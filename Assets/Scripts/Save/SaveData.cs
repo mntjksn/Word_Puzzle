@@ -10,6 +10,7 @@ namespace WordPuzzle.Save
         public int[] ClearCountByLength = new int[7];
         public List<int> ClearedWordIds = new List<int>();
         public int TotalHintsUsed;
+        public int Points;
 
         public void IncrementClear(int length)
         {

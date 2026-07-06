@@ -23,9 +23,16 @@ namespace WordPuzzle.Single
         [SerializeField] private TextMeshProUGUI  hintLabel;
         [SerializeField] private TextMeshProUGUI  lineHintLabel;
         [SerializeField] private UnityEngine.UI.Button btnLineHint;
+        [SerializeField] private TextMeshProUGUI  pointsText;
         [SerializeField] private GameObject       clearPanel;
         [SerializeField] private TextMeshProUGUI  clearWordText;
         [SerializeField] private TextMeshProUGUI  clearAttemptText;
+        [SerializeField] private TextMeshProUGUI  clearPointsText;
+
+        // 포인트 설정
+        private static readonly int[] PointsByLength = { 0, 0, 5, 8, 12, 18, 25 };
+        private const int JamoHintCost = 2;
+        private const int LineHintCost = 10;
 
         private readonly List<string>           _hintMessages      = new List<string>();
         private readonly HashSet<int>           _revealedPositions = new HashSet<int>();
@@ -37,6 +44,7 @@ namespace WordPuzzle.Single
         private int            _attempts;
         private bool           _isCleared;
         private bool           _lineHintUsed;
+        private Color          _pointsNormalColor;
 
         private const string ContinueKey = "IsContinue";
 
@@ -44,6 +52,8 @@ namespace WordPuzzle.Single
         {
             if (inputField != null)
                 inputField.onSubmit.AddListener(_ => OnSubmit());
+            if (pointsText != null)
+                _pointsNormalColor = pointsText.color;
         }
 
         private void Start()
@@ -105,6 +115,7 @@ namespace WordPuzzle.Single
 
             difficultyText.text = $"{letterCount}글자";
             UpdateAttemptText();
+            UpdatePointsText();
             tokenView.Build(displayTokens);
             hintController.Setup(_answerTokens, OnHintRevealed, _revealedPositions);
             historyView.Clear();
@@ -122,7 +133,6 @@ namespace WordPuzzle.Single
                         ?? WordDatabase.Instance.GetByWord(save.word);
             if (_currentWord == null)
             {
-                // 단어 DB에 없으면 새 게임
                 SaveManager.ClearMidGame();
                 StartGame(save.wordLength);
                 return;
@@ -147,8 +157,8 @@ namespace WordPuzzle.Single
 
             difficultyText.text = $"{save.wordLength}글자";
             UpdateAttemptText();
+            UpdatePointsText();
 
-            // TokenView 복원
             var fixedPos = new Dictionary<int, string>();
             if (save.fixedPosKeys != null)
                 for (int i = 0; i < save.fixedPosKeys.Length; i++)
@@ -156,10 +166,8 @@ namespace WordPuzzle.Single
             var pool = save.unfixedPool != null ? new List<string>(save.unfixedPool) : new List<string>();
             tokenView.BuildFromRestore(_answerTokens.Count, fixedPos, pool);
 
-            // HintController 복원 (힌트 사용 횟수 = hintMessages 수)
             hintController.Setup(_answerTokens, OnHintRevealed, _revealedPositions, _hintMessages.Count);
 
-            // 힌트 라벨 복원
             if (hintLabel != null)
             {
                 if (_hintMessages.Count > 0)
@@ -173,7 +181,6 @@ namespace WordPuzzle.Single
                 }
             }
 
-            // 한 줄 힌트 복원
             _lineHintUsed = save.lineHintUsed;
             if (_lineHintUsed && lineHintLabel != null)
             {
@@ -187,7 +194,6 @@ namespace WordPuzzle.Single
                 if (btnLineHint   != null) btnLineHint.interactable = true;
             }
 
-            // 히스토리 복원
             historyView.RestoreEntries(_historyLog);
 
             inputField.text = "";
@@ -236,20 +242,65 @@ namespace WordPuzzle.Single
             if (result.IsCorrect) OnClear();
         }
 
+        public void OnJamoHint()
+        {
+            if (_saveData.Points < JamoHintCost)
+            {
+                StartCoroutine(FlashNotEnoughPoints());
+                return;
+            }
+            if (!hintController.TryReveal()) return;
+
+            _saveData.Points -= JamoHintCost;
+            _saveData.TotalHintsUsed++;
+            SaveManager.SaveSingle(_saveData);
+            UpdatePointsText();
+        }
+
+        public void OnLineHint()
+        {
+            if (_lineHintUsed || _currentWord == null || string.IsNullOrEmpty(_currentWord.hint)) return;
+
+            if (_saveData.Points < LineHintCost)
+            {
+                StartCoroutine(FlashNotEnoughPoints());
+                return;
+            }
+
+            _lineHintUsed = true;
+            _saveData.Points -= LineHintCost;
+            SaveManager.SaveSingle(_saveData);
+            UpdatePointsText();
+
+            if (lineHintLabel != null)
+            {
+                lineHintLabel.text = _currentWord.hint;
+                lineHintLabel.gameObject.SetActive(true);
+            }
+            if (btnLineHint != null) btnLineHint.interactable = false;
+        }
+
         private void OnClear()
         {
             _isCleared = true;
             SaveManager.ClearMidGame();
-            clearPanel.SetActive(true);
             inputField.interactable = false;
 
-            if (clearWordText  != null) clearWordText.text  = _currentWord.word;
-            if (clearAttemptText != null) clearAttemptText.text = $"{_attempts}번 만에 성공!";
+            int earned = _currentWord.length < PointsByLength.Length
+                ? PointsByLength[_currentWord.length] : 0;
+            _saveData.Points += earned;
 
             if (!_saveData.ClearedWordIds.Contains(_currentWord.id))
                 _saveData.ClearedWordIds.Add(_currentWord.id);
             _saveData.IncrementClear(_currentWord.length);
             SaveManager.SaveSingle(_saveData);
+
+            UpdatePointsText();
+            clearPanel.SetActive(true);
+
+            if (clearWordText    != null) clearWordText.text    = _currentWord.word;
+            if (clearAttemptText != null) clearAttemptText.text = $"{_attempts}번 만에 성공!";
+            if (clearPointsText  != null) clearPointsText.text  = $"+{earned}P 획득!";
         }
 
         private void OnHintRevealed(int position, string token)
@@ -290,24 +341,37 @@ namespace WordPuzzle.Single
             SaveManager.SaveMidGame(save);
         }
 
-        public void OnLineHint()
-        {
-            if (_lineHintUsed || _currentWord == null || string.IsNullOrEmpty(_currentWord.hint)) return;
-            _lineHintUsed = true;
-            if (lineHintLabel != null)
-            {
-                lineHintLabel.text = _currentWord.hint;
-                lineHintLabel.gameObject.SetActive(true);
-            }
-            if (btnLineHint != null) btnLineHint.interactable = false;
-        }
-
         public void OnPlayAgain() => StartGame(_currentWord.length);
 
         public void OnBackButton()
         {
             SaveMidGame();
             SceneManager.LoadScene("Intro");
+        }
+
+        private void UpdateAttemptText()
+        {
+            if (attemptText != null)
+                attemptText.text = _attempts == 0 ? "도전 중..." : $"{_attempts}번째 시도";
+        }
+
+        private void UpdatePointsText()
+        {
+            if (pointsText != null)
+                pointsText.text = $"{_saveData.Points} P";
+        }
+
+        private IEnumerator FlashNotEnoughPoints()
+        {
+            if (pointsText == null) yield break;
+            var red = new Color(1f, 0.3f, 0.3f, 1f);
+            for (int i = 0; i < 3; i++)
+            {
+                pointsText.color = red;
+                yield return new WaitForSeconds(0.12f);
+                pointsText.color = _pointsNormalColor;
+                yield return new WaitForSeconds(0.12f);
+            }
         }
 
         private static void ShuffleList(List<string> list)
@@ -317,12 +381,6 @@ namespace WordPuzzle.Single
                 int j = Random.Range(0, i + 1);
                 string tmp = list[i]; list[i] = list[j]; list[j] = tmp;
             }
-        }
-
-        private void UpdateAttemptText()
-        {
-            if (attemptText != null)
-                attemptText.text = _attempts == 0 ? "도전 중..." : $"{_attempts}번째 시도";
         }
     }
 }
