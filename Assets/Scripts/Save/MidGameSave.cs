@@ -27,5 +27,7 @@ namespace WordPuzzle.Save
         public string[] unfixedPool;
         // 히스토리 로그
         public List<HistoryEntryData> history = new List<HistoryEntryData>();
+        // 한 줄 힌트 사용 여부
+        public bool lineHintUsed;
     }
 }

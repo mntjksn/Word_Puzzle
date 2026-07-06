@@ -7,5 +7,6 @@ namespace WordPuzzle.Data
         public string word;
         public int    length;
         public int    difficulty;
+        public string hint;
     }
 }

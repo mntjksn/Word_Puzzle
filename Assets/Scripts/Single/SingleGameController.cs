@@ -21,6 +21,8 @@ namespace WordPuzzle.Single
         [SerializeField] private TextMeshProUGUI  difficultyText;
         [SerializeField] private TextMeshProUGUI  attemptText;
         [SerializeField] private TextMeshProUGUI  hintLabel;
+        [SerializeField] private TextMeshProUGUI  lineHintLabel;
+        [SerializeField] private UnityEngine.UI.Button btnLineHint;
         [SerializeField] private GameObject       clearPanel;
         [SerializeField] private TextMeshProUGUI  clearWordText;
         [SerializeField] private TextMeshProUGUI  clearAttemptText;
@@ -34,6 +36,7 @@ namespace WordPuzzle.Single
         private SingleSaveData _saveData;
         private int            _attempts;
         private bool           _isCleared;
+        private bool           _lineHintUsed;
 
         private const string ContinueKey = "IsContinue";
 
@@ -95,6 +98,7 @@ namespace WordPuzzle.Single
 
             _attempts = 0;
             _isCleared = false;
+            _lineHintUsed = false;
             _revealedPositions.Clear();
             _hintMessages.Clear();
             _historyLog.Clear();
@@ -104,7 +108,9 @@ namespace WordPuzzle.Single
             tokenView.Build(displayTokens);
             hintController.Setup(_answerTokens, OnHintRevealed, _revealedPositions);
             historyView.Clear();
-            if (hintLabel != null) { hintLabel.text = ""; hintLabel.gameObject.SetActive(false); }
+            if (hintLabel     != null) { hintLabel.text = "";     hintLabel.gameObject.SetActive(false); }
+            if (lineHintLabel != null) { lineHintLabel.text = ""; lineHintLabel.gameObject.SetActive(false); }
+            if (btnLineHint   != null) btnLineHint.interactable = true;
             inputField.text = "";
             inputField.interactable = true;
             clearPanel.SetActive(false);
@@ -165,6 +171,20 @@ namespace WordPuzzle.Single
                 {
                     hintLabel.gameObject.SetActive(false);
                 }
+            }
+
+            // 한 줄 힌트 복원
+            _lineHintUsed = save.lineHintUsed;
+            if (_lineHintUsed && lineHintLabel != null)
+            {
+                lineHintLabel.text = _currentWord.hint ?? "";
+                lineHintLabel.gameObject.SetActive(true);
+                if (btnLineHint != null) btnLineHint.interactable = false;
+            }
+            else
+            {
+                if (lineHintLabel != null) lineHintLabel.gameObject.SetActive(false);
+                if (btnLineHint   != null) btnLineHint.interactable = true;
             }
 
             // 히스토리 복원
@@ -264,9 +284,22 @@ namespace WordPuzzle.Single
                 fixedPosKeys       = fixedPos.Keys.ToArray(),
                 fixedPosValues     = fixedPos.Values.ToArray(),
                 unfixedPool        = unfixPool.ToArray(),
-                history            = new List<HistoryEntryData>(_historyLog)
+                history            = new List<HistoryEntryData>(_historyLog),
+                lineHintUsed       = _lineHintUsed
             };
             SaveManager.SaveMidGame(save);
+        }
+
+        public void OnLineHint()
+        {
+            if (_lineHintUsed || _currentWord == null || string.IsNullOrEmpty(_currentWord.hint)) return;
+            _lineHintUsed = true;
+            if (lineHintLabel != null)
+            {
+                lineHintLabel.text = _currentWord.hint;
+                lineHintLabel.gameObject.SetActive(true);
+            }
+            if (btnLineHint != null) btnLineHint.interactable = false;
         }
 
         public void OnPlayAgain() => StartGame(_currentWord.length);
