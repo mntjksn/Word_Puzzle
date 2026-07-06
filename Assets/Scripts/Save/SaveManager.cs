@@ -5,9 +5,33 @@ namespace WordPuzzle.Save
     // PlayerPrefs 기반 저장 / 로드 (추후 Firebase로 확장 가능)
     public static class SaveManager
     {
-        private const string KeySingle = "save_single";
-        private const string KeyDaily  = "save_daily";
-        private const string KeyMulti  = "save_multi";
+        private const string KeySingle  = "save_single";
+        private const string KeyDaily   = "save_daily";
+        private const string KeyMulti   = "save_multi";
+        private const string KeyMidGame = "save_midgame";
+
+        public static bool HasMidGame()
+            => PlayerPrefs.HasKey(KeyMidGame) && !string.IsNullOrEmpty(PlayerPrefs.GetString(KeyMidGame, ""));
+
+        public static MidGameSave LoadMidGame()
+        {
+            string json = PlayerPrefs.GetString(KeyMidGame, "");
+            if (string.IsNullOrEmpty(json)) return null;
+            try   { return JsonUtility.FromJson<MidGameSave>(json); }
+            catch { return null; }
+        }
+
+        public static void SaveMidGame(MidGameSave data)
+        {
+            PlayerPrefs.SetString(KeyMidGame, JsonUtility.ToJson(data));
+            PlayerPrefs.Save();
+        }
+
+        public static void ClearMidGame()
+        {
+            PlayerPrefs.DeleteKey(KeyMidGame);
+            PlayerPrefs.Save();
+        }
 
         public static SingleSaveData LoadSingle()
         {

@@ -16,13 +16,13 @@ namespace WordPuzzle.Single
 
         public bool CanUseHint => _hintsUsed < maxHintsPerPuzzle;
 
-        public void Setup(List<string> answerTokens, Action<int, string> onReveal, HashSet<int> revealedPositions)
+        public void Setup(List<string> answerTokens, Action<int, string> onReveal, HashSet<int> revealedPositions, int hintsAlreadyUsed = 0)
         {
             _answerTokens     = answerTokens;
             _onReveal         = onReveal;
             _revealedByStrike = revealedPositions;
             _usedIndices.Clear();
-            _hintsUsed = 0;
+            _hintsUsed = hintsAlreadyUsed;
         }
 
         public void OnHintButtonClicked()

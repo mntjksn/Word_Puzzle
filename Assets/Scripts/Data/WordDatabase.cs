@@ -49,6 +49,9 @@ namespace WordPuzzle.Data
         public WordData GetById(int id)
             => _words.Find(w => w.id == id);
 
+        public WordData GetByWord(string word)
+            => _words.Find(w => w.word == word);
+
         public List<WordData> GetByLength(int length)
             => _words.FindAll(w => w.length == length);
 

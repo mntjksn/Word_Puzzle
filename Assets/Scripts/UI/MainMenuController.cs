@@ -1,16 +1,34 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WordPuzzle.Save;
 
 namespace WordPuzzle.UI
 {
     public class MainMenuController : MonoBehaviour
     {
         [SerializeField] private WordLengthSelectPopup _singleModePopup;
+        [SerializeField] private GameObject            _continueButton;
+
+        private const string ContinueKey = "IsContinue";
+
+        private void Start()
+        {
+            if (_continueButton != null)
+                _continueButton.SetActive(SaveManager.HasMidGame());
+        }
 
         public void OnSingleMode()
         {
+            SaveManager.ClearMidGame();
             if (_singleModePopup != null) _singleModePopup.Show();
             else SceneManager.LoadScene("SingleGame");
+        }
+
+        public void OnContinue()
+        {
+            PlayerPrefs.SetInt(ContinueKey, 1);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("SingleGame");
         }
 
         public void OnDailyMode()  => SceneManager.LoadScene("DailyChallenge");

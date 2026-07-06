@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using WordPuzzle.Core;
+using WordPuzzle.Save;
 
 namespace WordPuzzle.UI
 {
@@ -48,6 +49,25 @@ namespace WordPuzzle.UI
             var item = Instantiate(itemPrefab, listContainer);
             item.SetSkipped();
             _items.Add(item);
+        }
+
+        public void RestoreEntries(List<HistoryEntryData> entries)
+        {
+            Clear();
+            foreach (var e in entries)
+            {
+                var item = Instantiate(itemPrefab, listContainer);
+                if (e.isError)
+                {
+                    item.SetError(_items.Count + 1, e.word);
+                }
+                else
+                {
+                    var result = new JudgeResult { Hits = System.Array.ConvertAll(e.hits, h => (TokenHit)h) };
+                    item.Set(_items.Count + 1, e.word, result, e.expectedTokenCount);
+                }
+                _items.Add(item);
+            }
         }
 
         public void Clear()

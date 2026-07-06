@@ -39,6 +39,25 @@ namespace WordPuzzle.UI
             RenderCells();
         }
 
+        public Dictionary<int, string> GetFixedPositions() => new Dictionary<int, string>(_fixedPositions);
+        public List<string>            GetUnfixedPool()   => new List<string>(_unfixedPool);
+
+        public void BuildFromRestore(int totalCount, Dictionary<int, string> fixedPos, List<string> pool)
+        {
+            _totalCount     = totalCount;
+            _fixedPositions = new Dictionary<int, string>(fixedPos);
+            _unfixedPool    = new List<string>(pool);
+
+            float containerWidth = ((RectTransform)cellContainer).rect.width;
+            if (containerWidth < 1f) containerWidth = 1020f;
+            float gap      = Mathf.Max(3f, 10f - Mathf.Max(0, _totalCount - 8) * 0.5f);
+            float totalGap = Mathf.Max(0, _totalCount - 1) * gap;
+            _cellSize = Mathf.Min((containerWidth - totalGap) / _totalCount, MaxCellSize);
+            var hLayout = cellContainer.GetComponent<HorizontalLayoutGroup>();
+            if (hLayout != null) hLayout.spacing = gap;
+            RenderCells();
+        }
+
         // answerIndex 위치를 correctJamo(노란색)으로 고정
         // displayJamo: 풀에서 제거할 회전된 자모
         public void LockPosition(int answerIndex, string correctJamo, string displayJamo)
