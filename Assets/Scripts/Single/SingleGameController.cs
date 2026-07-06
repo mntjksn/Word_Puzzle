@@ -29,22 +29,29 @@ namespace WordPuzzle.Single
         [SerializeField] private TextMeshProUGUI  clearAttemptText;
         [SerializeField] private TextMeshProUGUI  clearPointsText;
 
+        [Header("힌트 확인 팝업")]
+        [SerializeField] private GameObject       hintConfirmPopup;
+        [SerializeField] private TextMeshProUGUI  hintConfirmMsg;
+
         // 포인트 설정
-        private static readonly int[] PointsByLength = { 0, 0, 5, 8, 12, 18, 25 };
+        private static readonly int[] PointsByLength = { 0, 0, 1, 3, 10, 20, 30 };
         private const int JamoHintCost = 2;
         private const int LineHintCost = 10;
+
+        private enum PendingHintType { None, Jamo, Line }
 
         private readonly List<string>           _hintMessages      = new List<string>();
         private readonly HashSet<int>           _revealedPositions = new HashSet<int>();
         private readonly List<HistoryEntryData> _historyLog        = new List<HistoryEntryData>();
 
-        private WordData       _currentWord;
-        private List<string>   _answerTokens;
-        private SingleSaveData _saveData;
-        private int            _attempts;
-        private bool           _isCleared;
-        private bool           _lineHintUsed;
-        private Color          _pointsNormalColor;
+        private WordData         _currentWord;
+        private List<string>     _answerTokens;
+        private SingleSaveData   _saveData;
+        private int              _attempts;
+        private bool             _isCleared;
+        private bool             _lineHintUsed;
+        private Color            _pointsNormalColor;
+        private PendingHintType  _pendingHint;
 
         private const string ContinueKey = "IsContinue";
 
@@ -106,9 +113,10 @@ namespace WordPuzzle.Single
             var displayTokens = JamoConverter.GetDisplayTokens(_currentWord.word);
             ShuffleList(displayTokens);
 
-            _attempts = 0;
-            _isCleared = false;
+            _attempts     = 0;
+            _isCleared    = false;
             _lineHintUsed = false;
+            _pendingHint  = PendingHintType.None;
             _revealedPositions.Clear();
             _hintMessages.Clear();
             _historyLog.Clear();
@@ -122,6 +130,7 @@ namespace WordPuzzle.Single
             if (hintLabel     != null) { hintLabel.text = "";     hintLabel.gameObject.SetActive(false); }
             if (lineHintLabel != null) { lineHintLabel.text = ""; lineHintLabel.gameObject.SetActive(false); }
             if (btnLineHint   != null) btnLineHint.interactable = true;
+            if (hintConfirmPopup != null) hintConfirmPopup.SetActive(false);
             inputField.text = "";
             inputField.interactable = true;
             clearPanel.SetActive(false);
@@ -141,6 +150,7 @@ namespace WordPuzzle.Single
             _answerTokens = JamoConverter.GetAnswerTokens(_currentWord.word);
             _attempts     = save.attempts;
             _isCleared    = false;
+            _pendingHint  = PendingHintType.None;
 
             _revealedPositions.Clear();
             if (save.revealedPositions != null)
@@ -194,8 +204,8 @@ namespace WordPuzzle.Single
                 if (btnLineHint   != null) btnLineHint.interactable = true;
             }
 
+            if (hintConfirmPopup != null) hintConfirmPopup.SetActive(false);
             historyView.RestoreEntries(_historyLog);
-
             inputField.text = "";
             inputField.interactable = true;
             clearPanel.SetActive(false);
@@ -242,41 +252,54 @@ namespace WordPuzzle.Single
             if (result.IsCorrect) OnClear();
         }
 
+        // ── 힌트 확인 팝업 ──
         public void OnJamoHint()
         {
-            if (_saveData.Points < JamoHintCost)
-            {
-                StartCoroutine(FlashNotEnoughPoints());
-                return;
-            }
-            if (!hintController.TryReveal()) return;
+            if (_saveData.Points < JamoHintCost) { StartCoroutine(FlashNotEnoughPoints()); return; }
+            _pendingHint = PendingHintType.Jamo;
+            if (hintConfirmMsg  != null) hintConfirmMsg.text = $"자모 힌트를 사용하시겠습니까?\n( {JamoHintCost}P 소모 )";
+            if (hintConfirmPopup != null) hintConfirmPopup.SetActive(true);
+        }
 
+        public void OnLineHint()
+        {
+            if (_lineHintUsed || _currentWord == null || string.IsNullOrEmpty(_currentWord.hint)) return;
+            if (_saveData.Points < LineHintCost) { StartCoroutine(FlashNotEnoughPoints()); return; }
+            _pendingHint = PendingHintType.Line;
+            if (hintConfirmMsg  != null) hintConfirmMsg.text = $"한 줄 힌트를 사용하시겠습니까?\n( {LineHintCost}P 소모 )";
+            if (hintConfirmPopup != null) hintConfirmPopup.SetActive(true);
+        }
+
+        public void OnHintConfirmYes()
+        {
+            if (hintConfirmPopup != null) hintConfirmPopup.SetActive(false);
+            if (_pendingHint == PendingHintType.Jamo) ExecuteJamoHint();
+            else if (_pendingHint == PendingHintType.Line) ExecuteLineHint();
+            _pendingHint = PendingHintType.None;
+        }
+
+        public void OnHintConfirmNo()
+        {
+            if (hintConfirmPopup != null) hintConfirmPopup.SetActive(false);
+            _pendingHint = PendingHintType.None;
+        }
+
+        private void ExecuteJamoHint()
+        {
+            if (!hintController.TryReveal()) return;
             _saveData.Points -= JamoHintCost;
             _saveData.TotalHintsUsed++;
             SaveManager.SaveSingle(_saveData);
             UpdatePointsText();
         }
 
-        public void OnLineHint()
+        private void ExecuteLineHint()
         {
-            if (_lineHintUsed || _currentWord == null || string.IsNullOrEmpty(_currentWord.hint)) return;
-
-            if (_saveData.Points < LineHintCost)
-            {
-                StartCoroutine(FlashNotEnoughPoints());
-                return;
-            }
-
             _lineHintUsed = true;
             _saveData.Points -= LineHintCost;
             SaveManager.SaveSingle(_saveData);
             UpdatePointsText();
-
-            if (lineHintLabel != null)
-            {
-                lineHintLabel.text = _currentWord.hint;
-                lineHintLabel.gameObject.SetActive(true);
-            }
+            if (lineHintLabel != null) { lineHintLabel.text = _currentWord.hint; lineHintLabel.gameObject.SetActive(true); }
             if (btnLineHint != null) btnLineHint.interactable = false;
         }
 
@@ -286,8 +309,7 @@ namespace WordPuzzle.Single
             SaveManager.ClearMidGame();
             inputField.interactable = false;
 
-            int earned = _currentWord.length < PointsByLength.Length
-                ? PointsByLength[_currentWord.length] : 0;
+            int earned = _currentWord.length < PointsByLength.Length ? PointsByLength[_currentWord.length] : 0;
             _saveData.Points += earned;
 
             if (!_saveData.ClearedWordIds.Contains(_currentWord.id))
