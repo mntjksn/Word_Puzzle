@@ -37,6 +37,12 @@ namespace WordPuzzle.Single
 
         private const string ContinueKey = "IsContinue";
 
+        private void Awake()
+        {
+            if (inputField != null)
+                inputField.onSubmit.AddListener(_ => OnSubmit());
+        }
+
         private void Start()
         {
             _saveData = SaveManager.LoadSingle();
@@ -49,15 +55,6 @@ namespace WordPuzzle.Single
             {
                 int length = PlayerPrefs.GetInt(WordLengthSelectPopup.PrefKey, 4);
                 StartCoroutine(WaitAndStart(length));
-            }
-        }
-
-        private void Update()
-        {
-            if (inputField != null && inputField.interactable && inputField.isFocused)
-            {
-                if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
-                    OnSubmit();
             }
         }
 
