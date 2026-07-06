@@ -33,6 +33,7 @@ namespace WordPuzzle.Single
         private List<string>   _answerTokens;
         private SingleSaveData _saveData;
         private int            _attempts;
+        private bool           _isCleared;
 
         private const string ContinueKey = "IsContinue";
 
@@ -96,6 +97,7 @@ namespace WordPuzzle.Single
             ShuffleList(displayTokens);
 
             _attempts = 0;
+            _isCleared = false;
             _revealedPositions.Clear();
             _hintMessages.Clear();
             _historyLog.Clear();
@@ -125,6 +127,7 @@ namespace WordPuzzle.Single
 
             _answerTokens = JamoConverter.GetAnswerTokens(_currentWord.word);
             _attempts     = save.attempts;
+            _isCleared    = false;
 
             _revealedPositions.Clear();
             if (save.revealedPositions != null)
@@ -218,6 +221,7 @@ namespace WordPuzzle.Single
 
         private void OnClear()
         {
+            _isCleared = true;
             SaveManager.ClearMidGame();
             clearPanel.SetActive(true);
             inputField.interactable = false;
@@ -247,7 +251,7 @@ namespace WordPuzzle.Single
 
         private void SaveMidGame()
         {
-            if (_currentWord == null) return;
+            if (_currentWord == null || _isCleared) return;
 
             var fixedPos  = tokenView.GetFixedPositions();
             var unfixPool = tokenView.GetUnfixedPool();
