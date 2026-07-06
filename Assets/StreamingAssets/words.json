@@ -1,0 +1,9004 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "당근",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 2,
+      "word": "사과",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 3,
+      "word": "앉다",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 4,
+      "word": "가방",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 5,
+      "word": "공책",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 6,
+      "word": "연필",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 7,
+      "word": "볼펜",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 8,
+      "word": "책상",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 9,
+      "word": "의자",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 10,
+      "word": "칠판",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 11,
+      "word": "교실",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 12,
+      "word": "운동",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 13,
+      "word": "공부",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 14,
+      "word": "숙제",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 15,
+      "word": "시험",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 16,
+      "word": "점수",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 17,
+      "word": "성적",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 18,
+      "word": "과목",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 19,
+      "word": "국어",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 20,
+      "word": "영어",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 21,
+      "word": "수학",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 22,
+      "word": "과학",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 23,
+      "word": "음악",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 24,
+      "word": "미술",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 25,
+      "word": "체육",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 26,
+      "word": "역사",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 27,
+      "word": "마당",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 28,
+      "word": "지붕",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 29,
+      "word": "계단",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 30,
+      "word": "현관",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 31,
+      "word": "창문",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 32,
+      "word": "거울",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 33,
+      "word": "침대",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 34,
+      "word": "이불",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 35,
+      "word": "베개",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 36,
+      "word": "수건",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 37,
+      "word": "비누",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 38,
+      "word": "치약",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 39,
+      "word": "칫솔",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 40,
+      "word": "접시",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 41,
+      "word": "그릇",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 42,
+      "word": "냄비",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 43,
+      "word": "도마",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 44,
+      "word": "국자",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 45,
+      "word": "쟁반",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 46,
+      "word": "서랍",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 47,
+      "word": "장롱",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 48,
+      "word": "옷장",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 49,
+      "word": "신발",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 50,
+      "word": "양말",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 51,
+      "word": "바지",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 52,
+      "word": "치마",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 53,
+      "word": "모자",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 54,
+      "word": "장갑",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 55,
+      "word": "외투",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 56,
+      "word": "셔츠",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 57,
+      "word": "코트",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 58,
+      "word": "토끼",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 59,
+      "word": "사자",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 60,
+      "word": "기린",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 61,
+      "word": "돼지",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 62,
+      "word": "염소",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 63,
+      "word": "여우",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 64,
+      "word": "늑대",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 65,
+      "word": "참새",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 66,
+      "word": "까치",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 67,
+      "word": "상어",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 68,
+      "word": "고래",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 69,
+      "word": "문어",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 70,
+      "word": "조개",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 71,
+      "word": "새우",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 72,
+      "word": "하늘",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 73,
+      "word": "바다",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 74,
+      "word": "호수",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 75,
+      "word": "나무",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 76,
+      "word": "바위",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 77,
+      "word": "구름",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 78,
+      "word": "바람",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 79,
+      "word": "햇빛",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 80,
+      "word": "달빛",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 81,
+      "word": "별빛",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 82,
+      "word": "번개",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 83,
+      "word": "안개",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 84,
+      "word": "봄날",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 85,
+      "word": "여름",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 86,
+      "word": "가을",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 87,
+      "word": "겨울",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 88,
+      "word": "아침",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 89,
+      "word": "저녁",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 90,
+      "word": "오늘",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 91,
+      "word": "내일",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 92,
+      "word": "어제",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 93,
+      "word": "시장",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 94,
+      "word": "가게",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 95,
+      "word": "은행",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 96,
+      "word": "병원",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 97,
+      "word": "약국",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 98,
+      "word": "극장",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 99,
+      "word": "공원",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 100,
+      "word": "도로",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 101,
+      "word": "사람",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 102,
+      "word": "문제",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 103,
+      "word": "자신",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 104,
+      "word": "문화",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 105,
+      "word": "생각",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 106,
+      "word": "소리",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 107,
+      "word": "여자",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 108,
+      "word": "정도",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 109,
+      "word": "아이",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 110,
+      "word": "시간",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 111,
+      "word": "사실",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 112,
+      "word": "다음",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 113,
+      "word": "세계",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 114,
+      "word": "학교",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 115,
+      "word": "여성",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 116,
+      "word": "친구",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 117,
+      "word": "마음",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 118,
+      "word": "관계",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 119,
+      "word": "남자",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 120,
+      "word": "얼굴",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 121,
+      "word": "모습",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 122,
+      "word": "이번",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 123,
+      "word": "생활",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 124,
+      "word": "지금",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 125,
+      "word": "사이",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 126,
+      "word": "방법",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 127,
+      "word": "처음",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 128,
+      "word": "그때",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 129,
+      "word": "이상",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 130,
+      "word": "교육",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 131,
+      "word": "예술",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 132,
+      "word": "결과",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 133,
+      "word": "내용",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 134,
+      "word": "동안",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 135,
+      "word": "나라",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 136,
+      "word": "의미",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 137,
+      "word": "자리",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 138,
+      "word": "얘기",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 139,
+      "word": "학생",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 140,
+      "word": "엄마",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 141,
+      "word": "이름",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 142,
+      "word": "하나",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 143,
+      "word": "이유",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 144,
+      "word": "남편",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 145,
+      "word": "세상",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 146,
+      "word": "대학",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 147,
+      "word": "이후",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 148,
+      "word": "지방",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 149,
+      "word": "최근",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 150,
+      "word": "머리",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 151,
+      "word": "부분",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 152,
+      "word": "아들",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 153,
+      "word": "중심",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 154,
+      "word": "관심",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 155,
+      "word": "광고",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 156,
+      "word": "전체",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 157,
+      "word": "영화",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 158,
+      "word": "필요",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 159,
+      "word": "자연",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 160,
+      "word": "하루",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 161,
+      "word": "그림",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 162,
+      "word": "혼자",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 163,
+      "word": "이제",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 164,
+      "word": "교수",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 165,
+      "word": "사랑",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 166,
+      "word": "전화",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 167,
+      "word": "아빠",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 168,
+      "word": "한번",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 169,
+      "word": "커피",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 170,
+      "word": "가슴",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 171,
+      "word": "회사",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 172,
+      "word": "음식",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 173,
+      "word": "일부",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 174,
+      "word": "요즘",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 175,
+      "word": "계획",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 176,
+      "word": "느낌",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 177,
+      "word": "얼마",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 178,
+      "word": "고개",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 179,
+      "word": "성격",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 180,
+      "word": "아내",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 181,
+      "word": "가족",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 182,
+      "word": "도시",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 183,
+      "word": "나이",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 184,
+      "word": "행동",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 185,
+      "word": "국내",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 186,
+      "word": "아래",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 187,
+      "word": "모양",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 188,
+      "word": "교사",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 189,
+      "word": "마을",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 190,
+      "word": "방향",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 191,
+      "word": "대회",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 192,
+      "word": "노래",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 193,
+      "word": "노력",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 194,
+      "word": "언니",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 195,
+      "word": "능력",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 196,
+      "word": "자식",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 197,
+      "word": "학년",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 198,
+      "word": "신문",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 199,
+      "word": "선생",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 200,
+      "word": "사업",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 201,
+      "word": "기분",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 202,
+      "word": "동시",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 203,
+      "word": "회의",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 204,
+      "word": "방송",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 205,
+      "word": "연극",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 206,
+      "word": "이때",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 207,
+      "word": "과거",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 208,
+      "word": "물건",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 209,
+      "word": "경험",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 210,
+      "word": "최고",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 211,
+      "word": "고향",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 212,
+      "word": "결혼",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 213,
+      "word": "동생",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 214,
+      "word": "소설",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 215,
+      "word": "오후",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 216,
+      "word": "시민",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 217,
+      "word": "아기",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 218,
+      "word": "옛날",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 219,
+      "word": "이날",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 220,
+      "word": "경찰",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 221,
+      "word": "기자",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 222,
+      "word": "건강",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 223,
+      "word": "건물",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 224,
+      "word": "외국",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 225,
+      "word": "어른",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 226,
+      "word": "주변",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 227,
+      "word": "차례",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 228,
+      "word": "조금",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 229,
+      "word": "부모",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 230,
+      "word": "언어",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 231,
+      "word": "그날",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 232,
+      "word": "기간",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 233,
+      "word": "공장",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 234,
+      "word": "환자",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 235,
+      "word": "사고",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 236,
+      "word": "대화",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 237,
+      "word": "올해",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 238,
+      "word": "모두",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 239,
+      "word": "도움",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 240,
+      "word": "버스",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 241,
+      "word": "사진",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 242,
+      "word": "제일",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 243,
+      "word": "경기",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 244,
+      "word": "목적",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 245,
+      "word": "태도",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 246,
+      "word": "남성",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 247,
+      "word": "주위",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 248,
+      "word": "다리",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 249,
+      "word": "재료",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 250,
+      "word": "자유",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 251,
+      "word": "기회",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 252,
+      "word": "동네",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 253,
+      "word": "말씀",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 254,
+      "word": "눈물",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 255,
+      "word": "현재",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 256,
+      "word": "주인",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 257,
+      "word": "선수",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 258,
+      "word": "기억",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 259,
+      "word": "인기",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 260,
+      "word": "이전",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 261,
+      "word": "중앙",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 262,
+      "word": "게임",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 263,
+      "word": "국제",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 264,
+      "word": "위치",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 265,
+      "word": "가격",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 266,
+      "word": "손님",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 267,
+      "word": "모임",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 268,
+      "word": "웃음",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 269,
+      "word": "뉴스",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 270,
+      "word": "수업",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 271,
+      "word": "식사",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 272,
+      "word": "이해",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 273,
+      "word": "이웃",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 274,
+      "word": "편지",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 275,
+      "word": "상품",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 276,
+      "word": "설명",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 277,
+      "word": "어깨",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 278,
+      "word": "부부",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 279,
+      "word": "여행",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 280,
+      "word": "오월",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 281,
+      "word": "오빠",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 282,
+      "word": "사월",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 283,
+      "word": "나중",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 284,
+      "word": "며칠",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 285,
+      "word": "사용",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 286,
+      "word": "작년",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 287,
+      "word": "새벽",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 288,
+      "word": "직장",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 289,
+      "word": "크기",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 290,
+      "word": "고기",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 291,
+      "word": "서양",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 292,
+      "word": "냄새",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 293,
+      "word": "남녀",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 294,
+      "word": "속도",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 295,
+      "word": "준비",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 296,
+      "word": "구월",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 297,
+      "word": "소식",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 298,
+      "word": "유월",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 299,
+      "word": "허리",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 300,
+      "word": "노인",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 301,
+      "word": "결정",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 302,
+      "word": "사장",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 303,
+      "word": "삼월",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 304,
+      "word": "선배",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 305,
+      "word": "걱정",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 306,
+      "word": "만약",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 307,
+      "word": "행사",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 308,
+      "word": "누나",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 309,
+      "word": "질문",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 310,
+      "word": "거리",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 311,
+      "word": "근처",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 312,
+      "word": "놀이",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 313,
+      "word": "직원",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 314,
+      "word": "오전",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 315,
+      "word": "약속",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 316,
+      "word": "인사",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 317,
+      "word": "반대",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 318,
+      "word": "소금",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 319,
+      "word": "교통",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 320,
+      "word": "한글",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 321,
+      "word": "길이",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 322,
+      "word": "날씨",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 323,
+      "word": "동물",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 324,
+      "word": "의사",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 325,
+      "word": "미래",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 326,
+      "word": "축구",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 327,
+      "word": "장소",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 328,
+      "word": "바닥",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 329,
+      "word": "비밀",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 330,
+      "word": "잘못",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 331,
+      "word": "해외",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 332,
+      "word": "보통",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 333,
+      "word": "식당",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 334,
+      "word": "칠월",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 335,
+      "word": "종이",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 336,
+      "word": "물론",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 337,
+      "word": "재미",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 338,
+      "word": "대답",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 339,
+      "word": "시작",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 340,
+      "word": "평소",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 341,
+      "word": "과일",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 342,
+      "word": "시월",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 343,
+      "word": "검사",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 344,
+      "word": "제목",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 345,
+      "word": "팔월",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 346,
+      "word": "희망",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 347,
+      "word": "시골",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 348,
+      "word": "실수",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 349,
+      "word": "치료",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 350,
+      "word": "식구",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 351,
+      "word": "글자",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 352,
+      "word": "직업",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 353,
+      "word": "방학",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 354,
+      "word": "남쪽",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 355,
+      "word": "색깔",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 356,
+      "word": "요리",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 357,
+      "word": "부인",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 358,
+      "word": "우산",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 359,
+      "word": "기쁨",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 360,
+      "word": "무릎",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 361,
+      "word": "이용",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 362,
+      "word": "걸음",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 363,
+      "word": "스타",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 364,
+      "word": "시계",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 365,
+      "word": "입술",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 366,
+      "word": "중간",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 367,
+      "word": "교회",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 368,
+      "word": "관광",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 369,
+      "word": "수술",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 370,
+      "word": "식품",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 371,
+      "word": "일월",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 372,
+      "word": "회원",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 373,
+      "word": "선물",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 374,
+      "word": "습관",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 375,
+      "word": "위험",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 376,
+      "word": "지하",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 377,
+      "word": "고민",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 378,
+      "word": "상처",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 379,
+      "word": "만일",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 380,
+      "word": "주부",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 381,
+      "word": "이월",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 382,
+      "word": "방문",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 383,
+      "word": "숫자",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 384,
+      "word": "왼쪽",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 385,
+      "word": "택시",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 386,
+      "word": "계산",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 387,
+      "word": "전기",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 388,
+      "word": "고모",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 389,
+      "word": "잡지",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 390,
+      "word": "부족",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 391,
+      "word": "기름",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 392,
+      "word": "연습",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 393,
+      "word": "지도",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 394,
+      "word": "주말",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 395,
+      "word": "내년",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 396,
+      "word": "순서",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 397,
+      "word": "이사",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 398,
+      "word": "생일",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 399,
+      "word": "행복",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 400,
+      "word": "불안",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 401,
+      "word": "흰색",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 402,
+      "word": "가수",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 403,
+      "word": "입학",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 404,
+      "word": "만화",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 405,
+      "word": "우유",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 406,
+      "word": "형제",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 407,
+      "word": "안전",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 408,
+      "word": "규칙",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 409,
+      "word": "잠시",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 410,
+      "word": "부엌",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 411,
+      "word": "입구",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 412,
+      "word": "북쪽",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 413,
+      "word": "카드",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 414,
+      "word": "단어",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 415,
+      "word": "배우",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 416,
+      "word": "김치",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 417,
+      "word": "높이",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 418,
+      "word": "설탕",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 419,
+      "word": "점심",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 420,
+      "word": "청년",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 421,
+      "word": "연락",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 422,
+      "word": "낚시",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 423,
+      "word": "신부",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 424,
+      "word": "요금",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 425,
+      "word": "음료",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 426,
+      "word": "현금",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 427,
+      "word": "선택",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 428,
+      "word": "정리",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 429,
+      "word": "시내",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 430,
+      "word": "성공",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 431,
+      "word": "신청",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 432,
+      "word": "약간",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 433,
+      "word": "기온",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 434,
+      "word": "버릇",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 435,
+      "word": "술집",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 436,
+      "word": "풍경",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 437,
+      "word": "부장",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 438,
+      "word": "이틀",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 439,
+      "word": "공항",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 440,
+      "word": "군인",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 441,
+      "word": "달걀",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 442,
+      "word": "무게",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 443,
+      "word": "친척",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 444,
+      "word": "호텔",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 445,
+      "word": "긴장",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 446,
+      "word": "온도",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 447,
+      "word": "이마",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 448,
+      "word": "진짜",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 449,
+      "word": "청소",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 450,
+      "word": "학기",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 451,
+      "word": "계절",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 452,
+      "word": "후배",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 453,
+      "word": "휴가",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 454,
+      "word": "동쪽",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 455,
+      "word": "잠깐",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 456,
+      "word": "금지",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 457,
+      "word": "비교",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 458,
+      "word": "열차",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 459,
+      "word": "한복",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 460,
+      "word": "라면",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 461,
+      "word": "바깥",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 462,
+      "word": "빨래",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 463,
+      "word": "한자",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 464,
+      "word": "안경",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 465,
+      "word": "취미",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 466,
+      "word": "거실",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 467,
+      "word": "야구",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 468,
+      "word": "구경",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 469,
+      "word": "봉투",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 470,
+      "word": "소주",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 471,
+      "word": "생선",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 472,
+      "word": "슬픔",
+      "length": 2,
+      "difficulty": 1
+    },
+    {
+      "id": 473,
+      "word": "날짜",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 474,
+      "word": "서쪽",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 475,
+      "word": "안쪽",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 476,
+      "word": "짜증",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 477,
+      "word": "글씨",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 478,
+      "word": "아까",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 479,
+      "word": "식빵",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 480,
+      "word": "뒤쪽",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 481,
+      "word": "공짜",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 482,
+      "word": "찌개",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 483,
+      "word": "위쪽",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 484,
+      "word": "앞쪽",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 485,
+      "word": "딸기",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 486,
+      "word": "떡국",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 487,
+      "word": "꽃병",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 488,
+      "word": "꽃집",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 489,
+      "word": "넷째",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 490,
+      "word": "둘째",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 491,
+      "word": "빵집",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 492,
+      "word": "셋째",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 493,
+      "word": "짬뽕",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 494,
+      "word": "첫째",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 495,
+      "word": "까닭",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 496,
+      "word": "뿌리",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 497,
+      "word": "새끼",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 498,
+      "word": "싸움",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 499,
+      "word": "한쪽",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 500,
+      "word": "한때",
+      "length": 2,
+      "difficulty": 2
+    },
+    {
+      "id": 501,
+      "word": "바나나",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 502,
+      "word": "레미콘",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 503,
+      "word": "유리창",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 504,
+      "word": "요리사",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 505,
+      "word": "값어치",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 506,
+      "word": "도서관",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 507,
+      "word": "자동차",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 508,
+      "word": "비행기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 509,
+      "word": "고구마",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 510,
+      "word": "초콜릿",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 511,
+      "word": "도마뱀",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 512,
+      "word": "냉장고",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 513,
+      "word": "강아지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 514,
+      "word": "고양이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 515,
+      "word": "호랑이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 516,
+      "word": "코끼리",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 517,
+      "word": "원숭이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 518,
+      "word": "개구리",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 519,
+      "word": "물고기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 520,
+      "word": "오징어",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 521,
+      "word": "까마귀",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 522,
+      "word": "비둘기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 523,
+      "word": "거북이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 524,
+      "word": "다람쥐",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 525,
+      "word": "햄스터",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 526,
+      "word": "두더지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 527,
+      "word": "도롱뇽",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 528,
+      "word": "청설모",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 529,
+      "word": "해파리",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 530,
+      "word": "말미잘",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 531,
+      "word": "잠자리",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 532,
+      "word": "메뚜기",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 533,
+      "word": "사마귀",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 534,
+      "word": "제비꽃",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 535,
+      "word": "장미꽃",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 536,
+      "word": "개나리",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 537,
+      "word": "진달래",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 538,
+      "word": "소나무",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 539,
+      "word": "단풍잎",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 540,
+      "word": "나뭇잎",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 541,
+      "word": "꽃가루",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 542,
+      "word": "눈사람",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 543,
+      "word": "빗방울",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 544,
+      "word": "바닷가",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 545,
+      "word": "골짜기",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 546,
+      "word": "산마루",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 547,
+      "word": "모래밭",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 548,
+      "word": "자갈길",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 549,
+      "word": "된장국",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 550,
+      "word": "떡볶이",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 551,
+      "word": "비빔밥",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 552,
+      "word": "불고기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 553,
+      "word": "갈비탕",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 554,
+      "word": "삼계탕",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 555,
+      "word": "설렁탕",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 556,
+      "word": "자장면",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 557,
+      "word": "감자탕",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 558,
+      "word": "돈가스",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 559,
+      "word": "생선회",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 560,
+      "word": "순두부",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 561,
+      "word": "콩나물",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 562,
+      "word": "경찰서",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 563,
+      "word": "소방서",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 564,
+      "word": "우체국",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 565,
+      "word": "미용실",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 566,
+      "word": "정류장",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 567,
+      "word": "놀이터",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 568,
+      "word": "운동장",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 569,
+      "word": "주차장",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 570,
+      "word": "화장실",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 571,
+      "word": "교무실",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 572,
+      "word": "강의실",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 573,
+      "word": "연구실",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 574,
+      "word": "회의실",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 575,
+      "word": "작업실",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 576,
+      "word": "연습장",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 577,
+      "word": "컴퓨터",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 578,
+      "word": "마우스",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 579,
+      "word": "키보드",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 580,
+      "word": "모니터",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 581,
+      "word": "프린터",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 582,
+      "word": "이어폰",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 583,
+      "word": "충전기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 584,
+      "word": "세탁기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 585,
+      "word": "청소기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 586,
+      "word": "카메라",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 587,
+      "word": "지우개",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 588,
+      "word": "축구공",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 589,
+      "word": "농구공",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 590,
+      "word": "탁구공",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 591,
+      "word": "운동화",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 592,
+      "word": "자전거",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 593,
+      "word": "기차역",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 594,
+      "word": "어머니",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 595,
+      "word": "아버지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 596,
+      "word": "이야기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 597,
+      "word": "선생님",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 598,
+      "word": "가운데",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 599,
+      "word": "대부분",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 600,
+      "word": "분위기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 601,
+      "word": "그동안",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 602,
+      "word": "목소리",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 603,
+      "word": "지난해",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 604,
+      "word": "할머니",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 605,
+      "word": "아저씨",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 606,
+      "word": "마지막",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 607,
+      "word": "어린이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 608,
+      "word": "아파트",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 609,
+      "word": "티브이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 610,
+      "word": "쓰레기",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 611,
+      "word": "청소년",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 612,
+      "word": "부모님",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 613,
+      "word": "드라마",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 614,
+      "word": "손가락",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 615,
+      "word": "나머지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 616,
+      "word": "서비스",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 617,
+      "word": "스스로",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 618,
+      "word": "십이월",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 619,
+      "word": "올림픽",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 620,
+      "word": "일주일",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 621,
+      "word": "아무것",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 622,
+      "word": "박물관",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 623,
+      "word": "라디오",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 624,
+      "word": "외국인",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 625,
+      "word": "지난달",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 626,
+      "word": "스포츠",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 627,
+      "word": "지하철",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 628,
+      "word": "사무실",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 629,
+      "word": "일요일",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 630,
+      "word": "공무원",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 631,
+      "word": "비디오",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 632,
+      "word": "오른쪽",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 633,
+      "word": "화장품",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 634,
+      "word": "대학생",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 635,
+      "word": "백화점",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 636,
+      "word": "중학교",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 637,
+      "word": "방송국",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 638,
+      "word": "십일월",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 639,
+      "word": "쇠고기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 640,
+      "word": "거짓말",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 641,
+      "word": "토요일",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 642,
+      "word": "경찰관",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 643,
+      "word": "주머니",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 644,
+      "word": "오랜만",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 645,
+      "word": "아줌마",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 646,
+      "word": "인터넷",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 647,
+      "word": "아가씨",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 648,
+      "word": "종업원",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 649,
+      "word": "운전사",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 650,
+      "word": "요즈음",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 651,
+      "word": "밀가루",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 652,
+      "word": "한국어",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 653,
+      "word": "손바닥",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 654,
+      "word": "아버님",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 655,
+      "word": "교과서",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 656,
+      "word": "어머님",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 657,
+      "word": "디자인",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 658,
+      "word": "검은색",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 659,
+      "word": "엉덩이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 660,
+      "word": "대학원",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 661,
+      "word": "변호사",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 662,
+      "word": "여학생",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 663,
+      "word": "지난번",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 664,
+      "word": "결혼식",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 665,
+      "word": "유치원",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 666,
+      "word": "토마토",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 667,
+      "word": "메시지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 668,
+      "word": "연예인",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 669,
+      "word": "관광객",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 670,
+      "word": "미술관",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 671,
+      "word": "하숙집",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 672,
+      "word": "노래방",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 673,
+      "word": "달리기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 674,
+      "word": "오렌지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 675,
+      "word": "음식점",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 676,
+      "word": "대학교",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 677,
+      "word": "막걸리",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 678,
+      "word": "집안일",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 679,
+      "word": "젓가락",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 680,
+      "word": "피아노",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 681,
+      "word": "발가락",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 682,
+      "word": "기숙사",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 683,
+      "word": "월요일",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 684,
+      "word": "외국어",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 685,
+      "word": "중학생",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 686,
+      "word": "테니스",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 687,
+      "word": "어젯밤",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 688,
+      "word": "건너편",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 689,
+      "word": "남학생",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 690,
+      "word": "데이트",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 691,
+      "word": "오른손",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 692,
+      "word": "목욕탕",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 693,
+      "word": "대사관",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 694,
+      "word": "바깥쪽",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 695,
+      "word": "고추장",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 696,
+      "word": "여동생",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 697,
+      "word": "신호등",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 698,
+      "word": "태권도",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 699,
+      "word": "햄버거",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 700,
+      "word": "무궁화",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 701,
+      "word": "설거지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 702,
+      "word": "스웨터",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 703,
+      "word": "여행사",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 704,
+      "word": "유학생",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 705,
+      "word": "넥타이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 706,
+      "word": "장난감",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 707,
+      "word": "한국말",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 708,
+      "word": "아래쪽",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 709,
+      "word": "에어컨",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 710,
+      "word": "음료수",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 711,
+      "word": "관광지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 712,
+      "word": "전화기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 713,
+      "word": "지난주",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 714,
+      "word": "간호사",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 715,
+      "word": "닭고기",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 716,
+      "word": "숟가락",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 717,
+      "word": "금요일",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 718,
+      "word": "수요일",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 719,
+      "word": "볶음밥",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 720,
+      "word": "손수건",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 721,
+      "word": "터미널",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 722,
+      "word": "노란색",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 723,
+      "word": "사계절",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 724,
+      "word": "음악가",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 725,
+      "word": "자판기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 726,
+      "word": "출퇴근",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 727,
+      "word": "남동생",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 728,
+      "word": "발바닥",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 729,
+      "word": "점심때",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 730,
+      "word": "공휴일",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 731,
+      "word": "빨간색",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 732,
+      "word": "재채기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 733,
+      "word": "정거장",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 734,
+      "word": "티셔츠",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 735,
+      "word": "선풍기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 736,
+      "word": "원피스",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 737,
+      "word": "청바지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 738,
+      "word": "콘서트",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 739,
+      "word": "큰소리",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 740,
+      "word": "핸드폰",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 741,
+      "word": "휴지통",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 742,
+      "word": "목걸이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 743,
+      "word": "스키장",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 744,
+      "word": "목요일",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 745,
+      "word": "영화관",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 746,
+      "word": "중국집",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 747,
+      "word": "지하도",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 748,
+      "word": "분홍색",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 749,
+      "word": "수영장",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 750,
+      "word": "일본어",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 751,
+      "word": "동물원",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 752,
+      "word": "파란색",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 753,
+      "word": "화요일",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 754,
+      "word": "체육관",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 755,
+      "word": "칼국수",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 756,
+      "word": "연락처",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 757,
+      "word": "초록색",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 758,
+      "word": "보라색",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 759,
+      "word": "출입국",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 760,
+      "word": "세탁소",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 761,
+      "word": "운동복",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 762,
+      "word": "중국어",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 763,
+      "word": "학생증",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 764,
+      "word": "그저께",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 765,
+      "word": "까만색",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 766,
+      "word": "편의점",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 767,
+      "word": "하얀색",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 768,
+      "word": "감기약",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 769,
+      "word": "교통비",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 770,
+      "word": "귀걸이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 771,
+      "word": "기차표",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 772,
+      "word": "꽃다발",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 773,
+      "word": "남대문",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 774,
+      "word": "다림질",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 775,
+      "word": "다섯째",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 776,
+      "word": "다음날",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 777,
+      "word": "동대문",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 778,
+      "word": "러시아",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 779,
+      "word": "매표소",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 780,
+      "word": "목도리",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 781,
+      "word": "미역국",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 782,
+      "word": "반바지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 783,
+      "word": "베트남",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 784,
+      "word": "병문안",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 785,
+      "word": "사거리",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 786,
+      "word": "사이다",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 787,
+      "word": "사이즈",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 788,
+      "word": "삼거리",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 789,
+      "word": "삼겹살",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 790,
+      "word": "소고기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 791,
+      "word": "소화제",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 792,
+      "word": "수영복",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 793,
+      "word": "스카프",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 794,
+      "word": "시간표",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 795,
+      "word": "신분증",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 796,
+      "word": "안내문",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 797,
+      "word": "양치질",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 798,
+      "word": "여행지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 799,
+      "word": "영수증",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 800,
+      "word": "옷걸이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 801,
+      "word": "윷놀이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 802,
+      "word": "이삿짐",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 803,
+      "word": "일식집",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 804,
+      "word": "입장권",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 805,
+      "word": "제주도",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 806,
+      "word": "주황색",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 807,
+      "word": "집들이",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 808,
+      "word": "초대장",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 809,
+      "word": "캐나다",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 810,
+      "word": "커피숍",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 811,
+      "word": "케이크",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 812,
+      "word": "탕수육",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 813,
+      "word": "태극기",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 814,
+      "word": "프랑스",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 815,
+      "word": "하늘색",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 816,
+      "word": "하숙비",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 817,
+      "word": "한식집",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 818,
+      "word": "항공권",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 819,
+      "word": "회사원",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 820,
+      "word": "휴게실",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 821,
+      "word": "휴대폰",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 822,
+      "word": "대통령",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 823,
+      "word": "가능성",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 824,
+      "word": "오늘날",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 825,
+      "word": "구체적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 826,
+      "word": "소비자",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 827,
+      "word": "노동자",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 828,
+      "word": "한마디",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 829,
+      "word": "관계자",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 830,
+      "word": "움직임",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 831,
+      "word": "이미지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 832,
+      "word": "에너지",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 833,
+      "word": "젊은이",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 834,
+      "word": "적극적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 835,
+      "word": "주인공",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 836,
+      "word": "일반적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 837,
+      "word": "전문가",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 838,
+      "word": "문화재",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 839,
+      "word": "어려움",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 840,
+      "word": "그림자",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 841,
+      "word": "상대방",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 842,
+      "word": "시리즈",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 843,
+      "word": "부동산",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 844,
+      "word": "근본적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 845,
+      "word": "문제점",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 846,
+      "word": "시스템",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 847,
+      "word": "지도자",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 848,
+      "word": "효과적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 849,
+      "word": "예술가",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 850,
+      "word": "과학자",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 851,
+      "word": "상대적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 852,
+      "word": "조미료",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 853,
+      "word": "대표적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 854,
+      "word": "사회적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 855,
+      "word": "기본적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 856,
+      "word": "대규모",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 857,
+      "word": "농산물",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 858,
+      "word": "연구소",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 859,
+      "word": "근로자",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 860,
+      "word": "현실적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 861,
+      "word": "선진국",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 862,
+      "word": "직접적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 863,
+      "word": "필요성",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 864,
+      "word": "세계적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 865,
+      "word": "최소한",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 866,
+      "word": "머릿속",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 867,
+      "word": "오래전",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 868,
+      "word": "마음속",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 869,
+      "word": "스타일",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 870,
+      "word": "경쟁력",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 871,
+      "word": "정신적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 872,
+      "word": "역사가",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 873,
+      "word": "연구자",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 874,
+      "word": "연기자",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 875,
+      "word": "지식인",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 876,
+      "word": "전체적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 877,
+      "word": "글쓰기",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 878,
+      "word": "대기업",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 879,
+      "word": "전통적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 880,
+      "word": "객관적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 881,
+      "word": "경제적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 882,
+      "word": "시청자",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 883,
+      "word": "한동안",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 884,
+      "word": "미디어",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 885,
+      "word": "역사적",
+      "length": 3,
+      "difficulty": 1
+    },
+    {
+      "id": 886,
+      "word": "가까이",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 887,
+      "word": "꼭대기",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 888,
+      "word": "쌍둥이",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 889,
+      "word": "마음씨",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 890,
+      "word": "싸구려",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 891,
+      "word": "땅바닥",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 892,
+      "word": "저녁때",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 893,
+      "word": "어저께",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 894,
+      "word": "꽃꽂이",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 895,
+      "word": "꽃무늬",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 896,
+      "word": "눈싸움",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 897,
+      "word": "반대쪽",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 898,
+      "word": "발꿈치",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 899,
+      "word": "별말씀",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 900,
+      "word": "속눈썹",
+      "length": 3,
+      "difficulty": 2
+    },
+    {
+      "id": 901,
+      "word": "스마트폰",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 902,
+      "word": "대한민국",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 903,
+      "word": "지하철역",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 904,
+      "word": "강아지풀",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 905,
+      "word": "호랑나비",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 906,
+      "word": "개구리밥",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 907,
+      "word": "잠자리채",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 908,
+      "word": "무당벌레",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 909,
+      "word": "불가사리",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 910,
+      "word": "고슴도치",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 911,
+      "word": "사슴벌레",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 912,
+      "word": "해바라기",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 913,
+      "word": "은행나무",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 914,
+      "word": "진달래꽃",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 915,
+      "word": "개나리꽃",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 916,
+      "word": "단풍나무",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 917,
+      "word": "나뭇가지",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 918,
+      "word": "모래사장",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 919,
+      "word": "구름다리",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 920,
+      "word": "바람개비",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 921,
+      "word": "계란말이",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 922,
+      "word": "김치찌개",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 923,
+      "word": "된장찌개",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 924,
+      "word": "부대찌개",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 925,
+      "word": "잔치국수",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 926,
+      "word": "감자튀김",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 927,
+      "word": "비빔국수",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 928,
+      "word": "휴대전화",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 929,
+      "word": "전자사전",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 930,
+      "word": "카메라맨",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 931,
+      "word": "그림일기",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 932,
+      "word": "일기예보",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 933,
+      "word": "어린이집",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 934,
+      "word": "초등학교",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 935,
+      "word": "고등학교",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 936,
+      "word": "대학교수",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 937,
+      "word": "우리나라",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 938,
+      "word": "프로그램",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 939,
+      "word": "할아버지",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 940,
+      "word": "아나운서",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 941,
+      "word": "텔레비전",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 942,
+      "word": "오랫동안",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 943,
+      "word": "스트레스",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 944,
+      "word": "아주머니",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 945,
+      "word": "여기저기",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 946,
+      "word": "샌드위치",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 947,
+      "word": "교통사고",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 948,
+      "word": "시어머니",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 949,
+      "word": "전화번호",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 950,
+      "word": "바이올린",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 951,
+      "word": "머리카락",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 952,
+      "word": "어린아이",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 953,
+      "word": "돼지고기",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 954,
+      "word": "레스토랑",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 955,
+      "word": "오래간만",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 956,
+      "word": "점심시간",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 957,
+      "word": "신혼여행",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 958,
+      "word": "슈퍼마켓",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 959,
+      "word": "고등학생",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 960,
+      "word": "블라우스",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 961,
+      "word": "쓰레기통",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 962,
+      "word": "영화배우",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 963,
+      "word": "횡단보도",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 964,
+      "word": "공중전화",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 965,
+      "word": "배드민턴",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 966,
+      "word": "해외여행",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 967,
+      "word": "와이셔츠",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 968,
+      "word": "다이어트",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 969,
+      "word": "고속버스",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 970,
+      "word": "스케이트",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 971,
+      "word": "초등학생",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 972,
+      "word": "기말시험",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 973,
+      "word": "스파게티",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 974,
+      "word": "입학시험",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 975,
+      "word": "자기소개",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 976,
+      "word": "정형외과",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 977,
+      "word": "체크무늬",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 978,
+      "word": "테니스장",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 979,
+      "word": "프라이팬",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 980,
+      "word": "헬스클럽",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 981,
+      "word": "마찬가지",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 982,
+      "word": "민주주의",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 983,
+      "word": "중소기업",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 984,
+      "word": "후춧가루",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 985,
+      "word": "대중문화",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 986,
+      "word": "아이디어",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 987,
+      "word": "국회의원",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 988,
+      "word": "콤플렉스",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 989,
+      "word": "일상생활",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 990,
+      "word": "자연환경",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 991,
+      "word": "한가운데",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 992,
+      "word": "스튜디오",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 993,
+      "word": "울음소리",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 994,
+      "word": "호주머니",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 995,
+      "word": "고속도로",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 996,
+      "word": "플라스틱",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 997,
+      "word": "마음가짐",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 998,
+      "word": "이것저것",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 999,
+      "word": "인간관계",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1000,
+      "word": "이해관계",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1001,
+      "word": "하나하나",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1002,
+      "word": "사회생활",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1003,
+      "word": "부끄러움",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1004,
+      "word": "재활용품",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1005,
+      "word": "생활환경",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1006,
+      "word": "전기밥솥",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1007,
+      "word": "액세서리",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1008,
+      "word": "웃음소리",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1009,
+      "word": "비닐봉지",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1010,
+      "word": "수도꼭지",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1011,
+      "word": "노랫소리",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1012,
+      "word": "운전기사",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1013,
+      "word": "아랫사람",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1014,
+      "word": "어린이날",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1015,
+      "word": "외할머니",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1016,
+      "word": "홈페이지",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1017,
+      "word": "동그라미",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1018,
+      "word": "신혼부부",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1019,
+      "word": "이곳저곳",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1020,
+      "word": "일회용품",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1021,
+      "word": "대중교통",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1022,
+      "word": "고춧가루",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1023,
+      "word": "디자이너",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1024,
+      "word": "생활용품",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1025,
+      "word": "오피스텔",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1026,
+      "word": "해수욕장",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1027,
+      "word": "시내버스",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1028,
+      "word": "동서남북",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1029,
+      "word": "큰아버지",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1030,
+      "word": "시외버스",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1031,
+      "word": "공항버스",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1032,
+      "word": "시아버지",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1033,
+      "word": "큰어머니",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1034,
+      "word": "가전제품",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1035,
+      "word": "가정주부",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1036,
+      "word": "거스름돈",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1037,
+      "word": "결혼식장",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1038,
+      "word": "공공요금",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1039,
+      "word": "공공장소",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1040,
+      "word": "교통수단",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1041,
+      "word": "구경거리",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1042,
+      "word": "국제결혼",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1043,
+      "word": "놀이공원",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1044,
+      "word": "다운로드",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1045,
+      "word": "단발머리",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1046,
+      "word": "대중가요",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1047,
+      "word": "드라이브",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1048,
+      "word": "드라이어",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1049,
+      "word": "미성년자",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1050,
+      "word": "민속놀이",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1051,
+      "word": "배낭여행",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1052,
+      "word": "비밀번호",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1053,
+      "word": "사고방식",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1054,
+      "word": "산꼭대기",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1055,
+      "word": "생년월일",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1056,
+      "word": "선글라스",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1057,
+      "word": "손목시계",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1058,
+      "word": "쇼핑센터",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1059,
+      "word": "수수께끼",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1060,
+      "word": "아침저녁",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1061,
+      "word": "아프리카",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1062,
+      "word": "알레르기",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1063,
+      "word": "애완동물",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1064,
+      "word": "여름휴가",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1065,
+      "word": "열쇠고리",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1066,
+      "word": "영화감독",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1067,
+      "word": "오토바이",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1068,
+      "word": "요구르트",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1069,
+      "word": "운동선수",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1070,
+      "word": "운전면허",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1071,
+      "word": "인스턴트",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1072,
+      "word": "일석이조",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1073,
+      "word": "친아버지",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1074,
+      "word": "친어머니",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1075,
+      "word": "사회주의",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1076,
+      "word": "환경오염",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1077,
+      "word": "하드웨어",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1078,
+      "word": "구석구석",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1079,
+      "word": "시나리오",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1080,
+      "word": "알루미늄",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1081,
+      "word": "중계방송",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1082,
+      "word": "기성세대",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1083,
+      "word": "자연현상",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1084,
+      "word": "포장마차",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1085,
+      "word": "가정교사",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1086,
+      "word": "바이러스",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1087,
+      "word": "산부인과",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1088,
+      "word": "아스팔트",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1089,
+      "word": "팩시밀리",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1090,
+      "word": "마요네즈",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1091,
+      "word": "사이사이",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1092,
+      "word": "생활수준",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1093,
+      "word": "전통문화",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1094,
+      "word": "코스모스",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1095,
+      "word": "학교생활",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1096,
+      "word": "작은아들",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1097,
+      "word": "관광버스",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1098,
+      "word": "배추김치",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1099,
+      "word": "김포공항",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1100,
+      "word": "인천공항",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1101,
+      "word": "세종대왕",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1102,
+      "word": "생각하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1103,
+      "word": "시작하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1104,
+      "word": "들어가다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1105,
+      "word": "나타나다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1106,
+      "word": "일어나다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1107,
+      "word": "중요하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1108,
+      "word": "필요하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1109,
+      "word": "사용하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1110,
+      "word": "들어오다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1111,
+      "word": "기다리다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1112,
+      "word": "떨어지다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1113,
+      "word": "아름답다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1114,
+      "word": "돌아오다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1115,
+      "word": "바라보다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1116,
+      "word": "알아보다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1117,
+      "word": "좋아하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1118,
+      "word": "움직이다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1119,
+      "word": "이해하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1120,
+      "word": "돌아가다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1121,
+      "word": "시작되다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1122,
+      "word": "설명하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1123,
+      "word": "올라가다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1124,
+      "word": "태어나다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1125,
+      "word": "재미있다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1126,
+      "word": "가르치다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1127,
+      "word": "얘기하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1128,
+      "word": "비슷하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1129,
+      "word": "사랑하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1130,
+      "word": "공부하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1131,
+      "word": "어떠하다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1132,
+      "word": "내려오다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1133,
+      "word": "분명하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1134,
+      "word": "지나가다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1135,
+      "word": "훌륭하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1136,
+      "word": "어울리다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1137,
+      "word": "찾아오다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1138,
+      "word": "내려가다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1139,
+      "word": "가져오다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1140,
+      "word": "부드럽다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1141,
+      "word": "대답하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1142,
+      "word": "준비하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1143,
+      "word": "찾아보다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1144,
+      "word": "결혼하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1145,
+      "word": "쳐다보다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1146,
+      "word": "건강하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1147,
+      "word": "도착하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1148,
+      "word": "따뜻하다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1149,
+      "word": "간단하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1150,
+      "word": "복잡하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1151,
+      "word": "가리키다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1152,
+      "word": "말씀하다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1153,
+      "word": "소개하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1154,
+      "word": "찾아가다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1155,
+      "word": "깨끗하다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1156,
+      "word": "물어보다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1157,
+      "word": "미안하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1158,
+      "word": "올라오다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1159,
+      "word": "잘못되다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1160,
+      "word": "유명하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1161,
+      "word": "서두르다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1162,
+      "word": "충분하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1163,
+      "word": "특별하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1164,
+      "word": "일어서다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1165,
+      "word": "시원하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1166,
+      "word": "궁금하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1167,
+      "word": "잘못하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1168,
+      "word": "그만두다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1169,
+      "word": "다녀오다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1170,
+      "word": "걸어가다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1171,
+      "word": "안녕하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1172,
+      "word": "출발하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1173,
+      "word": "소중하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1174,
+      "word": "생각나다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1175,
+      "word": "화려하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1176,
+      "word": "위험하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1177,
+      "word": "졸업하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1178,
+      "word": "도와주다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1179,
+      "word": "헤어지다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1180,
+      "word": "부끄럽다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1181,
+      "word": "걱정하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1182,
+      "word": "적당하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1183,
+      "word": "조용하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1184,
+      "word": "답답하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1185,
+      "word": "싫어하다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1186,
+      "word": "피곤하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1187,
+      "word": "신선하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1188,
+      "word": "약속하다",
+      "length": 4,
+      "difficulty": 2
+    },
+    {
+      "id": 1189,
+      "word": "불쌍하다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1190,
+      "word": "기뻐하다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1191,
+      "word": "똑똑하다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1192,
+      "word": "뛰어가다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1193,
+      "word": "시끄럽다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1194,
+      "word": "재미없다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1195,
+      "word": "뚱뚱하다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1196,
+      "word": "날씬하다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1197,
+      "word": "받아쓰다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1198,
+      "word": "쌀쌀하다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1199,
+      "word": "없어지다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1200,
+      "word": "떠오르다",
+      "length": 4,
+      "difficulty": 3
+    },
+    {
+      "id": 1201,
+      "word": "서울특별시",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1202,
+      "word": "운전면허증",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1203,
+      "word": "주민등록증",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1204,
+      "word": "김치볶음밥",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1205,
+      "word": "프로그래밍",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1206,
+      "word": "소프트웨어",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1207,
+      "word": "전화번호부",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1208,
+      "word": "아르바이트",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1209,
+      "word": "엘리베이터",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1210,
+      "word": "크리스마스",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1211,
+      "word": "아이스크림",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1212,
+      "word": "말레이시아",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1213,
+      "word": "순두부찌개",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1214,
+      "word": "인도네시아",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1215,
+      "word": "자동판매기",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1216,
+      "word": "옛날이야기",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1217,
+      "word": "작은아버지",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1218,
+      "word": "외할아버지",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1219,
+      "word": "작은어머니",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1220,
+      "word": "가스레인지",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1221,
+      "word": "이비인후과",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1222,
+      "word": "전자레인지",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1223,
+      "word": "패스트푸드",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1224,
+      "word": "이데올로기",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1225,
+      "word": "남대문시장",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1226,
+      "word": "동대문시장",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1227,
+      "word": "이야기하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1228,
+      "word": "잃어버리다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1229,
+      "word": "잊어버리다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1230,
+      "word": "미끄러지다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1231,
+      "word": "날아다니다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1232,
+      "word": "즐거워하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1233,
+      "word": "괴로워하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1234,
+      "word": "부지런하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1235,
+      "word": "귀여워하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1236,
+      "word": "이루어지다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1237,
+      "word": "받아들이다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1238,
+      "word": "자연스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1239,
+      "word": "바람직하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1240,
+      "word": "불가능하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1241,
+      "word": "들여다보다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1242,
+      "word": "빠져나가다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1243,
+      "word": "자랑스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1244,
+      "word": "떨어뜨리다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1245,
+      "word": "조심스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1246,
+      "word": "흘러나오다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1247,
+      "word": "불가피하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1248,
+      "word": "내려다보다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1249,
+      "word": "말씀드리다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1250,
+      "word": "돌아다니다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1251,
+      "word": "빠져나오다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1252,
+      "word": "고통스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1253,
+      "word": "중얼거리다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1254,
+      "word": "익숙해지다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1255,
+      "word": "두려워하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1256,
+      "word": "갑작스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1257,
+      "word": "흘러내리다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1258,
+      "word": "오르내리다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1259,
+      "word": "가까워지다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1260,
+      "word": "넘어뜨리다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1261,
+      "word": "둘러싸이다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1262,
+      "word": "되돌아오다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1263,
+      "word": "잡아당기다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1264,
+      "word": "되돌아가다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1265,
+      "word": "따라다니다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1266,
+      "word": "부러워하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1267,
+      "word": "가져다주다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1268,
+      "word": "걱정스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1269,
+      "word": "끌어당기다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1270,
+      "word": "올려다보다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1271,
+      "word": "찾아다니다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1272,
+      "word": "뛰어내리다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1273,
+      "word": "뛰어다니다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1274,
+      "word": "만족스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1275,
+      "word": "사랑스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1276,
+      "word": "지저분하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1277,
+      "word": "고급스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1278,
+      "word": "더러워지다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1279,
+      "word": "뛰어나오다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1280,
+      "word": "짜증스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1281,
+      "word": "반짝거리다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1282,
+      "word": "뛰어나가다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1283,
+      "word": "고마워하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1284,
+      "word": "다행스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1285,
+      "word": "돌려보내다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1286,
+      "word": "되살아나다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1287,
+      "word": "두드러지다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1288,
+      "word": "뒤떨어지다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1289,
+      "word": "머뭇거리다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1290,
+      "word": "무서워하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1291,
+      "word": "미지근하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1292,
+      "word": "바래다주다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1293,
+      "word": "변덕스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1294,
+      "word": "부담스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1295,
+      "word": "비틀거리다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1296,
+      "word": "알아맞히다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1297,
+      "word": "어려워하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1298,
+      "word": "후회스럽다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1299,
+      "word": "되풀이하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1300,
+      "word": "튀어나오다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1301,
+      "word": "조그마하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1302,
+      "word": "나누어지다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1303,
+      "word": "중요시하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1304,
+      "word": "그럴듯하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1305,
+      "word": "되풀이되다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1306,
+      "word": "불평등하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1307,
+      "word": "무의미하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1308,
+      "word": "들이마시다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1309,
+      "word": "불완전하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1310,
+      "word": "불필요하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1311,
+      "word": "그리워하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1312,
+      "word": "되돌아보다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1313,
+      "word": "불확실하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1314,
+      "word": "무책임하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1315,
+      "word": "무관심하다",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1316,
+      "word": "가문비나무",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1317,
+      "word": "가스보일러",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1318,
+      "word": "가운뎃소리",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1319,
+      "word": "가위바위보",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1320,
+      "word": "가이드라인",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1321,
+      "word": "가장무도회",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1322,
+      "word": "가정의학과",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1323,
+      "word": "가택침입죄",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1324,
+      "word": "가톨릭교회",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1325,
+      "word": "가화만사성",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1326,
+      "word": "갈리시아어",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1327,
+      "word": "감감무소식",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1328,
+      "word": "개교기념일",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1329,
+      "word": "개구리헤엄",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1330,
+      "word": "개다래나무",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1331,
+      "word": "개발도상국",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1332,
+      "word": "개밥바라기",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1333,
+      "word": "개인플레이",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1334,
+      "word": "거짓말쟁이",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1335,
+      "word": "건국대학교",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1336,
+      "word": "게으름뱅이",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1337,
+      "word": "결혼기념일",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1338,
+      "word": "경기부양책",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1339,
+      "word": "경기활성화",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1340,
+      "word": "경제성장률",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1341,
+      "word": "계몽주의자",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1342,
+      "word": "고기잡이배",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1343,
+      "word": "고깃덩어리",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1344,
+      "word": "고등어자반",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1345,
+      "word": "고려대학교",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1346,
+      "word": "고리대금업",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1347,
+      "word": "고무줄놀이",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1348,
+      "word": "고무지우개",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1349,
+      "word": "고부가가치",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1350,
+      "word": "고소공포증",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1351,
+      "word": "고용노동부",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1352,
+      "word": "고위공직자",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1353,
+      "word": "고조할머니",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1354,
+      "word": "고추잠자리",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1355,
+      "word": "골든디스크",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1356,
+      "word": "공격성공률",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1357,
+      "word": "공공칠가방",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1358,
+      "word": "공기청정기",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1359,
+      "word": "공립대학교",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1360,
+      "word": "공무담임권",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1361,
+      "word": "공산주의자",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1362,
+      "word": "공인중개사",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1363,
+      "word": "공장자동화",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1364,
+      "word": "공정거래법",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1365,
+      "word": "공중목욕탕",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1366,
+      "word": "공중화장실",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1367,
+      "word": "공직선거법",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1368,
+      "word": "과대망상증",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1369,
+      "word": "과산화수소",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1370,
+      "word": "과속방지턱",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1371,
+      "word": "과학기술자",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1372,
+      "word": "관세음보살",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1373,
+      "word": "광개토대왕",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1374,
+      "word": "광역지자체",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1375,
+      "word": "광주광역시",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1376,
+      "word": "괭이갈매기",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1377,
+      "word": "괴나리봇짐",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1378,
+      "word": "구자라트어",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1379,
+      "word": "국가배상법",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1380,
+      "word": "국가보안법",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1381,
+      "word": "국가보훈처",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1382,
+      "word": "국가유공자",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1383,
+      "word": "국가정보원",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1384,
+      "word": "국군조직법",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1385,
+      "word": "국내총생산",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1386,
+      "word": "국립국어원",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1387,
+      "word": "국립대학교",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1388,
+      "word": "국민안전처",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1389,
+      "word": "국민참여당",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1390,
+      "word": "국세기본법",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1391,
+      "word": "국세징수법",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1392,
+      "word": "국수주의자",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1393,
+      "word": "국토해양부",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1394,
+      "word": "국회도서관",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1395,
+      "word": "국회의사당",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1396,
+      "word": "권위주의적",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1397,
+      "word": "그루지야어",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1398,
+      "word": "그리스도교",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1399,
+      "word": "그물주머니",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1400,
+      "word": "급브레이크",
+      "length": 5,
+      "difficulty": 3
+    },
+    {
+      "id": 1401,
+      "word": "데이터베이스",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1402,
+      "word": "주민등록번호",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1403,
+      "word": "국민연금공단",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1404,
+      "word": "지방자치단체",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1405,
+      "word": "드라이클리닝",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1406,
+      "word": "에스컬레이터",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1407,
+      "word": "불러일으키다",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1408,
+      "word": "두리번거리다",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1409,
+      "word": "부끄러워하다",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1410,
+      "word": "불만족스럽다",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1411,
+      "word": "안타까워하다",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1412,
+      "word": "가운뎃손가락",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1413,
+      "word": "거짓말탐지기",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1414,
+      "word": "고리대금업자",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1415,
+      "word": "고조할아버지",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1416,
+      "word": "공수래공수거",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1417,
+      "word": "과학고등학교",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1418,
+      "word": "국가공무원법",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1419,
+      "word": "국가비상사태",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1420,
+      "word": "국민건강보험",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1421,
+      "word": "그레이스케일",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1422,
+      "word": "금메달리스트",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1423,
+      "word": "꼭두각시놀음",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1424,
+      "word": "나로우주센터",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1425,
+      "word": "나무아미타불",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1426,
+      "word": "낮은음자리표",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1427,
+      "word": "네안데르탈인",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1428,
+      "word": "높은음자리표",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1429,
+      "word": "다이너마이트",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1430,
+      "word": "대한민국헌법",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1431,
+      "word": "도깨비방망이",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1432,
+      "word": "동방예의지국",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1433,
+      "word": "디지털카메라",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1434,
+      "word": "라스베이거스",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1435,
+      "word": "라틴아메리카",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1436,
+      "word": "레크리에이션",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1437,
+      "word": "롤러스케이트",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1438,
+      "word": "루브르박물관",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1439,
+      "word": "리브레오피스",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1440,
+      "word": "맹모삼천지교",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1441,
+      "word": "메일링리스트",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1442,
+      "word": "메조소프라노",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1443,
+      "word": "물구나무서기",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1444,
+      "word": "미토콘드리아",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1445,
+      "word": "바오바브나무",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1446,
+      "word": "백두산정계비",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1447,
+      "word": "밸런타인데이",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1448,
+      "word": "벙어리저금통",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1449,
+      "word": "베이킹파우더",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1450,
+      "word": "보이스카우트",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1451,
+      "word": "부동소수점수",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1452,
+      "word": "비프스테이크",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1453,
+      "word": "사회간접자본",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1454,
+      "word": "사회민주주의",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1455,
+      "word": "새천년민주당",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1456,
+      "word": "선캄브리아기",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1457,
+      "word": "성균관대학교",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1458,
+      "word": "셀로판테이프",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1459,
+      "word": "수산화나트륨",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1460,
+      "word": "수학능력시험",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1461,
+      "word": "숨은그림찾기",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1462,
+      "word": "스카치테이프",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1463,
+      "word": "스칸디나비아",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1464,
+      "word": "스케이트보드",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1465,
+      "word": "스테인리스강",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1466,
+      "word": "스페어타이어",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1467,
+      "word": "스포트라이트",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1468,
+      "word": "스프레드시트",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1469,
+      "word": "슬로베니아어",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1470,
+      "word": "시디플레이어",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1471,
+      "word": "신플라톤주의",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1472,
+      "word": "십자드라이버",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1473,
+      "word": "싱크로나이즈",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1474,
+      "word": "아랍에미리트",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1475,
+      "word": "아이스케이크",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1476,
+      "word": "아크로폴리스",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1477,
+      "word": "애프터서비스",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1478,
+      "word": "애플리케이션",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1479,
+      "word": "액셀러레이터",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1480,
+      "word": "액화석유가스",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1481,
+      "word": "야스쿠니신사",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1482,
+      "word": "어중이떠중이",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1483,
+      "word": "에어컨디셔너",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1484,
+      "word": "오롱이조롱이",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1485,
+      "word": "오리엔테이션",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1486,
+      "word": "오실로스코프",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1487,
+      "word": "우즈베키스탄",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1488,
+      "word": "워드프로세서",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1489,
+      "word": "원자력발전소",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1490,
+      "word": "유니버시아드",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1491,
+      "word": "육군사관학교",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1492,
+      "word": "응용프로그램",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1493,
+      "word": "이등변삼각형",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1494,
+      "word": "이현령비현령",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1495,
+      "word": "인스턴트식품",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1496,
+      "word": "장대높이뛰기",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1497,
+      "word": "호두까기인형",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1498,
+      "word": "갸우뚱거리다",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1499,
+      "word": "거꾸러뜨리다",
+      "length": 6,
+      "difficulty": 3
+    },
+    {
+      "id": 1500,
+      "word": "거꾸러트리다",
+      "length": 6,
+      "difficulty": 3
+    }
+  ]
+}
