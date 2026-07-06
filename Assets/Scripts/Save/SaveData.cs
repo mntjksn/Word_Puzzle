@@ -27,6 +27,7 @@ namespace WordPuzzle.Save
         public int    TodayAttempts;
         public float  TodayClearTime;      // 초 단위
         public int    StreakDays;
+        public bool   DailyLineHintUsed;
     }
 
     [Serializable]

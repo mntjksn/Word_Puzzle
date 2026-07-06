@@ -70,14 +70,17 @@ namespace WordPuzzle.Core
         };
 
         // 회전 치환 규칙
+        // ㅗ/ㅜ/ㅓ/ㅏ → ㅏ  |  ㅛ/ㅠ/ㅕ/ㅑ → ㅑ
         private static readonly Dictionary<string, string> RotationMap = new Dictionary<string, string>
         {
             { "ㄴ", "ㄱ" },
-            { "ㅗ", "ㅓ" },
+            { "ㅗ", "ㅏ" },
             { "ㅜ", "ㅏ" },
+            { "ㅓ", "ㅏ" },
             { "ㅡ", "ㅣ" },
-            { "ㅛ", "ㅕ" },
+            { "ㅛ", "ㅑ" },
             { "ㅠ", "ㅑ" },
+            { "ㅕ", "ㅑ" },
         };
 
         // 판정용 자모 리스트 생성
