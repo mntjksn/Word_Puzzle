@@ -2,6 +2,7 @@
   <Project Path="PhotonChat.csproj" />
   <Project Path="PhotonRealtime.csproj" />
   <Project Path="PhotonUnityNetworking.Editor.csproj" />
+  <Project Path="Firebase.App.Internal.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="PhotonUnityNetworking.csproj" />
   <Project Path="PhotonUnityNetworking.Demos.csproj" />
@@ -10,4 +11,5 @@
   <Project Path="PunDemos.DemoHubEditor.csproj" />
   <Project Path="PunDemos.DemoSlotcarEditor.csproj" />
   <Project Path="PhotonUnityNetworking.Utilities.Culling.Editor.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>

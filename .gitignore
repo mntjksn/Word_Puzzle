@@ -108,3 +108,13 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Firebase Unity SDK (대용량 패키지 — 별도 설치)
+/Assets/Firebase/
+/Assets/Firebase.meta
+/Assets/ExternalDependencyManager/
+/Assets/ExternalDependencyManager.meta
+/Assets/Editor Default Resources/
+/Assets/Editor Default Resources.meta
+/Assets/Plugins/
+/Assets/Plugins.meta

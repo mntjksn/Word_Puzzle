@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "301936895703",
+    "project_id": "word-puzzle-d492d",
+    "storage_bucket": "word-puzzle-d492d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301936895703:android:bc5e6dd858d274a8357292",
+        "android_client_info": {
+          "package_name": "com.kim.word"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBdzVQ8VHL29l254YUC4E5WSsqgsCi3lU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
