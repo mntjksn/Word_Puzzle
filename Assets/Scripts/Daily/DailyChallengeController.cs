@@ -34,7 +34,7 @@ namespace WordPuzzle.Daily
         [SerializeField] private GameObject      nextChallengePopup;
         [SerializeField] private TextMeshProUGUI nextTimerText;
 
-        private const int DailyReward = 50;
+        private const int DailyReward = 10;
 
         private WordData       _currentWord;
         private List<string>   _answerTokens;
