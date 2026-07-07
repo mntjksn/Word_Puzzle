@@ -93,6 +93,50 @@ namespace WordPuzzle.Firebase
 
         // ── 저장 ────────────────────────────────────────────────────────────
 
+        // 닉네임 중복 확인 후 저장 — nicknames/{key} 인덱스 활용
+        public void CheckAndSaveNickname(string nickname, System.Action<bool, string> callback)
+        {
+            if (!CheckReady()) { callback?.Invoke(false, "연결 오류"); return; }
+
+            string key     = nickname.ToLower().Replace(" ", "_");
+            string oldKey  = PlayerPrefs.GetString("PlayerNickname", "").ToLower().Replace(" ", "_");
+
+            _db.Child("nicknames").Child(key).GetValueAsync().ContinueWithOnMainThread(task =>
+            {
+                if (task.IsFaulted)
+                {
+                    callback?.Invoke(false, "서버 오류");
+                    return;
+                }
+
+                var snap = task.Result;
+                if (snap.Exists && snap.Value?.ToString() != UserId)
+                {
+                    callback?.Invoke(false, "이미 사용 중인 닉네임입니다.");
+                    return;
+                }
+
+                var batch = new System.Collections.Generic.Dictionary<string, object>
+                {
+                    [$"nicknames/{key}"]        = UserId,
+                    [$"users/{UserId}/nickname"] = nickname
+                };
+                if (!string.IsNullOrEmpty(oldKey) && oldKey != key)
+                    batch[$"nicknames/{oldKey}"] = null;
+
+                _db.UpdateChildrenAsync(batch).ContinueWithOnMainThread(t =>
+                {
+                    if (t.IsFaulted) callback?.Invoke(false, "저장 실패");
+                    else
+                    {
+                        Debug.Log($"[Firebase] 닉네임 설정: {nickname}");
+                        callback?.Invoke(true, "");
+                    }
+                });
+            });
+        }
+
+        // 중복검사 없이 직접 저장 (내부 동기화용)
         public void SaveNickname(string nickname)
         {
             if (!CheckReady()) return;

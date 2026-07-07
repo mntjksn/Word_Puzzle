@@ -10,7 +10,9 @@ namespace WordPuzzle.UI
     public class ProfilePopup : MonoBehaviour
     {
         [Header("닉네임")]
-        [SerializeField] private TMP_InputField nicknameInput;
+        [SerializeField] private TMP_InputField  nicknameInput;
+        [SerializeField] private Button          setNicknameButton;
+        [SerializeField] private TextMeshProUGUI nickStatusText;
 
         [Header("멀티 전적")]
         [SerializeField] private TextMeshProUGUI winText;
@@ -27,25 +29,30 @@ namespace WordPuzzle.UI
         [Header("공통")]
         [SerializeField] private Button closeButton;
 
+        private static readonly Color ColOk  = new Color(0.2f, 0.9f, 0.6f, 1f);
+        private static readonly Color ColErr = new Color(1f,   0.3f, 0.3f, 1f);
+        private static readonly Color ColInfo= new Color(0.7f, 0.85f, 1f,  0.85f);
+
         private void Start()
         {
-            if (closeButton)   closeButton.onClick.AddListener(Hide);
-            if (nicknameInput) nicknameInput.onEndEdit.AddListener(OnNicknameChanged);
+            if (closeButton)       closeButton.onClick.AddListener(Hide);
+            if (setNicknameButton) setNicknameButton.onClick.AddListener(OnSetNicknameClicked);
         }
 
         public void Show()
         {
             gameObject.SetActive(true);
+            SetStatus("", ColInfo);
             RefreshLocal();
 
-            // Firebase 로드 후 덮어쓰기
             if (FirebaseManager.Instance != null && FirebaseManager.Instance.IsReady)
                 FirebaseManager.Instance.LoadUserData(ApplyFirebaseData);
         }
 
         public void Hide() => gameObject.SetActive(false);
 
-        // 로컬 데이터로 즉시 표시
+        // ── 로컬 데이터 즉시 표시 ──────────────────────────────────────────
+
         private void RefreshLocal()
         {
             if (nicknameInput)
@@ -57,12 +64,12 @@ namespace WordPuzzle.UI
             ApplyStats(multi.WinCount, multi.LoseCount, single.ClearCountByLength);
         }
 
-        // Firebase DataSnapshot → UI 반영
+        // ── Firebase 데이터 반영 ───────────────────────────────────────────
+
         private void ApplyFirebaseData(DataSnapshot snap)
         {
             if (snap == null) return;
 
-            // 닉네임
             if (snap.HasChild("nickname") && nicknameInput)
             {
                 string nick = snap.Child("nickname").Value?.ToString() ?? "";
@@ -70,17 +77,61 @@ namespace WordPuzzle.UI
                 PlayerPrefs.SetString(SettingsPopup.NicknameKey, nick);
             }
 
-            // 멀티 전적
             int win  = ParseInt(snap, "multi/win");
             int lose = ParseInt(snap, "multi/lose");
 
-            // 단어 클리어
             int[] clears = new int[7];
             for (int len = 2; len <= 6; len++)
                 clears[len] = ParseInt(snap, $"single/clearByLength/{len}");
 
             ApplyStats(win, lose, clears);
         }
+
+        // ── 닉네임 설정 버튼 ─────────────────────────────────────────────
+
+        private void OnSetNicknameClicked()
+        {
+            string nick = nicknameInput != null ? nicknameInput.text.Trim() : "";
+
+            if (string.IsNullOrEmpty(nick))
+            {
+                SetStatus("닉네임을 입력해주세요.", ColErr);
+                return;
+            }
+            if (nick.Length < 2)
+            {
+                SetStatus("2글자 이상 입력해주세요.", ColErr);
+                return;
+            }
+
+            var fb = FirebaseManager.Instance;
+            if (fb == null || !fb.IsReady)
+            {
+                // Firebase 없으면 로컬에만 저장
+                SaveNickLocal(nick);
+                SetStatus("저장 완료!", ColOk);
+                return;
+            }
+
+            SetStatus("확인 중...", ColInfo);
+            SetNickButton(false);
+
+            fb.CheckAndSaveNickname(nick, (success, msg) =>
+            {
+                SetNickButton(true);
+                if (success)
+                {
+                    SaveNickLocal(nick);
+                    SetStatus("닉네임이 설정됐습니다!", ColOk);
+                }
+                else
+                {
+                    SetStatus(msg, ColErr);
+                }
+            });
+        }
+
+        // ── 헬퍼 ──────────────────────────────────────────────────────────
 
         private void ApplyStats(int win, int lose, int[] clears)
         {
@@ -91,19 +142,34 @@ namespace WordPuzzle.UI
             float rate = total > 0 ? (float)win / total * 100f : 0f;
             if (winRateText) winRateText.text = $"{rate:F0}%";
 
-            if (clear2Text) clear2Text.text = (clears?.Length > 2 ? clears[2] : 0).ToString();
-            if (clear3Text) clear3Text.text = (clears?.Length > 3 ? clears[3] : 0).ToString();
-            if (clear4Text) clear4Text.text = (clears?.Length > 4 ? clears[4] : 0).ToString();
-            if (clear5Text) clear5Text.text = (clears?.Length > 5 ? clears[5] : 0).ToString();
-            if (clear6Text) clear6Text.text = (clears?.Length > 6 ? clears[6] : 0).ToString();
+            SetClear(clear2Text, clears, 2);
+            SetClear(clear3Text, clears, 3);
+            SetClear(clear4Text, clears, 4);
+            SetClear(clear5Text, clears, 5);
+            SetClear(clear6Text, clears, 6);
         }
 
-        private void OnNicknameChanged(string value)
+        private static void SetClear(TextMeshProUGUI t, int[] arr, int idx)
         {
-            string trimmed = value.Trim();
-            PlayerPrefs.SetString(SettingsPopup.NicknameKey, trimmed);
+            if (t != null) t.text = (arr != null && arr.Length > idx ? arr[idx] : 0).ToString();
+        }
+
+        private static void SaveNickLocal(string nick)
+        {
+            PlayerPrefs.SetString(SettingsPopup.NicknameKey, nick);
             PlayerPrefs.Save();
-            FirebaseManager.Instance?.SaveNickname(trimmed);
+        }
+
+        private void SetStatus(string msg, Color col)
+        {
+            if (nickStatusText == null) return;
+            nickStatusText.text  = msg;
+            nickStatusText.color = col;
+        }
+
+        private void SetNickButton(bool on)
+        {
+            if (setNicknameButton) setNicknameButton.interactable = on;
         }
 
         private static int ParseInt(DataSnapshot snap, string path)
