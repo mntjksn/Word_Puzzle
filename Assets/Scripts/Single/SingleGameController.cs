@@ -34,7 +34,7 @@ namespace WordPuzzle.Single
         [SerializeField] private TextMeshProUGUI  hintConfirmMsg;
 
         // 포인트 설정
-        private static readonly int[] PointsByLength = { 0, 0, 1, 3, 10, 20, 30 };
+        private static readonly int[] PointsByLength = { 0, 0, 1, 2, 3, 4, 5 };
         private const int JamoHintCost = 2;
         private const int LineHintCost = 10;
 

@@ -74,6 +74,9 @@ sysinfo.txt
 # Mono auto generated files
 mono_crash.*
 
+# Screenshots (MCP 자동 생성)
+/[Aa]ssets/Screenshots/
+
 # Builds
 *.apk
 *.aab
