@@ -58,7 +58,7 @@ namespace WordPuzzle.Firebase
             {
                 UserId = _auth.CurrentUser.UserId;
                 Debug.Log($"[Firebase] 기존 세션 재사용 uid={UserId}");
-                SyncLocalToFirebase();
+                SyncFirebaseToLocal();
                 return;
             }
 
@@ -71,7 +71,7 @@ namespace WordPuzzle.Firebase
                 }
                 UserId = _auth.CurrentUser?.UserId;
                 Debug.Log($"[Firebase] 익명 로그인 성공 uid={UserId}");
-                SyncLocalToFirebase();
+                SyncFirebaseToLocal();
             });
         }
 
@@ -151,44 +151,6 @@ namespace WordPuzzle.Firebase
                });
         }
 
-        // 멀티 매치 결과 — win/lose/score 누적
-        public void SaveMatchResult(bool isWin, int score)
-        {
-            if (!CheckReady()) return;
-
-            var multiRef = _db.Child("users").Child(UserId).Child("multi");
-            multiRef.GetValueAsync().ContinueWithOnMainThread(task =>
-            {
-                if (task.IsFaulted)
-                {
-                    Debug.LogError($"[Firebase] 매치 데이터 읽기 실패: {task.Exception?.GetBaseException().Message}");
-                    return;
-                }
-
-                var snap  = task.Result;
-                int win   = ParseInt(snap, "win");
-                int lose  = ParseInt(snap, "lose");
-                int total = ParseInt(snap, "score");
-
-                if (isWin) win++; else lose++;
-                total += score;
-
-                multiRef.UpdateChildrenAsync(new Dictionary<string, object>
-                {
-                    ["win"]       = win,
-                    ["lose"]      = lose,
-                    ["score"]     = total,
-                    ["updatedAt"] = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
-                }).ContinueWithOnMainThread(t =>
-                {
-                    if (t.IsFaulted)
-                        Debug.LogError($"[Firebase] 매치 결과 저장 실패: {t.Exception?.GetBaseException().Message}");
-                    else
-                        Debug.Log($"[Firebase] 매치 결과 저장 완료 win:{win} lose:{lose} score:{total}");
-                });
-            });
-        }
-
         // 싱글 플레이 데이터 저장
         public void SaveSingleData(SingleSaveData data)
         {
@@ -257,23 +219,99 @@ namespace WordPuzzle.Firebase
                });
         }
 
-        // 로그인 후 로컬 → Firebase 한 번 동기화
-        private void SyncLocalToFirebase()
+        // ── 로그인 후 동기화 ─────────────────────────────────────────────────
+
+        // Firebase → 로컬 캐시 복원 (재설치 후 데이터 복구)
+        // Firebase에 데이터가 없으면 반대 방향(로컬 → Firebase) 초기 업로드
+        private void SyncFirebaseToLocal()
+        {
+            LoadUserData(snap =>
+            {
+                if (snap == null || !snap.Exists)
+                {
+                    PushLocalToFirebase();
+                    return;
+                }
+
+                // 닉네임
+                string nick = ParseStr(snap, "nickname");
+                if (!string.IsNullOrEmpty(nick))
+                    PlayerPrefs.SetString("PlayerNickname", nick);
+
+                // 멀티 전적
+                var multi         = SaveManager.LoadMulti();
+                multi.WinCount    = ParseInt(snap, "multi/win");
+                multi.LoseCount   = ParseInt(snap, "multi/lose");
+                multi.PlayCount   = ParseInt(snap, "multi/playCount");
+                SaveManager.WriteMultiLocal(multi);
+
+                // 일일 도전
+                var daily            = SaveManager.LoadDaily();
+                daily.LastPlayDate   = ParseStr(snap,  "daily/lastPlayDate");
+                daily.IsClearedToday = ParseBool(snap, "daily/isClearedToday");
+                daily.StreakDays     = ParseInt(snap,  "daily/streakDays");
+                daily.TodayAttempts  = ParseInt(snap,  "daily/todayAttempts");
+                SaveManager.WriteDailyLocal(daily);
+
+                // 싱글: ClearCountByLength·힌트·포인트 (ClearedWordIds는 로컬 전용)
+                var single = SaveManager.LoadSingle();
+                for (int len = 2; len <= 6; len++)
+                    single.ClearCountByLength[len] = ParseInt(snap, $"single/clearByLength/{len}");
+                single.TotalHintsUsed = ParseInt(snap, "single/totalHintsUsed");
+                single.Points         = ParseInt(snap, "single/points");
+                SaveManager.WriteSingleLocal(single);
+
+                PlayerPrefs.Save();
+                Debug.Log("[Firebase] 로컬 캐시 복원 완료");
+            });
+        }
+
+        // 신규 사용자: 로컬 → Firebase 초기 업로드
+        private void PushLocalToFirebase()
         {
             SaveSingleData(SaveManager.LoadSingle());
             SaveDailyData(SaveManager.LoadDaily());
             SyncMultiData(SaveManager.LoadMulti());
-
             string nick = PlayerPrefs.GetString("PlayerNickname", "");
             if (!string.IsNullOrEmpty(nick)) SaveNickname(nick);
+            Debug.Log("[Firebase] 신규 사용자: 로컬 → Firebase 초기 업로드");
         }
 
         // ── 헬퍼 ────────────────────────────────────────────────────────────
 
-        private static int ParseInt(DataSnapshot snap, string key)
+        private static int ParseInt(DataSnapshot snap, string path)
         {
-            if (!snap.HasChild(key)) return 0;
-            return int.TryParse(snap.Child(key).Value?.ToString(), out int v) ? v : 0;
+            var node = snap;
+            foreach (string key in path.Split('/'))
+            {
+                if (!node.HasChild(key)) return 0;
+                node = node.Child(key);
+            }
+            return int.TryParse(node.Value?.ToString(), out int v) ? v : 0;
+        }
+
+        private static bool ParseBool(DataSnapshot snap, string path)
+        {
+            var node = snap;
+            foreach (string key in path.Split('/'))
+            {
+                if (!node.HasChild(key)) return false;
+                node = node.Child(key);
+            }
+            var val = node.Value;
+            if (val is bool b) return b;
+            return bool.TryParse(val?.ToString(), out bool result) && result;
+        }
+
+        private static string ParseStr(DataSnapshot snap, string path)
+        {
+            var node = snap;
+            foreach (string key in path.Split('/'))
+            {
+                if (!node.HasChild(key)) return "";
+                node = node.Child(key);
+            }
+            return node.Value?.ToString() ?? "";
         }
 
         private bool CheckReady()
@@ -286,11 +324,10 @@ namespace WordPuzzle.Firebase
             return true;
         }
 
-        [ContextMenu("테스트: 닉네임·승리·점수 저장")]
-        private void TestSave()
-        {
-            SaveNickname("TestUser");
-            SaveMatchResult(isWin: true, score: 100);
-        }
+        [ContextMenu("테스트: 닉네임 저장")]
+        private void TestSave() => SaveNickname("TestUser");
+
+        [ContextMenu("테스트: Firebase → 로컬 동기화")]
+        private void TestSync() => SyncFirebaseToLocal();
     }
 }

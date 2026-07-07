@@ -41,7 +41,7 @@ namespace WordPuzzle.Save
 
         public static void SaveSingle(SingleSaveData data)
         {
-            PlayerPrefs.SetString(KeySingle, JsonUtility.ToJson(data));
+            WriteSingleLocal(data);
             PlayerPrefs.Save();
             FirebaseManager.Instance?.SaveSingleData(data);
         }
@@ -54,7 +54,7 @@ namespace WordPuzzle.Save
 
         public static void SaveDaily(DailySaveData data)
         {
-            PlayerPrefs.SetString(KeyDaily, JsonUtility.ToJson(data));
+            WriteDailyLocal(data);
             PlayerPrefs.Save();
             FirebaseManager.Instance?.SaveDailyData(data);
         }
@@ -67,9 +67,19 @@ namespace WordPuzzle.Save
 
         public static void SaveMulti(MultiSaveData data)
         {
-            PlayerPrefs.SetString(KeyMulti, JsonUtility.ToJson(data));
+            WriteMultiLocal(data);
             PlayerPrefs.Save();
             FirebaseManager.Instance?.SyncMultiData(data);
         }
+
+        // Firebase 동기화 시 PlayerPrefs에만 쓰는 내부 메서드 (Firebase 재업로드 방지)
+        internal static void WriteSingleLocal(SingleSaveData data) =>
+            PlayerPrefs.SetString(KeySingle, JsonUtility.ToJson(data));
+
+        internal static void WriteDailyLocal(DailySaveData data) =>
+            PlayerPrefs.SetString(KeyDaily, JsonUtility.ToJson(data));
+
+        internal static void WriteMultiLocal(MultiSaveData data) =>
+            PlayerPrefs.SetString(KeyMulti, JsonUtility.ToJson(data));
     }
 }
