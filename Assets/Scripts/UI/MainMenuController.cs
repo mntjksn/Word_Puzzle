@@ -10,6 +10,7 @@ namespace WordPuzzle.UI
         [SerializeField] private GameObject            _continueButton;
         [SerializeField] private GameObject            _howToPlayPopup;
         [SerializeField] private SettingsPopup         _settingsPopup;
+        [SerializeField] private ProfilePopup          _profilePopup;
 
         private const string ContinueKey = "IsContinue";
 
@@ -39,5 +40,6 @@ namespace WordPuzzle.UI
         public void OnDailyMode()  => SceneManager.LoadScene("DailyChallenge");
         public void OnMultiMode()  => SceneManager.LoadScene("MultiMenu");
         public void OnSettings()   { if (_settingsPopup) _settingsPopup.Show(); }
+        public void OnProfile()    { if (_profilePopup)  _profilePopup.Show();  }
     }
 }

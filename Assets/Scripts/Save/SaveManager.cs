@@ -1,8 +1,8 @@
 using UnityEngine;
+using WordPuzzle.Firebase;
 
 namespace WordPuzzle.Save
 {
-    // PlayerPrefs 기반 저장 / 로드 (추후 Firebase로 확장 가능)
     public static class SaveManager
     {
         private const string KeySingle  = "save_single";
@@ -43,6 +43,7 @@ namespace WordPuzzle.Save
         {
             PlayerPrefs.SetString(KeySingle, JsonUtility.ToJson(data));
             PlayerPrefs.Save();
+            FirebaseManager.Instance?.SaveSingleData(data);
         }
 
         public static DailySaveData LoadDaily()
@@ -55,6 +56,7 @@ namespace WordPuzzle.Save
         {
             PlayerPrefs.SetString(KeyDaily, JsonUtility.ToJson(data));
             PlayerPrefs.Save();
+            FirebaseManager.Instance?.SaveDailyData(data);
         }
 
         public static MultiSaveData LoadMulti()
@@ -67,6 +69,7 @@ namespace WordPuzzle.Save
         {
             PlayerPrefs.SetString(KeyMulti, JsonUtility.ToJson(data));
             PlayerPrefs.Save();
+            FirebaseManager.Instance?.SyncMultiData(data);
         }
     }
 }
