@@ -15,12 +15,17 @@ namespace WordPuzzle.Multi
         [Header("UI 참조")]
         [SerializeField] private TextMeshProUGUI roomCodeText;
         [SerializeField] private TextMeshProUGUI player1Text;
+        [SerializeField] private TextMeshProUGUI player1StatsText;
         [SerializeField] private TextMeshProUGUI player2Text;
+        [SerializeField] private TextMeshProUGUI player2StatsText;
         [SerializeField] private Button          readyButton;
         [SerializeField] private TextMeshProUGUI readyButtonText;
         [SerializeField] private TextMeshProUGUI statusText;
         [SerializeField] private Button          copyCodeButton;
         [SerializeField] private Button          leaveButton;
+
+        private const string PropWins   = "wins";
+        private const string PropLosses = "losses";
 
         private bool _isReady;
 
@@ -34,6 +39,12 @@ namespace WordPuzzle.Multi
         private void OnEnable()
         {
             PhotonNetwork.AddCallbackTarget(this);
+
+            // 내 전적을 커스텀 프로퍼티로 공유
+            var multi = WordPuzzle.Save.SaveManager.LoadMulti();
+            var props = new Hashtable { [PropWins] = multi.WinCount, [PropLosses] = multi.LoseCount };
+            PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+
             RefreshUI();
         }
 
@@ -49,11 +60,33 @@ namespace WordPuzzle.Multi
             int idx = 0;
             foreach (var p in PhotonNetwork.CurrentRoom.Players.Values)
             {
-                if (idx == 0) player1Text.text = p.NickName;
-                else          player2Text.text = p.NickName;
+                if (idx == 0)
+                {
+                    player1Text.text = p.NickName;
+                    if (player1StatsText) player1StatsText.text = GetStatsStr(p);
+                }
+                else
+                {
+                    player2Text.text = p.NickName;
+                    if (player2StatsText) player2StatsText.text = GetStatsStr(p);
+                }
                 idx++;
             }
-            if (idx < 2) player2Text.text = "대기 중...";
+            if (idx < 2)
+            {
+                player2Text.text = "대기 중...";
+                if (player2StatsText) player2StatsText.text = "";
+            }
+        }
+
+        private static string GetStatsStr(Player p)
+        {
+            var props = p.CustomProperties;
+            int win   = props.ContainsKey("wins")   ? (int)props["wins"]   : 0;
+            int lose  = props.ContainsKey("losses") ? (int)props["losses"] : 0;
+            int total = win + lose;
+            float rate = total > 0 ? (float)win / total * 100f : 0f;
+            return $"{win}/{total} 승률 {rate:F0}%";
         }
 
         // 초대 코드 클립보드 복사
@@ -105,8 +138,9 @@ namespace WordPuzzle.Multi
                 MultiNetworkEvents.All, MultiNetworkEvents.Reliable);
         }
 
-        public override void OnPlayerEnteredRoom(Player newPlayer) => RefreshUI();
-        public override void OnPlayerLeftRoom(Player otherPlayer)  => RefreshUI();
+        public override void OnPlayerEnteredRoom(Player newPlayer)        => RefreshUI();
+        public override void OnPlayerLeftRoom(Player otherPlayer)         => RefreshUI();
+        public override void OnPlayerPropertiesUpdate(Player target, Hashtable props) => RefreshUI();
     }
 }
 #endif
