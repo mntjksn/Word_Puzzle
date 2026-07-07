@@ -18599,7 +18599,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uD654\uBA74 \uC0C1\uB2E8 \uBCF4\uAE30 \uCE78\uC758 \uC790\uBAA8\uB294
     \uC815\uB2F5 \uC790\uBAA8\uB97C\n\uCE58\uD658\uD55C \uD615\uD0DC\uB85C \uD45C\uC2DC\uB429\uB2C8\uB2E4.\n<color=#FFD945>\u3157\xB7\u315C\xB7\u3153\xB7\u314F</color>\uB294
-    \uBAA8\uB450 <color=#9FD9FF>\u314F</color>\uB85C, <color=#FFD945>\u315B\xB7\u3160\xB7\u3155\xB7\u3151</color>\uB294
+    \uBAA8\uB450 <color=#9FD9FF>\u314F</color>\uB85C,\n<color=#FFD945>\u315B\xB7\u3160\xB7\u3155\xB7\u3151</color>\uB294
     \uBAA8\uB450 <color=#9FD9FF>\u3151</color>\uB85C \uD45C\uC2DC\uB429\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8fed834ea8add249b7033bd49ad0dea, type: 2}
