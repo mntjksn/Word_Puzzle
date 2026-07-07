@@ -219,51 +219,137 @@ namespace WordPuzzle.Firebase
                });
         }
 
+        // ── 계정 복구 ────────────────────────────────────────────────────────
+
+        // 신규 uid 감지 시 발행 — AccountRestorePopup이 구독해 팝업 표시
+        public static bool          NewUserDetected    { get; private set; }
+        public static event Action  OnNewUserDetected;
+
+        // 닉네임으로 이전 계정 찾아 새 uid로 데이터 이전
+        public void CheckAndRestoreAccount(string nickname, Action<bool, string> callback)
+        {
+            if (!CheckReady()) { callback?.Invoke(false, "연결 오류"); return; }
+
+            string key = nickname.ToLower().Replace(" ", "_");
+            _db.Child("nicknames").Child(key).GetValueAsync().ContinueWithOnMainThread(task =>
+            {
+                if (task.IsFaulted) { callback?.Invoke(false, "서버 오류"); return; }
+
+                var snap   = task.Result;
+                string oldUid = snap.Exists ? snap.Value?.ToString() : null;
+
+                if (string.IsNullOrEmpty(oldUid))
+                { callback?.Invoke(false, "닉네임을 찾을 수 없습니다."); return; }
+
+                if (oldUid == UserId)
+                { callback?.Invoke(true, ""); return; } // 이미 같은 uid
+
+                // 이전 uid 데이터 로드 → 새 uid로 복사
+                _db.Child("users").Child(oldUid).GetValueAsync().ContinueWithOnMainThread(t2 =>
+                {
+                    if (t2.IsFaulted) { callback?.Invoke(false, "데이터 로드 실패"); return; }
+
+                    var oldData = t2.Result;
+                    if (!oldData.Exists)
+                    { callback?.Invoke(false, "복구할 데이터가 없습니다."); return; }
+
+                    // 로컬 캐시에 적용
+                    ApplySnapshotToLocal(oldData);
+
+                    // 새 uid에 일괄 기록
+                    var single = SaveManager.LoadSingle();
+                    var daily  = SaveManager.LoadDaily();
+                    var multi  = SaveManager.LoadMulti();
+                    string nick = PlayerPrefs.GetString("PlayerNickname", nickname);
+
+                    var clr = new Dictionary<string, object>();
+                    for (int i = 2; i < single.ClearCountByLength.Length; i++)
+                        clr[i.ToString()] = single.ClearCountByLength[i];
+
+                    var batch = new Dictionary<string, object>
+                    {
+                        [$"nicknames/{key}"]                       = UserId,
+                        [$"users/{UserId}/nickname"]               = nick,
+                        [$"users/{UserId}/multi/win"]              = multi.WinCount,
+                        [$"users/{UserId}/multi/lose"]             = multi.LoseCount,
+                        [$"users/{UserId}/multi/playCount"]        = multi.PlayCount,
+                        [$"users/{UserId}/daily/lastPlayDate"]     = daily.LastPlayDate,
+                        [$"users/{UserId}/daily/isClearedToday"]  = daily.IsClearedToday,
+                        [$"users/{UserId}/daily/streakDays"]       = daily.StreakDays,
+                        [$"users/{UserId}/daily/todayAttempts"]    = daily.TodayAttempts,
+                        [$"users/{UserId}/single/clearByLength"]   = clr,
+                        [$"users/{UserId}/single/totalHintsUsed"]  = single.TotalHintsUsed,
+                        [$"users/{UserId}/single/points"]          = single.Points,
+                    };
+
+                    _db.UpdateChildrenAsync(batch).ContinueWithOnMainThread(t3 =>
+                    {
+                        if (t3.IsFaulted) { callback?.Invoke(false, "복구 실패"); return; }
+                        NewUserDetected = false;
+                        Debug.Log($"[Firebase] 계정 복구: {nickname} ({oldUid} → {UserId})");
+                        callback?.Invoke(true, "");
+                    });
+                });
+            });
+        }
+
+        // "새로 시작" 선택 시 — 빈 로컬 데이터를 Firebase에 초기 업로드
+        public void ConfirmNewUser()
+        {
+            NewUserDetected = false;
+            PushLocalToFirebase();
+        }
+
         // ── 로그인 후 동기화 ─────────────────────────────────────────────────
 
         // Firebase → 로컬 캐시 복원 (재설치 후 데이터 복구)
-        // Firebase에 데이터가 없으면 반대 방향(로컬 → Firebase) 초기 업로드
         private void SyncFirebaseToLocal()
         {
             LoadUserData(snap =>
             {
                 if (snap == null || !snap.Exists)
                 {
-                    PushLocalToFirebase();
+                    // 이 uid에 데이터 없음 → 신규 or 재설치 → 팝업으로 판단 위임
+                    NewUserDetected = true;
+                    OnNewUserDetected?.Invoke();
                     return;
                 }
 
-                // 닉네임
-                string nick = ParseStr(snap, "nickname");
-                if (!string.IsNullOrEmpty(nick))
-                    PlayerPrefs.SetString("PlayerNickname", nick);
-
-                // 멀티 전적
-                var multi         = SaveManager.LoadMulti();
-                multi.WinCount    = ParseInt(snap, "multi/win");
-                multi.LoseCount   = ParseInt(snap, "multi/lose");
-                multi.PlayCount   = ParseInt(snap, "multi/playCount");
-                SaveManager.WriteMultiLocal(multi);
-
-                // 일일 도전
-                var daily            = SaveManager.LoadDaily();
-                daily.LastPlayDate   = ParseStr(snap,  "daily/lastPlayDate");
-                daily.IsClearedToday = ParseBool(snap, "daily/isClearedToday");
-                daily.StreakDays     = ParseInt(snap,  "daily/streakDays");
-                daily.TodayAttempts  = ParseInt(snap,  "daily/todayAttempts");
-                SaveManager.WriteDailyLocal(daily);
-
-                // 싱글: ClearCountByLength·힌트·포인트 (ClearedWordIds는 로컬 전용)
-                var single = SaveManager.LoadSingle();
-                for (int len = 2; len <= 6; len++)
-                    single.ClearCountByLength[len] = ParseInt(snap, $"single/clearByLength/{len}");
-                single.TotalHintsUsed = ParseInt(snap, "single/totalHintsUsed");
-                single.Points         = ParseInt(snap, "single/points");
-                SaveManager.WriteSingleLocal(single);
-
-                PlayerPrefs.Save();
+                ApplySnapshotToLocal(snap);
                 Debug.Log("[Firebase] 로컬 캐시 복원 완료");
             });
+        }
+
+        // DataSnapshot → 로컬 캐시 반영 (복구·동기화 공용)
+        private void ApplySnapshotToLocal(DataSnapshot snap)
+        {
+            if (snap == null || !snap.Exists) return;
+
+            string nick = ParseStr(snap, "nickname");
+            if (!string.IsNullOrEmpty(nick))
+                PlayerPrefs.SetString("PlayerNickname", nick);
+
+            var multi      = SaveManager.LoadMulti();
+            multi.WinCount  = ParseInt(snap, "multi/win");
+            multi.LoseCount = ParseInt(snap, "multi/lose");
+            multi.PlayCount = ParseInt(snap, "multi/playCount");
+            SaveManager.WriteMultiLocal(multi);
+
+            var daily            = SaveManager.LoadDaily();
+            daily.LastPlayDate   = ParseStr(snap,  "daily/lastPlayDate");
+            daily.IsClearedToday = ParseBool(snap, "daily/isClearedToday");
+            daily.StreakDays     = ParseInt(snap,  "daily/streakDays");
+            daily.TodayAttempts  = ParseInt(snap,  "daily/todayAttempts");
+            SaveManager.WriteDailyLocal(daily);
+
+            var single = SaveManager.LoadSingle();
+            for (int len = 2; len <= 6; len++)
+                single.ClearCountByLength[len] = ParseInt(snap, $"single/clearByLength/{len}");
+            single.TotalHintsUsed = ParseInt(snap, "single/totalHintsUsed");
+            single.Points         = ParseInt(snap, "single/points");
+            SaveManager.WriteSingleLocal(single);
+
+            PlayerPrefs.Save();
         }
 
         // 신규 사용자: 로컬 → Firebase 초기 업로드
