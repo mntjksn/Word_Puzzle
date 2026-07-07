@@ -19,8 +19,17 @@ namespace WordPuzzle.Multi
         [SerializeField] private Button          readyButton;
         [SerializeField] private TextMeshProUGUI readyButtonText;
         [SerializeField] private TextMeshProUGUI statusText;
+        [SerializeField] private Button          copyCodeButton;
+        [SerializeField] private Button          leaveButton;
 
         private bool _isReady;
+
+        private void Start()
+        {
+            if (copyCodeButton) copyCodeButton.onClick.AddListener(OnCopyCode);
+            if (readyButton)    readyButton.onClick.AddListener(OnReadyButtonClicked);
+            if (leaveButton)    leaveButton.onClick.AddListener(OnLeaveRoom);
+        }
 
         private void OnEnable()
         {
