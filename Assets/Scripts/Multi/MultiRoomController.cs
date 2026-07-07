@@ -80,9 +80,9 @@ namespace WordPuzzle.Multi
             if (idx < 2)
             {
                 player2Text.text = "대기 중...";
-                if (player2StatsText) player2StatsText.text = "";
-                if (player2ReadyText) player2ReadyText.text = "";
-                if (player2SlotImg)   player2SlotImg.color  = ColSlotNormal;
+                if (player2StatsText) { player2StatsText.gameObject.SetActive(false); player2StatsText.text = ""; }
+                if (player2ReadyText) { player2ReadyText.gameObject.SetActive(false); player2ReadyText.text = ""; }
+                if (player2SlotImg)   player2SlotImg.color = ColSlotNormal;
             }
         }
 
@@ -91,9 +91,10 @@ namespace WordPuzzle.Multi
                                 Player p, bool ready)
         {
             if (nameT)  nameT.text  = p.NickName;
-            if (statsT) statsT.text = GetStatsStr(p);
+            if (statsT) { statsT.gameObject.SetActive(true); statsT.text = GetStatsStr(p); }
             if (readyT)
             {
+                readyT.gameObject.SetActive(true);
                 readyT.text  = ready ? "준비완료" : "";
                 readyT.color = ColReadyText;
             }
