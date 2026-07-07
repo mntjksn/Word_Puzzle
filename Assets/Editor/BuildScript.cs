@@ -35,6 +35,9 @@ public class BuildScript
         // Android 빌드 타겟으로 전환
         EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android, BuildTarget.Android);
 
+        // IL2CPP AccessViolation 우회 — Mono 백엔드로 고정
+        PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.Mono2x);
+
         var options = new BuildPlayerOptions
         {
             scenes           = scenes,
