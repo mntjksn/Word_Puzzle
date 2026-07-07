@@ -16,8 +16,12 @@ namespace WordPuzzle.Multi
         [SerializeField] private TextMeshProUGUI roomCodeText;
         [SerializeField] private TextMeshProUGUI player1Text;
         [SerializeField] private TextMeshProUGUI player1StatsText;
+        [SerializeField] private TextMeshProUGUI player1ReadyText;
+        [SerializeField] private UnityEngine.UI.Image player1SlotImg;
         [SerializeField] private TextMeshProUGUI player2Text;
         [SerializeField] private TextMeshProUGUI player2StatsText;
+        [SerializeField] private TextMeshProUGUI player2ReadyText;
+        [SerializeField] private UnityEngine.UI.Image player2SlotImg;
         [SerializeField] private Button          readyButton;
         [SerializeField] private TextMeshProUGUI readyButtonText;
         [SerializeField] private TextMeshProUGUI statusText;
@@ -26,6 +30,13 @@ namespace WordPuzzle.Multi
 
         private const string PropWins   = "wins";
         private const string PropLosses = "losses";
+
+        private static readonly Color ColSlotNormal = new Color(1f, 1f, 1f, 0.06f);
+        private static readonly Color ColSlotReady  = new Color(0.28f, 0.62f, 1f, 0.28f);
+        private static readonly Color ColReadyText  = new Color(0.45f, 0.78f, 1f, 1f);
+
+        private readonly System.Collections.Generic.Dictionary<int, bool> _readyStates
+            = new System.Collections.Generic.Dictionary<int, bool>();
 
         private bool _isReady;
 
@@ -39,6 +50,7 @@ namespace WordPuzzle.Multi
         private void OnEnable()
         {
             PhotonNetwork.AddCallbackTarget(this);
+            _readyStates.Clear();
 
             // 내 전적을 커스텀 프로퍼티로 공유
             var multi = WordPuzzle.Save.SaveManager.LoadMulti();
@@ -60,23 +72,32 @@ namespace WordPuzzle.Multi
             int idx = 0;
             foreach (var p in PhotonNetwork.CurrentRoom.Players.Values)
             {
-                if (idx == 0)
-                {
-                    player1Text.text = p.NickName;
-                    if (player1StatsText) player1StatsText.text = GetStatsStr(p);
-                }
-                else
-                {
-                    player2Text.text = p.NickName;
-                    if (player2StatsText) player2StatsText.text = GetStatsStr(p);
-                }
+                bool ready = _readyStates.TryGetValue(p.ActorNumber, out bool r) && r;
+                if (idx == 0) ApplySlot(player1Text, player1StatsText, player1ReadyText, player1SlotImg, p, ready);
+                else          ApplySlot(player2Text, player2StatsText, player2ReadyText, player2SlotImg, p, ready);
                 idx++;
             }
             if (idx < 2)
             {
                 player2Text.text = "대기 중...";
                 if (player2StatsText) player2StatsText.text = "";
+                if (player2ReadyText) player2ReadyText.text = "";
+                if (player2SlotImg)   player2SlotImg.color  = ColSlotNormal;
             }
+        }
+
+        private void ApplySlot(TextMeshProUGUI nameT, TextMeshProUGUI statsT,
+                                TextMeshProUGUI readyT, UnityEngine.UI.Image slotImg,
+                                Player p, bool ready)
+        {
+            if (nameT)  nameT.text  = p.NickName;
+            if (statsT) statsT.text = GetStatsStr(p);
+            if (readyT)
+            {
+                readyT.text  = ready ? "준비완료" : "";
+                readyT.color = ColReadyText;
+            }
+            if (slotImg) slotImg.color = ready ? ColSlotReady : ColSlotNormal;
         }
 
         private static string GetStatsStr(Player p)
@@ -102,6 +123,9 @@ namespace WordPuzzle.Multi
             _isReady             = !_isReady;
             readyButtonText.text = _isReady ? "준비 취소" : "준비";
 
+            _readyStates[PhotonNetwork.LocalPlayer.ActorNumber] = _isReady;
+            RefreshUI();
+
             var data = new object[] { PhotonNetwork.LocalPlayer.ActorNumber, _isReady };
             PhotonNetwork.RaiseEvent(
                 MultiNetworkEvents.PlayerReadyChanged, data,
@@ -119,6 +143,12 @@ namespace WordPuzzle.Multi
         {
             if (photonEvent.Code == MultiNetworkEvents.PlayerReadyChanged)
             {
+                var data = (object[])photonEvent.CustomData;
+                int actorNum = (int)data[0];
+                bool ready   = (bool)data[1];
+                _readyStates[actorNum] = ready;
+                RefreshUI();
+
                 if (PhotonNetwork.IsMasterClient)
                     CheckAllReady();
             }
