@@ -166,7 +166,9 @@ namespace WordPuzzle.Daily
 
         private void OnClear()
         {
-            _isCleared                = true;
+            _isCleared = true;
+            if (!_dailySave.IsClearedToday)
+                _dailySave.TotalDailyClearCount++;
             _dailySave.IsClearedToday = true;
             _singleSave.Points       += DailyReward;
             SaveManager.SaveSingle(_singleSave);

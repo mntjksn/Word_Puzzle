@@ -185,11 +185,12 @@ namespace WordPuzzle.Firebase
             _db.Child("users").Child(UserId).Child("daily")
                .UpdateChildrenAsync(new Dictionary<string, object>
                {
-                   ["lastPlayDate"]    = data.LastPlayDate,
-                   ["isClearedToday"] = data.IsClearedToday,
-                   ["streakDays"]     = data.StreakDays,
-                   ["todayAttempts"]  = data.TodayAttempts,
-                   ["updatedAt"]      = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
+                   ["lastPlayDate"]         = data.LastPlayDate,
+                   ["isClearedToday"]       = data.IsClearedToday,
+                   ["streakDays"]           = data.StreakDays,
+                   ["todayAttempts"]        = data.TodayAttempts,
+                   ["totalDailyClearCount"] = data.TotalDailyClearCount,
+                   ["updatedAt"]            = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
                }).ContinueWithOnMainThread(t =>
                {
                    if (t.IsFaulted)
@@ -273,10 +274,11 @@ namespace WordPuzzle.Firebase
                         [$"users/{UserId}/multi/win"]              = multi.WinCount,
                         [$"users/{UserId}/multi/lose"]             = multi.LoseCount,
                         [$"users/{UserId}/multi/playCount"]        = multi.PlayCount,
-                        [$"users/{UserId}/daily/lastPlayDate"]     = daily.LastPlayDate,
-                        [$"users/{UserId}/daily/isClearedToday"]  = daily.IsClearedToday,
-                        [$"users/{UserId}/daily/streakDays"]       = daily.StreakDays,
-                        [$"users/{UserId}/daily/todayAttempts"]    = daily.TodayAttempts,
+                        [$"users/{UserId}/daily/lastPlayDate"]          = daily.LastPlayDate,
+                        [$"users/{UserId}/daily/isClearedToday"]       = daily.IsClearedToday,
+                        [$"users/{UserId}/daily/streakDays"]            = daily.StreakDays,
+                        [$"users/{UserId}/daily/todayAttempts"]         = daily.TodayAttempts,
+                        [$"users/{UserId}/daily/totalDailyClearCount"]  = daily.TotalDailyClearCount,
                         [$"users/{UserId}/single/clearByLength"]   = clr,
                         [$"users/{UserId}/single/totalHintsUsed"]  = single.TotalHintsUsed,
                         [$"users/{UserId}/single/points"]          = single.Points,
@@ -336,10 +338,11 @@ namespace WordPuzzle.Firebase
             SaveManager.WriteMultiLocal(multi);
 
             var daily            = SaveManager.LoadDaily();
-            daily.LastPlayDate   = ParseStr(snap,  "daily/lastPlayDate");
-            daily.IsClearedToday = ParseBool(snap, "daily/isClearedToday");
-            daily.StreakDays     = ParseInt(snap,  "daily/streakDays");
-            daily.TodayAttempts  = ParseInt(snap,  "daily/todayAttempts");
+            daily.LastPlayDate          = ParseStr(snap,  "daily/lastPlayDate");
+            daily.IsClearedToday        = ParseBool(snap, "daily/isClearedToday");
+            daily.StreakDays            = ParseInt(snap,  "daily/streakDays");
+            daily.TodayAttempts         = ParseInt(snap,  "daily/todayAttempts");
+            daily.TotalDailyClearCount  = ParseInt(snap,  "daily/totalDailyClearCount");
             SaveManager.WriteDailyLocal(daily);
 
             var single = SaveManager.LoadSingle();

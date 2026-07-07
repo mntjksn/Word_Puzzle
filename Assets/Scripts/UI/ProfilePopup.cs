@@ -26,6 +26,10 @@ namespace WordPuzzle.UI
         [SerializeField] private TextMeshProUGUI clear5Text;
         [SerializeField] private TextMeshProUGUI clear6Text;
 
+        [Header("일일 도전")]
+        [SerializeField] private TextMeshProUGUI dailyClearCountText;
+        [SerializeField] private TextMeshProUGUI dailyStreakText;
+
         [Header("공통")]
         [SerializeField] private Button closeButton;
 
@@ -61,7 +65,9 @@ namespace WordPuzzle.UI
 
             var multi  = SaveManager.LoadMulti();
             var single = SaveManager.LoadSingle();
-            ApplyStats(multi.WinCount, multi.LoseCount, single.ClearCountByLength);
+            var daily  = SaveManager.LoadDaily();
+            ApplyStats(multi.WinCount, multi.LoseCount, single.ClearCountByLength,
+                       daily.TotalDailyClearCount, daily.StreakDays);
         }
 
         // ── Firebase 데이터 반영 ───────────────────────────────────────────
@@ -84,7 +90,10 @@ namespace WordPuzzle.UI
             for (int len = 2; len <= 6; len++)
                 clears[len] = ParseInt(snap, $"single/clearByLength/{len}");
 
-            ApplyStats(win, lose, clears);
+            int dailyClearCount = ParseInt(snap, "daily/totalDailyClearCount");
+            int streakDays      = ParseInt(snap, "daily/streakDays");
+
+            ApplyStats(win, lose, clears, dailyClearCount, streakDays);
         }
 
         // ── 닉네임 설정 버튼 ─────────────────────────────────────────────
@@ -133,7 +142,7 @@ namespace WordPuzzle.UI
 
         // ── 헬퍼 ──────────────────────────────────────────────────────────
 
-        private void ApplyStats(int win, int lose, int[] clears)
+        private void ApplyStats(int win, int lose, int[] clears, int dailyClearCount, int streakDays)
         {
             if (winText)  winText.text  = win.ToString();
             if (loseText) loseText.text = lose.ToString();
@@ -147,6 +156,9 @@ namespace WordPuzzle.UI
             SetClear(clear4Text, clears, 4);
             SetClear(clear5Text, clears, 5);
             SetClear(clear6Text, clears, 6);
+
+            if (dailyClearCountText) dailyClearCountText.text = dailyClearCount.ToString();
+            if (dailyStreakText)     dailyStreakText.text      = streakDays.ToString();
         }
 
         private static void SetClear(TextMeshProUGUI t, int[] arr, int idx)
