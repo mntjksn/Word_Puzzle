@@ -33,9 +33,8 @@ namespace WordPuzzle.Save
     [Serializable]
     public class MultiSaveData
     {
-        public string Nickname;
-        public int    WinCount;
-        public int    LoseCount;
-        public int    PlayCount;
+        public int WinCount;
+        public int LoseCount;
+        public int PlayCount;
     }
 }
