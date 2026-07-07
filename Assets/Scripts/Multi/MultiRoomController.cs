@@ -76,7 +76,10 @@ namespace WordPuzzle.Multi
         }
 
         public void OnLeaveRoom()
-            => PhotonMultiplayerManager.Instance.LeaveRoom();
+        {
+            PhotonMultiplayerManager.Instance?.LeaveRoom();
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MultiMenu");
+        }
 
         // Photon 이벤트 수신
         public void OnEvent(EventData photonEvent)

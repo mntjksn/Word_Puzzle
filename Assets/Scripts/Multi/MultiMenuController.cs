@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using WordPuzzle.UI;
 
 namespace WordPuzzle.Multi
 {
@@ -15,7 +16,6 @@ namespace WordPuzzle.Multi
         [SerializeField] private GameObject menuPanel;
 
         [Header("입력")]
-        [SerializeField] private TMP_InputField nicknameInput;
         [SerializeField] private TMP_InputField roomCodeInput;
 
         [Header("버튼")]
@@ -113,7 +113,7 @@ namespace WordPuzzle.Multi
 
         private void ApplyNickname()
         {
-            string nick = nicknameInput != null ? nicknameInput.text.Trim() : "";
+            string nick = PlayerPrefs.GetString(SettingsPopup.NicknameKey, "").Trim();
             if (string.IsNullOrEmpty(nick))
                 nick = "플레이어" + Random.Range(100, 999);
             _mgr.SetNickname(nick);
