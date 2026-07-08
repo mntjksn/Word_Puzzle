@@ -7,11 +7,12 @@ namespace WordPuzzle.UI
 {
     public class AccountRestorePopup : MonoBehaviour
     {
-        [SerializeField] private TMP_InputField  nicknameInput;
-        [SerializeField] private Button          restoreButton;
-        [SerializeField] private Button          newUserButton;
-        [SerializeField] private TextMeshProUGUI statusText;
-        [SerializeField] private Button          closeButton;
+        [SerializeField] private TMP_InputField    nicknameInput;
+        [SerializeField] private Button            restoreButton;
+        [SerializeField] private Button            newUserButton;
+        [SerializeField] private TextMeshProUGUI   statusText;
+        [SerializeField] private Button            closeButton;
+        [SerializeField] private NicknameSetupPopup nicknameSetupPopup;
 
         private static readonly Color ColOk   = new Color(0.2f, 0.9f, 0.6f, 1f);
         private static readonly Color ColErr  = new Color(1f,   0.3f, 0.3f, 1f);
@@ -84,6 +85,9 @@ namespace WordPuzzle.UI
         {
             FirebaseManager.Instance?.ConfirmNewUser();
             Hide();
+            // 닉네임이 없으면 바로 닉네임 설정 팝업 표시
+            if (nicknameSetupPopup != null && NicknameSetupPopup.NeedsNickname())
+                nicknameSetupPopup.Show();
         }
 
         private void SetStatus(string msg, Color col)

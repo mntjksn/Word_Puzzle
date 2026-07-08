@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WordPuzzle.Firebase;
 using WordPuzzle.Save;
 
 namespace WordPuzzle.UI
@@ -11,6 +12,7 @@ namespace WordPuzzle.UI
         [SerializeField] private GameObject            _howToPlayPopup;
         [SerializeField] private SettingsPopup         _settingsPopup;
         [SerializeField] private ProfilePopup          _profilePopup;
+        [SerializeField] private NicknameSetupPopup    _nicknameSetupPopup;
 
         private const string ContinueKey = "IsContinue";
 
@@ -18,6 +20,19 @@ namespace WordPuzzle.UI
         {
             if (_continueButton != null)
                 _continueButton.SetActive(SaveManager.HasMidGame());
+
+            // 닉네임 없으면 설정 팝업 (AccountRestorePopup이 없는 경우 fallback)
+            if (_nicknameSetupPopup != null && NicknameSetupPopup.NeedsNickname())
+                Invoke(nameof(ShowNicknameSetupIfNeeded), 0.8f);
+        }
+
+        private void ShowNicknameSetupIfNeeded()
+        {
+            if (_nicknameSetupPopup == null) return;
+            if (!NicknameSetupPopup.NeedsNickname()) return;
+            // AccountRestorePopup이 신규 유저 처리 중이면 거기서 띄움
+            if (FirebaseManager.NewUserDetected) return;
+            _nicknameSetupPopup.Show();
         }
 
         public void OnSingleMode()

@@ -64,6 +64,7 @@ namespace WordPuzzle.Multi
         [SerializeField] private GameObject            panel;
         [SerializeField] private UnityEngine.UI.Button leaveButton;
         [SerializeField] private UnityEngine.UI.Image  topAccentImage;
+        [SerializeField] private ConfettiSystem        confettiSystem;
 
         private static readonly Color ColWinText    = new Color(1.00f, 0.88f, 0.20f, 1.00f);
         private static readonly Color ColLossText   = new Color(1.00f, 0.45f, 0.45f, 1.00f);
@@ -83,11 +84,16 @@ namespace WordPuzzle.Multi
             if (topAccentImage == null)
                 foreach (var img in GetComponentsInChildren<UnityEngine.UI.Image>(true))
                     if (img.name == "TopAccent") { topAccentImage = img; break; }
+
+            if (confettiSystem == null)
+                confettiSystem = GetComponentInChildren<ConfettiSystem>(true);
         }
 
         public void Show(bool isWin, Dictionary<int, MultiPlayerState> players,
                          string correctWord, int turnCount, int wins, int losses)
         {
+            // 폭죽 이펙트 모드 설정 (panel.SetActive 전에 해야 OnEnable 타이밍이 맞음)
+            if (confettiSystem) confettiSystem.SetLossMode(!isWin);
             panel.SetActive(true);
 
             if (emojiText)      emojiText.text   = isWin ? "★★★" : "●";

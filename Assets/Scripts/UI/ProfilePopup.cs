@@ -10,8 +10,12 @@ namespace WordPuzzle.UI
     public class ProfilePopup : MonoBehaviour
     {
         [Header("닉네임")]
+        [SerializeField] private TextMeshProUGUI currentNicknameText;
+        [SerializeField] private Button          changeNicknameButton;
+        [SerializeField] private GameObject      editNicknameGroup;
         [SerializeField] private TMP_InputField  nicknameInput;
         [SerializeField] private Button          setNicknameButton;
+        [SerializeField] private Button          cancelEditButton;
         [SerializeField] private TextMeshProUGUI nickStatusText;
 
         [Header("멀티 전적")]
@@ -39,13 +43,17 @@ namespace WordPuzzle.UI
 
         private void Start()
         {
-            if (closeButton)       closeButton.onClick.AddListener(Hide);
-            if (setNicknameButton) setNicknameButton.onClick.AddListener(OnSetNicknameClicked);
+            if (closeButton)         closeButton.onClick.AddListener(Hide);
+            if (setNicknameButton)   setNicknameButton.onClick.AddListener(OnSetNicknameClicked);
+            if (changeNicknameButton)changeNicknameButton.onClick.AddListener(ShowEditPanel);
+            if (cancelEditButton)    cancelEditButton.onClick.AddListener(HideEditPanel);
+            HideEditPanel();
         }
 
         public void Show()
         {
             gameObject.SetActive(true);
+            HideEditPanel();
             SetStatus("", ColInfo);
             RefreshLocal();
 
@@ -57,11 +65,28 @@ namespace WordPuzzle.UI
 
         // ── 로컬 데이터 즉시 표시 ──────────────────────────────────────────
 
+        private void ShowEditPanel()
+        {
+            if (editNicknameGroup)    editNicknameGroup.SetActive(true);
+            if (cancelEditButton)     cancelEditButton.gameObject.SetActive(true);
+            if (changeNicknameButton) changeNicknameButton.gameObject.SetActive(false);
+            if (nicknameInput)        nicknameInput.SetTextWithoutNotify(PlayerPrefs.GetString(SettingsPopup.NicknameKey, ""));
+            SetStatus("", ColInfo);
+        }
+
+        private void HideEditPanel()
+        {
+            if (editNicknameGroup)    editNicknameGroup.SetActive(false);
+            if (cancelEditButton)     cancelEditButton.gameObject.SetActive(false);
+            if (changeNicknameButton) changeNicknameButton.gameObject.SetActive(true);
+            SetStatus("", ColInfo);
+        }
+
         private void RefreshLocal()
         {
-            if (nicknameInput)
-                nicknameInput.SetTextWithoutNotify(
-                    PlayerPrefs.GetString(SettingsPopup.NicknameKey, ""));
+            string nick = PlayerPrefs.GetString(SettingsPopup.NicknameKey, "");
+            if (currentNicknameText)
+                currentNicknameText.text = string.IsNullOrEmpty(nick) ? "닉네임 없음" : nick;
 
             var multi  = SaveManager.LoadMulti();
             var single = SaveManager.LoadSingle();
@@ -76,11 +101,12 @@ namespace WordPuzzle.UI
         {
             if (snap == null) return;
 
-            if (snap.HasChild("nickname") && nicknameInput)
+            if (snap.HasChild("nickname"))
             {
                 string nick = snap.Child("nickname").Value?.ToString() ?? "";
-                nicknameInput.SetTextWithoutNotify(nick);
                 PlayerPrefs.SetString(SettingsPopup.NicknameKey, nick);
+                if (currentNicknameText) currentNicknameText.text = string.IsNullOrEmpty(nick) ? "닉네임 없음" : nick;
+                if (nicknameInput) nicknameInput.SetTextWithoutNotify(nick);
             }
 
             int win  = ParseInt(snap, "multi/win");
@@ -116,9 +142,10 @@ namespace WordPuzzle.UI
             var fb = FirebaseManager.Instance;
             if (fb == null || !fb.IsReady)
             {
-                // Firebase 없으면 로컬에만 저장
                 SaveNickLocal(nick);
                 SetStatus("저장 완료!", ColOk);
+                if (currentNicknameText) currentNicknameText.text = nick;
+                Invoke(nameof(HideEditPanel), 0.8f);
                 return;
             }
 
@@ -132,6 +159,8 @@ namespace WordPuzzle.UI
                 {
                     SaveNickLocal(nick);
                     SetStatus("닉네임이 설정됐습니다!", ColOk);
+                    if (currentNicknameText) currentNicknameText.text = nick;
+                    Invoke(nameof(HideEditPanel), 1.0f);
                 }
                 else
                 {
