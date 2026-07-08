@@ -40,7 +40,12 @@ namespace WordPuzzle.Multi
         public void Connect()
         {
             if (!PhotonNetwork.IsConnected)
+            {
+                // BestRegion은 기기마다 다른 서버(jp/kr 등)를 선택해 방 입장 실패를 유발
+                // 모든 기기를 kr 서버로 고정
+                PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "kr";
                 PhotonNetwork.ConnectUsingSettings();
+            }
         }
 
         public void SetNickname(string nickname)
@@ -73,16 +78,19 @@ namespace WordPuzzle.Multi
 
         public override void OnConnectedToMaster()
         {
-            PhotonNetwork.JoinLobby();
+            // 초기 연결 및 방 나간 후 복귀 시 모두 호출됨
+            // JoinRoom/CreateRoom은 ConnectedToMaster 상태에서 바로 가능 → JoinLobby 불필요
+            Debug.Log($"[Photon] 마스터 서버 연결 | 지역:{PhotonNetwork.CloudRegion}");
             OnConnectedCallback?.Invoke();
         }
 
-        public override void OnJoinedLobby()
-            => Debug.Log("[Photon] 로비 입장 완료");
+        // 방 나가기 완료 후 자동으로 OnConnectedToMaster 호출됨
+        public override void OnLeftRoom()
+            => Debug.Log("[Photon] 방 나가기 완료");
 
         public override void OnJoinedRoom()
         {
-            Debug.Log($"[Photon] 방 입장: {PhotonNetwork.CurrentRoom.Name}");
+            Debug.Log($"[Photon] 방 입장: {PhotonNetwork.CurrentRoom.Name} | 지역:{PhotonNetwork.CloudRegion}");
             OnJoinedRoomCallback?.Invoke();
         }
 
@@ -94,14 +102,14 @@ namespace WordPuzzle.Multi
 
         public override void OnCreateRoomFailed(short returnCode, string message)
         {
-            Debug.LogWarning($"[Photon] 방 생성 실패: {message}");
+            Debug.LogWarning($"[Photon] 방 생성 실패 ({returnCode}): {message} | 지역:{PhotonNetwork.CloudRegion}");
             OnJoinFailedCallback?.Invoke(message);
         }
 
         public override void OnJoinRoomFailed(short returnCode, string message)
         {
-            Debug.LogWarning($"[Photon] 방 입장 실패: {message}");
-            OnJoinFailedCallback?.Invoke(message);
+            Debug.LogWarning($"[Photon] 방 입장 실패 ({returnCode}): {message} | 지역:{PhotonNetwork.CloudRegion}");
+            OnJoinFailedCallback?.Invoke($"{message}\n[지역:{PhotonNetwork.CloudRegion}]");
         }
 
         public override void OnDisconnected(DisconnectCause cause)

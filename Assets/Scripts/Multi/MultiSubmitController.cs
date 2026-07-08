@@ -1,6 +1,8 @@
 #if PHOTON_UNITY_NETWORKING
+using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using Photon.Realtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,32 +22,53 @@ namespace WordPuzzle.Multi
         private List<string> _answerTokens;
         private bool         _hasSubmitted;
         private bool         _useHidden;
-        private bool         _hiddenUsed;   // 게임당 1회 제한
+        private bool         _hiddenUsed;
         private int          _currentTurn;
 
-        // 게임 시작 시 히든 초기화
+        private void Start()
+        {
+            if (submitButton) submitButton.onClick.AddListener(OnSubmitButtonClicked);
+            if (hiddenButton) hiddenButton.onClick.AddListener(OnHiddenButtonClicked);
+            // 키보드 Enter 로도 제출
+            if (inputField) inputField.onSubmit.AddListener(_ => OnSubmitButtonClicked());
+        }
+
         public void ResetForGame()
         {
-            _hiddenUsed           = false;
-            hiddenButton.interactable = true;
-            UpdateHiddenButtonUI();
-        }
-
-        // 새 턴 시작 시 UI 초기화
-        public void Setup(List<string> answerTokens, int turnIndex)
-        {
-            _answerTokens             = answerTokens;
-            _currentTurn              = turnIndex;
-            _hasSubmitted             = false;
+            _hiddenUsed               = false;
             _useHidden                = false;
-            inputField.text           = "";
-            inputField.interactable   = true;
-            submitButton.interactable = true;
-            hiddenButton.interactable = !_hiddenUsed;
+            if (hiddenButton) hiddenButton.interactable = false;
             UpdateHiddenButtonUI();
         }
 
-        // 히든 버튼 토글
+        // 새 턴: isMyTurn이 true일 때만 입력 활성화
+        public void Setup(List<string> answerTokens, int turnIndex, bool isMyTurn)
+        {
+            _answerTokens  = answerTokens;
+            _currentTurn   = turnIndex;
+            _hasSubmitted  = false;
+            _useHidden     = false;
+
+            if (inputField)    { inputField.text = "";  inputField.interactable   = isMyTurn; }
+            if (submitButton)    submitButton.interactable = isMyTurn;
+            if (hiddenButton)    hiddenButton.interactable = isMyTurn && !_hiddenUsed;
+            UpdateHiddenButtonUI();
+
+            if (isMyTurn && inputField) StartCoroutine(ActivateInputNextFrame());
+        }
+
+        private IEnumerator ActivateInputNextFrame()
+        {
+            yield return null; // 레이아웃 완료 대기
+            yield return null; // SelectionPanel 비활성화 완료 보장
+            if (inputField == null || !inputField.interactable || !inputField.gameObject.activeInHierarchy)
+                yield break;
+            // EventSystem에 명시적으로 등록 후 활성화 (포커스 누락 방지)
+            var es = UnityEngine.EventSystems.EventSystem.current;
+            if (es != null) es.SetSelectedGameObject(inputField.gameObject);
+            inputField.ActivateInputField();
+        }
+
         public void OnHiddenButtonClicked()
         {
             if (_hiddenUsed || _hasSubmitted) return;
@@ -53,12 +76,10 @@ namespace WordPuzzle.Multi
             UpdateHiddenButtonUI();
         }
 
-        // 제출 버튼
         public void OnSubmitButtonClicked()
         {
             if (_hasSubmitted) return;
-
-            string input = inputField.text.Trim();
+            string input = inputField != null ? inputField.text.Trim() : "";
             if (string.IsNullOrEmpty(input)) return;
 
             var inputTokens = JamoConverter.GetAnswerTokens(input);
@@ -77,33 +98,49 @@ namespace WordPuzzle.Multi
                 UseHidden   = _useHidden,
             };
 
-            // 히든 사용 시 상대에게는 숨긴 데이터 전송
-            var sendData = _useHidden ? submit.ToHiddenView() : submit;
-
             if (_useHidden)
             {
-                _hiddenUsed               = true;
-                _useHidden                = false;
-                hiddenButton.interactable = false;
+                _hiddenUsed = true;
+                _useHidden  = false;
+                if (hiddenButton) hiddenButton.interactable = false;
+
+                // 히든: 나 자신에게는 원본(내 기록에서 결과 확인 가능), 상대에게만 히든 버전
+                PhotonNetwork.RaiseEvent(
+                    MultiNetworkEvents.SubmitTurn,
+                    submit.Serialize(),
+                    new RaiseEventOptions
+                    {
+                        TargetActors = new int[] { PhotonNetwork.LocalPlayer.ActorNumber }
+                    },
+                    MultiNetworkEvents.Reliable);
+                PhotonNetwork.RaiseEvent(
+                    MultiNetworkEvents.SubmitTurn,
+                    submit.ToHiddenView().Serialize(),
+                    MultiNetworkEvents.Others,
+                    MultiNetworkEvents.Reliable);
+            }
+            else
+            {
+                PhotonNetwork.RaiseEvent(
+                    MultiNetworkEvents.SubmitTurn,
+                    submit.Serialize(),
+                    MultiNetworkEvents.All,
+                    MultiNetworkEvents.Reliable);
             }
 
-            PhotonNetwork.RaiseEvent(
-                MultiNetworkEvents.SubmitTurn,
-                sendData.Serialize(),
-                MultiNetworkEvents.All,
-                MultiNetworkEvents.Reliable);
-
-            _hasSubmitted             = true;
-            inputField.interactable   = false;
-            submitButton.interactable = false;
+            _hasSubmitted = true;
+            if (inputField)   inputField.interactable   = false;
+            if (submitButton) submitButton.interactable = false;
+            UpdateHiddenButtonUI();
         }
 
         private void UpdateHiddenButtonUI()
         {
+            if (hiddenButtonText == null) return;
             if (_hiddenUsed)
                 hiddenButtonText.text = "히든 사용됨";
             else
-                hiddenButtonText.text = _useHidden ? "히든 ON" : "히든 OFF";
+                hiddenButtonText.text = _useHidden ? "히든 ON" : "히든 아이템";
         }
     }
 }

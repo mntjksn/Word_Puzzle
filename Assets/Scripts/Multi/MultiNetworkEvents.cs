@@ -13,11 +13,21 @@ namespace WordPuzzle.Multi
         public const byte PlayerReadyChanged = 4;
         public const byte StartGame          = 5;
         public const byte NextTurn           = 6;
+        public const byte CountdownStart     = 7;
+        public const byte CountdownCancel    = 8;
+        public const byte TurnOrderSet       = 9;
+        public const byte CardTapped         = 10; // 선공/후공 카드 탭 동기화
 
-        // 모든 플레이어 대상, 신뢰성 있음
+        // 모든 플레이어 대상
         public static readonly RaiseEventOptions All = new RaiseEventOptions
         {
             Receivers = ReceiverGroup.All
+        };
+
+        // 나를 제외한 다른 플레이어 대상 (히든 아이템 상대 전송용)
+        public static readonly RaiseEventOptions Others = new RaiseEventOptions
+        {
+            Receivers = ReceiverGroup.Others
         };
 
         public static readonly SendOptions Reliable = SendOptions.SendReliable;

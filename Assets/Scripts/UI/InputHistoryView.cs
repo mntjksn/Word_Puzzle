@@ -18,7 +18,9 @@ namespace WordPuzzle.UI
 
         private void Awake()
         {
-            _scrollRect = GetComponentInParent<ScrollRect>();
+            _scrollRect = GetComponentInChildren<ScrollRect>(true);
+            if (_scrollRect == null)
+                _scrollRect = GetComponentInParent<ScrollRect>();
         }
 
         public void AddErrorEntry(string inputWord)
@@ -42,6 +44,7 @@ namespace WordPuzzle.UI
             var item = Instantiate(itemPrefab, listContainer);
             item.SetHidden();
             _items.Add(item);
+            ScrollToBottom();
         }
 
         public void AddSkippedEntry()
@@ -49,6 +52,7 @@ namespace WordPuzzle.UI
             var item = Instantiate(itemPrefab, listContainer);
             item.SetSkipped();
             _items.Add(item);
+            ScrollToBottom();
         }
 
         public void RestoreEntries(List<HistoryEntryData> entries)
@@ -68,6 +72,7 @@ namespace WordPuzzle.UI
                 }
                 _items.Add(item);
             }
+            ScrollToBottom();
         }
 
         public void Clear()
@@ -85,9 +90,9 @@ namespace WordPuzzle.UI
 
         private IEnumerator ForceScrollToBottom()
         {
-            // 레이아웃 재계산 후 스크롤
             yield return new WaitForEndOfFrame();
-            _scrollRect.normalizedPosition = new Vector2(0f, 0f);
+            Canvas.ForceUpdateCanvases();
+            _scrollRect.verticalNormalizedPosition = 0f;
         }
     }
 }

@@ -1,6 +1,7 @@
 #if PHOTON_UNITY_NETWORKING
 using System.Text;
 using Photon.Pun;
+using Photon.Realtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -48,9 +49,12 @@ namespace WordPuzzle.Multi
             _mgr.OnJoinedRoomCallback       = () => SceneManager.LoadScene("MultiRoom");
             _mgr.OnJoinFailedCallback       = msg => { SetStatus("실패: " + msg); SetButtons(true); };
 
-            if (PhotonNetwork.IsConnected)
+            // ConnectedToMaster / JoinedLobby = 방 생성·입장 가능 상태 → 즉시 메뉴 표시
+            // Leaving / Connecting 등 중간 상태 → OnConnectedToMaster 콜백 대기
+            var cs = PhotonNetwork.NetworkClientState;
+            if (cs == ClientState.ConnectedToMasterServer || cs == ClientState.JoinedLobby)
                 OnConnected();
-            else
+            else if (!PhotonNetwork.IsConnected)
                 _mgr.Connect();
         }
 
@@ -67,6 +71,7 @@ namespace WordPuzzle.Multi
 
         public void OnCreateRoom()
         {
+            if (!IsReadyForRooms()) return;
             ApplyNickname();
             string code = GenerateCode();
             SetStatus("방 생성 중...");
@@ -78,10 +83,21 @@ namespace WordPuzzle.Multi
         {
             string code = roomCodeInput != null ? roomCodeInput.text.Trim().ToUpper() : "";
             if (string.IsNullOrEmpty(code)) { SetStatus("방 코드를 입력해주세요."); return; }
+            if (!IsReadyForRooms()) return;
             ApplyNickname();
             SetStatus("방 입장 중...");
             SetButtons(false);
             _mgr.JoinRoom(code);
+        }
+
+        // ConnectedToMaster 또는 JoinedLobby 상태일 때만 방 조작 허용
+        private bool IsReadyForRooms()
+        {
+            var cs = PhotonNetwork.NetworkClientState;
+            if (cs == ClientState.ConnectedToMasterServer || cs == ClientState.JoinedLobby)
+                return true;
+            SetStatus("서버 연결 중입니다. 잠시 후 다시 시도해주세요.");
+            return false;
         }
 
         public void OnBack() => SceneManager.LoadScene("Intro");

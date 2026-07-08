@@ -1,4 +1,5 @@
 #if PHOTON_UNITY_NETWORKING
+using System.Collections;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
@@ -31,14 +32,20 @@ namespace WordPuzzle.Multi
         private const string PropWins   = "wins";
         private const string PropLosses = "losses";
 
-        private static readonly Color ColSlotNormal = new Color(1f, 1f, 1f, 0.06f);
-        private static readonly Color ColSlotReady  = new Color(0.28f, 0.62f, 1f, 0.28f);
-        private static readonly Color ColReadyText  = new Color(0.45f, 0.78f, 1f, 1f);
+        private static readonly Color ColSlotNormal    = new Color(1f, 1f, 1f, 0.06f);
+        private static readonly Color ColSlotReady    = new Color(0.28f, 0.62f, 1f, 0.28f);
+        private static readonly Color ColReadyText    = new Color(0.45f, 0.78f, 1f, 1f);
+        private static readonly Color ColCountdownNum = new Color(0.92f, 0.22f, 0.14f, 1f);
+        private static readonly Color ColStatusNormal = new Color(0.80f, 0.85f, 1.00f, 1f);
 
         private readonly System.Collections.Generic.Dictionary<int, bool> _readyStates
             = new System.Collections.Generic.Dictionary<int, bool>();
 
-        private bool _isReady;
+        private bool      _isReady;
+        private Coroutine _countdownCoroutine;
+        private const int   CountdownSeconds        = 3;
+        private const float StatusTextNormalSize    = 30f;
+        private const float StatusTextCountdownSize = 90f;
 
         private void Start()
         {
@@ -52,10 +59,13 @@ namespace WordPuzzle.Multi
             PhotonNetwork.AddCallbackTarget(this);
             _readyStates.Clear();
 
-            // 내 전적을 커스텀 프로퍼티로 공유
-            var multi = WordPuzzle.Save.SaveManager.LoadMulti();
-            var props = new Hashtable { [PropWins] = multi.WinCount, [PropLosses] = multi.LoseCount };
-            PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+            // 방에 실제로 입장한 상태일 때만 전적 공유 (Joining 상태에서 호출 시 에러 방지)
+            if (PhotonNetwork.InRoom)
+            {
+                var multi = WordPuzzle.Save.SaveManager.LoadMulti();
+                var props = new Hashtable { [PropWins] = multi.WinCount, [PropLosses] = multi.LoseCount };
+                PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+            }
 
             RefreshUI();
         }
@@ -144,7 +154,7 @@ namespace WordPuzzle.Multi
         {
             if (photonEvent.Code == MultiNetworkEvents.PlayerReadyChanged)
             {
-                var data = (object[])photonEvent.CustomData;
+                var data     = (object[])photonEvent.CustomData;
                 int actorNum = (int)data[0];
                 bool ready   = (bool)data[1];
                 _readyStates[actorNum] = ready;
@@ -153,20 +163,91 @@ namespace WordPuzzle.Multi
                 if (PhotonNetwork.IsMasterClient)
                     CheckAllReady();
             }
+            else if (photonEvent.Code == MultiNetworkEvents.CountdownStart)
+            {
+                StartCountdown();
+            }
+            else if (photonEvent.Code == MultiNetworkEvents.CountdownCancel)
+            {
+                CancelCountdown();
+            }
             else if (photonEvent.Code == MultiNetworkEvents.StartGame)
             {
-                FindObjectOfType<MultiGameController>()?.StartGame();
+                // GamePanel이 비활성 상태이므로 includeInactive=true 필수
+                FindObjectOfType<MultiGameController>(true)?.StartGame();
             }
         }
 
         private void CheckAllReady()
         {
-            // 2명이 방에 있으면 게임 시작 (추후 Custom Player Properties로 ready 확인 가능)
             if (PhotonNetwork.CurrentRoom.PlayerCount < 2) return;
 
-            PhotonNetwork.RaiseEvent(
-                MultiNetworkEvents.StartGame, null,
-                MultiNetworkEvents.All, MultiNetworkEvents.Reliable);
+            bool allReady = true;
+            foreach (var p in PhotonNetwork.CurrentRoom.Players.Values)
+            {
+                if (!_readyStates.TryGetValue(p.ActorNumber, out bool r) || !r)
+                { allReady = false; break; }
+            }
+
+            if (allReady)
+            {
+                PhotonNetwork.RaiseEvent(
+                    MultiNetworkEvents.CountdownStart, null,
+                    MultiNetworkEvents.All, MultiNetworkEvents.Reliable);
+            }
+            else
+            {
+                PhotonNetwork.RaiseEvent(
+                    MultiNetworkEvents.CountdownCancel, null,
+                    MultiNetworkEvents.All, MultiNetworkEvents.Reliable);
+            }
+        }
+
+        private void StartCountdown()
+        {
+            if (_countdownCoroutine != null) StopCoroutine(_countdownCoroutine);
+            _countdownCoroutine = StartCoroutine(CountdownCoroutine());
+        }
+
+        private void CancelCountdown()
+        {
+            if (_countdownCoroutine != null)
+            {
+                StopCoroutine(_countdownCoroutine);
+                _countdownCoroutine = null;
+            }
+            if (statusText)
+            {
+                statusText.fontSize = StatusTextNormalSize;
+                statusText.color    = ColStatusNormal;
+                statusText.text     = "상대방을 기다리는 중...";
+            }
+        }
+
+        private IEnumerator CountdownCoroutine()
+        {
+            if (statusText)
+            {
+                statusText.fontSize = StatusTextCountdownSize;
+                statusText.color    = ColCountdownNum;
+            }
+
+            for (int i = CountdownSeconds; i >= 1; i--)
+            {
+                if (statusText) statusText.text = i.ToString();
+                yield return new WaitForSeconds(1f);
+            }
+
+            _countdownCoroutine = null;
+            if (statusText)
+            {
+                statusText.fontSize = StatusTextNormalSize;
+                statusText.color    = ColStatusNormal;
+            }
+            if (PhotonNetwork.IsMasterClient)
+                PhotonNetwork.RaiseEvent(
+                    MultiNetworkEvents.StartGame, null,
+                    MultiNetworkEvents.All, MultiNetworkEvents.Reliable);
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)        => RefreshUI();
