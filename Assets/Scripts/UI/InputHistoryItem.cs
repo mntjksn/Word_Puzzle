@@ -23,23 +23,55 @@ namespace WordPuzzle.UI
             var old = transform.Find("ResultText");
             if (old != null) old.gameObject.SetActive(false);
 
-            // 도트 컨테이너 (오른쪽 절반)
+            // ── 아이템 자체를 세로 레이아웃으로 전환 ─────────────────────────
+            // wordText는 위쪽 행, DotContainer는 아래 행
+            var selfRT  = GetComponent<RectTransform>();
+            var selfVLG = gameObject.AddComponent<VerticalLayoutGroup>();
+            selfVLG.childAlignment       = TextAnchor.UpperLeft;
+            selfVLG.childControlWidth    = true;
+            selfVLG.childControlHeight   = false;
+            selfVLG.childForceExpandWidth  = true;
+            selfVLG.childForceExpandHeight = false;
+            selfVLG.spacing              = 2f;
+            selfVLG.padding              = new RectOffset(8, 8, 4, 4);
+
+            // wordText에 LayoutElement 추가 (높이 고정)
+            if (wordText != null)
+            {
+                var le = wordText.GetComponent<LayoutElement>();
+                if (le == null) le = wordText.gameObject.AddComponent<LayoutElement>();
+                le.preferredHeight  = 40f;
+                le.flexibleHeight   = 0f;
+                wordText.alignment  = TMPro.TextAlignmentOptions.MidlineLeft;
+            }
+
+            // DotContainer — 아이템 하단 행
             var go = new GameObject("DotContainer", typeof(RectTransform));
             go.transform.SetParent(transform, false);
             _dotContainer = (RectTransform)go.transform;
-            _dotContainer.anchorMin = new Vector2(0.4f, 0f);
-            _dotContainer.anchorMax = new Vector2(1f, 1f);
-            _dotContainer.offsetMin = new Vector2(0f, 0f);
-            _dotContainer.offsetMax = new Vector2(-12f, 0f);
+
+            var dotLE = go.AddComponent<LayoutElement>();
+            dotLE.preferredHeight = 24f;
+            dotLE.flexibleHeight  = 0f;
 
             var hlg = go.AddComponent<HorizontalLayoutGroup>();
             hlg.childAlignment       = TextAnchor.MiddleRight;
             hlg.spacing              = 4f;
-            hlg.padding              = new RectOffset(0, 0, 0, 0);
+            hlg.padding              = new RectOffset(0, 8, 0, 0);
             hlg.childControlWidth    = false;
             hlg.childControlHeight   = false;
             hlg.childForceExpandWidth  = false;
             hlg.childForceExpandHeight = false;
+
+            // 프리팹의 고정 높이(LayoutElement.preferredHeight=88)를 제거해서
+            // 부모 VLG(Content)가 우리 VLG의 계산값을 읽게 함
+            var existingLE = GetComponent<LayoutElement>();
+            if (existingLE != null) existingLE.preferredHeight = -1f;
+
+            // ContentSizeFitter (부모 VLG가 childControlHeight=false 인 경우 대비 fallback)
+            var csf = gameObject.GetComponent<ContentSizeFitter>();
+            if (csf == null) csf = gameObject.AddComponent<ContentSizeFitter>();
+            csf.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
         }
 
         public void SetError(int number, string word)

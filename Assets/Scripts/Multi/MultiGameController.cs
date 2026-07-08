@@ -29,6 +29,10 @@ namespace WordPuzzle.Multi
         [SerializeField] private MultiSubmitController  submitController;
         [SerializeField] private MultiResultHistoryView historyView;
 
+        [Header("힌트 UI")]
+        [SerializeField] private TextMeshProUGUI wordLengthHintText;
+        [SerializeField] private TextMeshProUGUI autoHintText;
+
         [Header("선공/후공 선택 패널")]
         [SerializeField] private GameObject      selectionPanel;
         [SerializeField] private TextMeshProUGUI selectionTitle;
@@ -77,6 +81,8 @@ namespace WordPuzzle.Multi
             gamePanel.SetActive(true);
             historyView.Clear();
             submitController.ResetForGame();
+            if (wordLengthHintText) wordLengthHintText.gameObject.SetActive(false);
+            if (autoHintText)       autoHintText.gameObject.SetActive(false);
 
             _players.Clear();
             foreach (var p in PhotonNetwork.CurrentRoom.Players.Values)
@@ -250,6 +256,47 @@ namespace WordPuzzle.Multi
             submitController.Setup(_answerTokens, _turnIndex, IsMyTurn);
             if (turnIndicatorText)
                 turnIndicatorText.text = IsMyTurn ? "내 차례" : "상대방 차례";
+            RefreshHints();
+        }
+
+        private void RefreshHints()
+        {
+            if (_currentWord == null) return;
+
+            // 5턴 이후: 글자 수 공개
+            if (wordLengthHintText)
+            {
+                if (_turnIndex >= 5)
+                {
+                    var tokens = JamoConverter.GetDisplayTokens(_currentWord.word);
+                    wordLengthHintText.text = tokens.Count + "글자";
+                    wordLengthHintText.gameObject.SetActive(true);
+                }
+                else wordLengthHintText.gameObject.SetActive(false);
+            }
+
+            // 20턴 이후: 단어 힌트(설명) 공개
+            if (autoHintText)
+            {
+                if (_turnIndex >= 20)
+                {
+                    string hintStr = string.IsNullOrEmpty(_currentWord.hint)
+                        ? BuildFirstSyllableHint()
+                        : _currentWord.hint;
+                    autoHintText.text = "힌트: " + hintStr;
+                    autoHintText.gameObject.SetActive(true);
+                }
+                else autoHintText.gameObject.SetActive(false);
+            }
+        }
+
+        private string BuildFirstSyllableHint()
+        {
+            var tokens = JamoConverter.GetDisplayTokens(_currentWord.word);
+            if (tokens == null || tokens.Count == 0) return "";
+            var sb = new System.Text.StringBuilder(tokens[0]);
+            for (int i = 1; i < tokens.Count; i++) sb.Append(" _");
+            return sb.ToString();
         }
 
         private void BuildWord(int wordId)
