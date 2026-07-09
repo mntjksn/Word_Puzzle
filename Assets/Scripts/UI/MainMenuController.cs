@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using WordPuzzle.Firebase;
 using WordPuzzle.Save;
 
@@ -49,8 +51,23 @@ namespace WordPuzzle.UI
             SceneManager.LoadScene("SingleGame");
         }
 
-        public void OnHowToPlay()       { if (_howToPlayPopup) _howToPlayPopup.SetActive(true);  }
+        public void OnHowToPlay()
+        {
+            if (_howToPlayPopup == null) return;
+            _howToPlayPopup.SetActive(true);
+            var scrollRect = _howToPlayPopup.GetComponentInChildren<ScrollRect>();
+            if (scrollRect != null) StartCoroutine(ResetScrollToTop(scrollRect));
+        }
+
         public void OnHowToPlayClose()  { if (_howToPlayPopup) _howToPlayPopup.SetActive(false); }
+
+        // 팝업을 열 때마다 스크롤을 맨 위로 되돌림 (레이아웃 계산 이후에 적용해야 함)
+        private IEnumerator ResetScrollToTop(ScrollRect scrollRect)
+        {
+            yield return new WaitForEndOfFrame();
+            Canvas.ForceUpdateCanvases();
+            scrollRect.verticalNormalizedPosition = 1f;
+        }
 
         public void OnDailyMode()  => SceneManager.LoadScene("DailyChallenge");
         public void OnMultiMode()  => SceneManager.LoadScene("MultiMenu");

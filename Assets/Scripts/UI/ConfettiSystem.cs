@@ -59,26 +59,29 @@ namespace WordPuzzle.UI
         {
             if (!lossMode)
             {
-                // 초기 버스트
+                // 초기 버스트 — 매 반복 new WaitForSeconds 대신 캐시된 인스턴스 재사용(GC 절감)
+                var burstWait = new WaitForSeconds(burstRate);
                 for (int i = 0; i < burstCount; i++)
                 {
                     if (_active < maxPieces) StartCoroutine(PieceLife(false));
-                    yield return new WaitForSeconds(burstRate);
+                    yield return burstWait;
                 }
                 // 지속 낙하
+                var fallWait = new WaitForSeconds(0.14f);
                 while (true)
                 {
                     if (_active < maxPieces) StartCoroutine(PieceLife(false));
-                    yield return new WaitForSeconds(0.14f);
+                    yield return fallWait;
                 }
             }
             else
             {
                 // 패배: 천천히 떨어지는 어두운 입자
+                var lossWait = new WaitForSeconds(0.28f);
                 while (true)
                 {
                     if (_active < 28) StartCoroutine(PieceLife(true));
-                    yield return new WaitForSeconds(0.28f);
+                    yield return lossWait;
                 }
             }
         }

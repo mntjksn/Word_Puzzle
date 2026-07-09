@@ -72,10 +72,10 @@ namespace WordPuzzle.Data
             return _words[index];
         }
 
-        // 2~4글자 단어 풀에서 날짜 seed로 일일 도전 단어 반환
+        // 2~6글자 단어 풀에서 날짜 seed로 일일 도전 단어 반환
         public WordData GetDailyChallenge(DateTime date)
         {
-            var pool = _words.FindAll(w => w.length >= 2 && w.length <= 4);
+            var pool = _words.FindAll(w => w.length >= 2 && w.length <= 6);
             if (pool.Count == 0) return null;
             int seed  = int.Parse(date.ToString("yyyyMMdd"));
             int index = Math.Abs(seed) % pool.Count;

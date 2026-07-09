@@ -197,6 +197,8 @@ namespace WordPuzzle.Daily
             if (_timerCoroutine != null) { StopCoroutine(_timerCoroutine); _timerCoroutine = null; }
         }
 
+        private static readonly WaitForSeconds OneSecondWait = new WaitForSeconds(1f);
+
         private IEnumerator TimerLoop()
         {
             while (nextChallengePopup != null && nextChallengePopup.activeSelf)
@@ -206,7 +208,7 @@ namespace WordPuzzle.Daily
                     var remain = DateTime.Now.Date.AddDays(1) - DateTime.Now;
                     nextTimerText.text = $"{remain.Hours:D2}:{remain.Minutes:D2}:{remain.Seconds:D2}";
                 }
-                yield return new WaitForSeconds(1f);
+                yield return OneSecondWait;
             }
         }
 

@@ -19,6 +19,10 @@ namespace WordPuzzle.UI
         private Dictionary<int, string> _fixedPositions = new Dictionary<int, string>();
         private List<string>            _unfixedPool    = new List<string>();
 
+        // Destroy()는 프레임 끝에 지연 적용되므로 cellContainer.childCount를 즉시 신뢰할 수 없음 —
+        // 직접 렌더링한 칸 수를 별도로 추적해서 재사용 여부를 판단
+        private int _renderedCellCount = -1;
+
         public void Build(List<string> displayTokens)
         {
             _totalCount = displayTokens.Count;
@@ -71,8 +75,17 @@ namespace WordPuzzle.UI
 
         private void RenderCells()
         {
-            foreach (Transform child in cellContainer)
-                Destroy(child.gameObject);
+            // 칸 수가 같으면(같은 단어 내 힌트/스트라이크 갱신) 기존 셀을 재사용해서
+            // 매번 전체를 Destroy/Instantiate하지 않도록 함
+            bool reuse = _renderedCellCount == _totalCount;
+            if (!reuse)
+            {
+                foreach (Transform child in cellContainer)
+                    Destroy(child.gameObject);
+            }
+            _renderedCellCount = _totalCount;
+
+            Color defaultColor = tokenCellPrefab.GetComponentInChildren<TextMeshProUGUI>().color;
 
             int unfixedIdx = 0;
             for (int i = 0; i < _totalCount; i++)
@@ -81,13 +94,14 @@ namespace WordPuzzle.UI
                 if (!isFixed)
                     jamo = unfixedIdx < _unfixedPool.Count ? _unfixedPool[unfixedIdx++] : "";
 
-                var cell = Instantiate(tokenCellPrefab, cellContainer);
+                GameObject cell = reuse ? cellContainer.GetChild(i).gameObject
+                                        : Instantiate(tokenCellPrefab, cellContainer);
                 cell.GetComponent<RectTransform>().sizeDelta = new Vector2(_cellSize, _cellSize);
 
                 var text = cell.GetComponentInChildren<TextMeshProUGUI>();
                 text.text     = jamo;
                 text.fontSize = Mathf.Clamp(_cellSize * 0.50f, 14f, 54f);
-                if (isFixed) text.color = LockedColor;
+                text.color    = isFixed ? LockedColor : defaultColor;
             }
         }
     }

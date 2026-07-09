@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="gcm_defaultSenderId" translatable="false">301936895703</string>
+  <string name="google_storage_bucket" translatable="false">word-puzzle-d492d.firebasestorage.app</string>
+  <string name="project_id" translatable="false">word-puzzle-d492d</string>
+  <string name="google_api_key" translatable="false">AIzaSyDBdzVQ8VHL29l254YUC4E5WSsqgsCi3lU</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDBdzVQ8VHL29l254YUC4E5WSsqgsCi3lU</string>
+  <string name="google_app_id" translatable="false">1:301936895703:android:bc5e6dd858d274a8357292</string>
+</resources>

@@ -117,5 +117,9 @@ InitTestScene*.unity*
 /Assets/Firebase/Plugins/iOS.meta
 /Assets/Plugins/iOS/
 /Assets/Plugins/iOS.meta
+
+# EDM4U가 Assets/Firebase/m2repository를 그대로 복제해 로컬에 생성하는 캐시 (재생성 가능, 불필요)
+/[Aa]ssets/GeneratedLocalRepo/
+/[Aa]ssets/GeneratedLocalRepo.meta
 /Assets/Plugins/tvOS/
 /Assets/Plugins/tvOS.meta

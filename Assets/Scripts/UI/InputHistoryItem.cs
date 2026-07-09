@@ -16,36 +16,96 @@ namespace WordPuzzle.UI
 
         private static Sprite _dotSprite;
         private RectTransform _dotContainer;
+        private bool _initialized;
 
-        private void Awake()
+        // compact=false: 싱글/일일 — 단어(왼쪽)·도트(오른쪽) 한 줄
+        // compact=true : 멀티 — 히스토리 패널이 좁아 한 줄에 다 안 들어가므로 단어 위 / 도트 아래 두 줄
+        public void Init(bool compact)
         {
+            if (_initialized) return;
+            _initialized = true;
+
             // 기존 ResultText 비활성화
             var old = transform.Find("ResultText");
             if (old != null) old.gameObject.SetActive(false);
 
-            // ── 아이템 자체를 세로 레이아웃으로 전환 ─────────────────────────
-            // wordText는 위쪽 행, DotContainer는 아래 행
-            var selfRT  = GetComponent<RectTransform>();
-            var selfVLG = gameObject.AddComponent<VerticalLayoutGroup>();
-            selfVLG.childAlignment       = TextAnchor.UpperLeft;
-            selfVLG.childControlWidth    = true;
-            selfVLG.childControlHeight   = false;
-            selfVLG.childForceExpandWidth  = true;
-            selfVLG.childForceExpandHeight = false;
-            selfVLG.spacing              = 2f;
-            selfVLG.padding              = new RectOffset(8, 8, 4, 4);
+            if (compact) BuildCompactLayout();
+            else         BuildSingleLineLayout();
+        }
 
-            // wordText에 LayoutElement 추가 (높이 고정)
+        // ── 싱글/일일: 한 줄 레이아웃 ─────────────────────────
+        // wordText(왼쪽) · DotContainer(오른쪽)를 같은 행에 두고 둘 다 세로 중앙 정렬
+        private void BuildSingleLineLayout()
+        {
+            var selfHLG = gameObject.AddComponent<HorizontalLayoutGroup>();
+            selfHLG.childAlignment       = TextAnchor.MiddleLeft;
+            selfHLG.childControlWidth    = true;
+            selfHLG.childControlHeight   = true;
+            selfHLG.childForceExpandWidth  = false;
+            selfHLG.childForceExpandHeight = false;
+            selfHLG.spacing              = 8f;
+            selfHLG.padding              = new RectOffset(16, 16, 28, 28);
+
+            // wordText — 남는 가로 공간을 모두 차지, 도트와 겹치지 않도록 줄바꿈 대신 말줄임 처리
             if (wordText != null)
             {
                 var le = wordText.GetComponent<LayoutElement>();
                 if (le == null) le = wordText.gameObject.AddComponent<LayoutElement>();
-                le.preferredHeight  = 40f;
-                le.flexibleHeight   = 0f;
-                wordText.alignment  = TMPro.TextAlignmentOptions.MidlineLeft;
+                le.preferredHeight = 48f;
+                le.flexibleWidth   = 1f;
+                le.flexibleHeight  = 0f;
+                wordText.alignment        = TMPro.TextAlignmentOptions.MidlineLeft;
+                wordText.enableWordWrapping = false;
+                wordText.overflowMode     = TMPro.TextOverflowModes.Ellipsis;
             }
 
-            // DotContainer — 아이템 하단 행
+            // DotContainer — 같은 행의 오른쪽, 필요한 만큼만 너비 차지(도트 개수에 따라 자동 계산)
+            var go = new GameObject("DotContainer", typeof(RectTransform));
+            go.transform.SetParent(transform, false);
+            _dotContainer = (RectTransform)go.transform;
+
+            var dotLE = go.AddComponent<LayoutElement>();
+            dotLE.preferredHeight = 48f;
+            dotLE.flexibleWidth   = 0f;
+            dotLE.flexibleHeight  = 0f;
+
+            var hlg = go.AddComponent<HorizontalLayoutGroup>();
+            hlg.childAlignment       = TextAnchor.MiddleRight;
+            hlg.spacing              = 4f;
+            hlg.padding              = new RectOffset(0, 0, 0, 0);
+            hlg.childControlWidth    = false;
+            hlg.childControlHeight   = false;
+            hlg.childForceExpandWidth  = false;
+            hlg.childForceExpandHeight = false;
+
+            FinalizeLayout();
+        }
+
+        // ── 멀티: 두 줄 레이아웃 ─────────────────────────
+        // wordText는 위쪽 행, DotContainer는 아래쪽 행 (히스토리 패널 폭이 좁아 한 줄에 안 들어감)
+        private void BuildCompactLayout()
+        {
+            var selfVLG = gameObject.AddComponent<VerticalLayoutGroup>();
+            selfVLG.childAlignment       = TextAnchor.MiddleLeft;
+            selfVLG.childControlWidth    = true;
+            selfVLG.childControlHeight   = true;
+            selfVLG.childForceExpandWidth  = true;
+            selfVLG.childForceExpandHeight = false;
+            selfVLG.spacing              = 8f;
+            selfVLG.padding              = new RectOffset(10, 10, 8, 14);
+
+            if (wordText != null)
+            {
+                var le = wordText.GetComponent<LayoutElement>();
+                if (le == null) le = wordText.gameObject.AddComponent<LayoutElement>();
+                // preferredHeight가 폰트 크기(34)보다 작으면 TMP가 한 줄도 못 그려서 텍스트가 통째로 사라짐
+                le.preferredHeight = 44f;
+                le.flexibleHeight  = 0f;
+                wordText.alignment        = TMPro.TextAlignmentOptions.MidlineLeft;
+                wordText.enableWordWrapping = false;
+                wordText.overflowMode     = TMPro.TextOverflowModes.Ellipsis;
+            }
+
             var go = new GameObject("DotContainer", typeof(RectTransform));
             go.transform.SetParent(transform, false);
             _dotContainer = (RectTransform)go.transform;
@@ -55,16 +115,21 @@ namespace WordPuzzle.UI
             dotLE.flexibleHeight  = 0f;
 
             var hlg = go.AddComponent<HorizontalLayoutGroup>();
-            hlg.childAlignment       = TextAnchor.MiddleRight;
+            hlg.childAlignment       = TextAnchor.MiddleLeft;
             hlg.spacing              = 4f;
-            hlg.padding              = new RectOffset(0, 8, 0, 0);
+            hlg.padding              = new RectOffset(0, 0, 0, 0);
             hlg.childControlWidth    = false;
             hlg.childControlHeight   = false;
             hlg.childForceExpandWidth  = false;
             hlg.childForceExpandHeight = false;
 
+            FinalizeLayout();
+        }
+
+        private void FinalizeLayout()
+        {
             // 프리팹의 고정 높이(LayoutElement.preferredHeight=88)를 제거해서
-            // 부모 VLG(Content)가 우리 VLG의 계산값을 읽게 함
+            // 부모 VLG(Content)가 우리 레이아웃의 계산값을 읽게 함
             var existingLE = GetComponent<LayoutElement>();
             if (existingLE != null) existingLE.preferredHeight = -1f;
 
@@ -106,7 +171,8 @@ namespace WordPuzzle.UI
 
         public void SetHidden()
         {
-            wordText.text = "???";
+            wordText.text      = "???";
+            wordText.alignment = TMPro.TextAlignmentOptions.Center;
             ClearDots();
         }
 
@@ -136,7 +202,7 @@ namespace WordPuzzle.UI
                                                  : OutColor;
 
             var rt = (RectTransform)go.transform;
-            rt.sizeDelta = new Vector2(16f, 16f);
+            rt.sizeDelta = new Vector2(20f, 20f);
         }
 
         // 런타임에 원형 스프라이트를 한 번만 생성

@@ -263,22 +263,21 @@ namespace WordPuzzle.Multi
         {
             if (_currentWord == null) return;
 
-            // 5턴 이후: 글자 수 공개
+            // 각 플레이어 5턴씩(총 10턴) 이후: 글자 수 공개
             if (wordLengthHintText)
             {
-                if (_turnIndex >= 5)
+                if (_turnIndex >= 10)
                 {
-                    var tokens = JamoConverter.GetDisplayTokens(_currentWord.word);
-                    wordLengthHintText.text = tokens.Count + "글자";
+                    wordLengthHintText.text = _currentWord.length + "글자";
                     wordLengthHintText.gameObject.SetActive(true);
                 }
                 else wordLengthHintText.gameObject.SetActive(false);
             }
 
-            // 20턴 이후: 단어 힌트(설명) 공개
+            // 각 플레이어 20턴씩(총 40턴) 이후: 단어 힌트(설명) 공개
             if (autoHintText)
             {
-                if (_turnIndex >= 20)
+                if (_turnIndex >= 40)
                 {
                     string hintStr = string.IsNullOrEmpty(_currentWord.hint)
                         ? BuildFirstSyllableHint()

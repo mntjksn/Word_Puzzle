@@ -53,7 +53,7 @@ Assets/
 ### 힌트 시스템
 - 싱글: `HintController`가 자모 힌트(포인트 소모, 랜덤 위치 1칸 공개), `SingleGameController`가 한 줄 힌트(단어 설명 공개)를 관리.
 - 일일: 한 줄 힌트만 존재(`DailyChallengeController.OnLineHint`).
-- 멀티: 자동 힌트 — 5턴 이후 글자 수 공개, 20턴 이후 단어 힌트(또는 첫 음절) 자동 공개(`MultiGameController.RefreshHints`).
+- 멀티: 자동 힌트 — 각 플레이어 5턴씩(총 10턴) 이후 글자 수 공개, 각 플레이어 20턴씩(총 40턴) 이후 단어 힌트(또는 첫 음절) 자동 공개(`MultiGameController.RefreshHints`).
 - 맞춘 위치(Strike)는 힌트 여부와 무관하게 자동으로 `TokenView.LockPosition`으로 고정 표시됨.
 
 ### 히스토리/저장 시스템 (`Scripts/Save`)

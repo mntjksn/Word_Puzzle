@@ -39,10 +39,12 @@ namespace WordPuzzle.UI
 
         private IEnumerator SpawnLoop()
         {
+            // 매 반복 new WaitForSeconds 대신 캐시된 인스턴스 재사용(GC 절감)
+            var wait = new WaitForSeconds(spawnRate);
             while (true)
             {
                 if (_active < maxStars) StartCoroutine(StarLife());
-                yield return new WaitForSeconds(spawnRate);
+                yield return wait;
             }
         }
 
