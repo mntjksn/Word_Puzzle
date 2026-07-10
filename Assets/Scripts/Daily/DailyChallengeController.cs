@@ -5,6 +5,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WordPuzzle.Audio;
 using WordPuzzle.Core;
 using WordPuzzle.Data;
 using WordPuzzle.Save;
@@ -90,6 +91,8 @@ namespace WordPuzzle.Daily
             _lineHintUsed = _dailySave.DailyLineHintUsed;
             _isCleared    = _dailySave.IsClearedToday;
 
+            if (!_isCleared) SoundManager.Instance?.PlaySfx("match_start");
+
             if (difficultyText != null) difficultyText.text = $"{_currentWord.length}글자";
             UpdateAttemptText();
             UpdatePointsText();
@@ -129,10 +132,10 @@ namespace WordPuzzle.Daily
             _attempts++;
             UpdateAttemptText();
             inputField.text = "";
-            inputField.ActivateInputField();
 
             if (input.Length != _currentWord.length)
             {
+                SoundManager.Instance?.PlaySfx("wrong");
                 historyView.AddErrorEntry(input);
                 _dailySave.TodayAttempts = _attempts;
                 SaveManager.SaveDaily(_dailySave);
@@ -141,6 +144,7 @@ namespace WordPuzzle.Daily
 
             var inputTokens = JamoConverter.GetAnswerTokens(input);
             var result      = BaseballJudge.Judge(_answerTokens, inputTokens);
+            SoundManager.Instance?.PlaySfx(result.IsCorrect ? "correct" : "wrong");
             historyView.AddEntry(input, result, _answerTokens.Count);
 
             if (result.Hits != null)
@@ -157,6 +161,7 @@ namespace WordPuzzle.Daily
         public void OnLineHint()
         {
             if (_lineHintUsed || string.IsNullOrEmpty(_currentWord?.hint)) return;
+            SoundManager.Instance?.PlaySfx("hint_reveal");
             _lineHintUsed = true;
             _dailySave.DailyLineHintUsed = true;
             SaveManager.SaveDaily(_dailySave);
@@ -212,7 +217,11 @@ namespace WordPuzzle.Daily
             }
         }
 
-        public void OnBackButton() => SceneManager.LoadScene("Intro");
+        public void OnBackButton()
+        {
+            SoundManager.Instance?.PlaySfx("button_back");
+            SceneManager.LoadScene("Intro");
+        }
 
         private void UpdateAttemptText()
         {

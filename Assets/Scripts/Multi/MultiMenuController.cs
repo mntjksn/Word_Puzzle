@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using WordPuzzle.Audio;
 using WordPuzzle.UI;
 
 namespace WordPuzzle.Multi
@@ -71,6 +72,7 @@ namespace WordPuzzle.Multi
 
         public void OnCreateRoom()
         {
+            SoundManager.Instance?.PlaySfx("button_click");
             if (!IsReadyForRooms()) return;
             ApplyNickname();
             string code = GenerateCode();
@@ -81,6 +83,7 @@ namespace WordPuzzle.Multi
 
         public void OnJoinRoom()
         {
+            SoundManager.Instance?.PlaySfx("button_click");
             string code = roomCodeInput != null ? roomCodeInput.text.Trim().ToUpper() : "";
             if (string.IsNullOrEmpty(code)) { SetStatus("방 코드를 입력해주세요."); return; }
             if (!IsReadyForRooms()) return;
@@ -100,7 +103,11 @@ namespace WordPuzzle.Multi
             return false;
         }
 
-        public void OnBack() => SceneManager.LoadScene("Intro");
+        public void OnBack()
+        {
+            SoundManager.Instance?.PlaySfx("button_back");
+            SceneManager.LoadScene("Intro");
+        }
 
         // ── 내부 헬퍼 ──────────────────────────────────────────────────────
 

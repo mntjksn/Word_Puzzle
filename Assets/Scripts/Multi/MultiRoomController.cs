@@ -7,6 +7,7 @@ using Photon.Realtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using WordPuzzle.Audio;
 
 namespace WordPuzzle.Multi
 {
@@ -58,6 +59,7 @@ namespace WordPuzzle.Multi
         {
             PhotonNetwork.AddCallbackTarget(this);
             _readyStates.Clear();
+            SoundManager.Instance?.PlaySfx("room_join");
 
             // 방에 실제로 입장한 상태일 때만 전적 공유 (Joining 상태에서 호출 시 에러 방지)
             if (PhotonNetwork.InRoom)
@@ -124,6 +126,7 @@ namespace WordPuzzle.Multi
         // 초대 코드 클립보드 복사
         public void OnCopyCode()
         {
+            SoundManager.Instance?.PlaySfx("button_click");
             GUIUtility.systemCopyBuffer = PhotonNetwork.CurrentRoom.Name;
             statusText.text = "코드가 복사되었습니다!";
         }
@@ -131,6 +134,7 @@ namespace WordPuzzle.Multi
         // 준비 버튼 토글
         public void OnReadyButtonClicked()
         {
+            SoundManager.Instance?.PlaySfx("button_click");
             _isReady             = !_isReady;
             readyButtonText.text = _isReady ? "준비 취소" : "준비";
 
@@ -145,6 +149,7 @@ namespace WordPuzzle.Multi
 
         public void OnLeaveRoom()
         {
+            SoundManager.Instance?.PlaySfx("button_back");
             PhotonMultiplayerManager.Instance?.LeaveRoom();
             UnityEngine.SceneManagement.SceneManager.LoadScene("MultiMenu");
         }
@@ -250,7 +255,11 @@ namespace WordPuzzle.Multi
                     MultiNetworkEvents.All, MultiNetworkEvents.Reliable);
         }
 
-        public override void OnPlayerEnteredRoom(Player newPlayer)        => RefreshUI();
+        public override void OnPlayerEnteredRoom(Player newPlayer)
+        {
+            SoundManager.Instance?.PlaySfx("room_join");
+            RefreshUI();
+        }
         public override void OnPlayerLeftRoom(Player otherPlayer)         => RefreshUI();
         public override void OnPlayerPropertiesUpdate(Player target, Hashtable props) => RefreshUI();
     }

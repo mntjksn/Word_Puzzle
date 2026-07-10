@@ -4,6 +4,7 @@ using Photon.Pun;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WordPuzzle.Audio;
 using WordPuzzle.Core;
 using WordPuzzle.UI;
 
@@ -92,6 +93,8 @@ namespace WordPuzzle.Multi
         public void Show(bool isWin, Dictionary<int, MultiPlayerState> players,
                          string correctWord, int turnCount, int wins, int losses)
         {
+            SoundManager.Instance?.PlaySfx(isWin ? "win" : "lose");
+
             // 폭죽 이펙트 모드 설정 (panel.SetActive 전에 해야 OnEnable 타이밍이 맞음)
             if (confettiSystem) confettiSystem.SetLossMode(!isWin);
             panel.SetActive(true);
@@ -117,6 +120,7 @@ namespace WordPuzzle.Multi
 
         public void OnLeave()
         {
+            SoundManager.Instance?.PlaySfx("button_back");
             PhotonNetwork.LeaveRoom();
             SceneManager.LoadScene("MultiMenu");
         }

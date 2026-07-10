@@ -8,6 +8,7 @@ using Photon.Realtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using WordPuzzle.Audio;
 using WordPuzzle.Core;
 using WordPuzzle.Data;
 using WordPuzzle.Save;
@@ -65,6 +66,9 @@ namespace WordPuzzle.Multi
         private bool _cardTapSent;   // 이미 CardTapped 이벤트를 전송했음 (중복 전송 방지)
         private bool _isMyTurnFirst;
 
+        private bool _wordLengthHintPlayed;  // 힌트 공개 효과음 중복 재생 방지
+        private bool _autoHintPlayed;
+
         private readonly Dictionary<int, MultiPlayerState> _players = new Dictionary<int, MultiPlayerState>();
 
         private int  ActiveActorNumber => (_turnActors != null && _turnActors.Length == 2)
@@ -77,10 +81,13 @@ namespace WordPuzzle.Multi
         // ── 게임 시작 ─────────────────────────────────────────────────
         public void StartGame()
         {
+            SoundManager.Instance?.PlaySfx("match_start");
             if (lobbyCard) lobbyCard.SetActive(false);
             gamePanel.SetActive(true);
             historyView.Clear();
             submitController.ResetForGame();
+            _wordLengthHintPlayed = false;
+            _autoHintPlayed       = false;
             if (wordLengthHintText) wordLengthHintText.gameObject.SetActive(false);
             if (autoHintText)       autoHintText.gameObject.SetActive(false);
 
@@ -268,17 +275,27 @@ namespace WordPuzzle.Multi
             {
                 if (_turnIndex >= 10)
                 {
+                    if (!_wordLengthHintPlayed)
+                    {
+                        _wordLengthHintPlayed = true;
+                        SoundManager.Instance?.PlaySfx("hint_reveal");
+                    }
                     wordLengthHintText.text = _currentWord.length + "글자";
                     wordLengthHintText.gameObject.SetActive(true);
                 }
                 else wordLengthHintText.gameObject.SetActive(false);
             }
 
-            // 각 플레이어 20턴씩(총 40턴) 이후: 단어 힌트(설명) 공개
+            // 각 플레이어 10턴씩(총 20턴) 이후: 단어 힌트(설명) 공개
             if (autoHintText)
             {
-                if (_turnIndex >= 40)
+                if (_turnIndex >= 20)
                 {
+                    if (!_autoHintPlayed)
+                    {
+                        _autoHintPlayed = true;
+                        SoundManager.Instance?.PlaySfx("hint_reveal");
+                    }
                     string hintStr = string.IsNullOrEmpty(_currentWord.hint)
                         ? BuildFirstSyllableHint()
                         : _currentWord.hint;
@@ -335,6 +352,7 @@ namespace WordPuzzle.Multi
             if (seconds != _prevTimerSeconds)
             {
                 if (timerText) timerText.text = seconds.ToString();
+                if (seconds <= 10 && seconds > 0) SoundManager.Instance?.PlaySfx("timer_tick");
                 _prevTimerSeconds = seconds;
             }
 

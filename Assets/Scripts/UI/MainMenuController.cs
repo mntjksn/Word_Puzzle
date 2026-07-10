@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using WordPuzzle.Audio;
 using WordPuzzle.Firebase;
 using WordPuzzle.Save;
 
@@ -39,6 +40,7 @@ namespace WordPuzzle.UI
 
         public void OnSingleMode()
         {
+            SoundManager.Instance?.PlaySfx("button_click");
             SaveManager.ClearMidGame();
             if (_singleModePopup != null) _singleModePopup.Show();
             else SceneManager.LoadScene("SingleGame");
@@ -46,6 +48,7 @@ namespace WordPuzzle.UI
 
         public void OnContinue()
         {
+            SoundManager.Instance?.PlaySfx("button_click");
             PlayerPrefs.SetInt(ContinueKey, 1);
             PlayerPrefs.Save();
             SceneManager.LoadScene("SingleGame");
@@ -53,13 +56,18 @@ namespace WordPuzzle.UI
 
         public void OnHowToPlay()
         {
+            SoundManager.Instance?.PlaySfx("button_click");
             if (_howToPlayPopup == null) return;
             _howToPlayPopup.SetActive(true);
             var scrollRect = _howToPlayPopup.GetComponentInChildren<ScrollRect>();
             if (scrollRect != null) StartCoroutine(ResetScrollToTop(scrollRect));
         }
 
-        public void OnHowToPlayClose()  { if (_howToPlayPopup) _howToPlayPopup.SetActive(false); }
+        public void OnHowToPlayClose()
+        {
+            SoundManager.Instance?.PlaySfx("button_back");
+            if (_howToPlayPopup) _howToPlayPopup.SetActive(false);
+        }
 
         // 팝업을 열 때마다 스크롤을 맨 위로 되돌림 (레이아웃 계산 이후에 적용해야 함)
         private IEnumerator ResetScrollToTop(ScrollRect scrollRect)
@@ -69,9 +77,28 @@ namespace WordPuzzle.UI
             scrollRect.verticalNormalizedPosition = 1f;
         }
 
-        public void OnDailyMode()  => SceneManager.LoadScene("DailyChallenge");
-        public void OnMultiMode()  => SceneManager.LoadScene("MultiMenu");
-        public void OnSettings()   { if (_settingsPopup) _settingsPopup.Show(); }
-        public void OnProfile()    { if (_profilePopup)  _profilePopup.Show();  }
+        public void OnDailyMode()
+        {
+            SoundManager.Instance?.PlaySfx("button_click");
+            SceneManager.LoadScene("DailyChallenge");
+        }
+
+        public void OnMultiMode()
+        {
+            SoundManager.Instance?.PlaySfx("button_click");
+            SceneManager.LoadScene("MultiMenu");
+        }
+
+        public void OnSettings()
+        {
+            SoundManager.Instance?.PlaySfx("button_click");
+            if (_settingsPopup) _settingsPopup.Show();
+        }
+
+        public void OnProfile()
+        {
+            SoundManager.Instance?.PlaySfx("button_click");
+            if (_profilePopup) _profilePopup.Show();
+        }
     }
 }

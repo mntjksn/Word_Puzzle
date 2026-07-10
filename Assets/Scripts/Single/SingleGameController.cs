@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WordPuzzle.Audio;
 using WordPuzzle.Core;
 using WordPuzzle.Data;
 using WordPuzzle.Save;
@@ -108,6 +109,8 @@ namespace WordPuzzle.Single
                 Debug.LogWarning($"[Single] {letterCount}글자 단어 없음");
                 return;
             }
+
+            SoundManager.Instance?.PlaySfx("match_start");
 
             _answerTokens = JamoConverter.GetAnswerTokens(_currentWord.word);
             var displayTokens = JamoConverter.GetDisplayTokens(_currentWord.word);
@@ -219,10 +222,10 @@ namespace WordPuzzle.Single
             _attempts++;
             UpdateAttemptText();
             inputField.text = "";
-            inputField.ActivateInputField();
 
             if (input.Length != _currentWord.length)
             {
+                SoundManager.Instance?.PlaySfx("wrong");
                 historyView.AddErrorEntry(input);
                 _historyLog.Add(new HistoryEntryData { word = input, isError = true });
                 return;
@@ -230,6 +233,7 @@ namespace WordPuzzle.Single
 
             var inputTokens = JamoConverter.GetAnswerTokens(input);
             var result      = BaseballJudge.Judge(_answerTokens, inputTokens);
+            SoundManager.Instance?.PlaySfx(result.IsCorrect ? "correct" : "wrong");
             historyView.AddEntry(input, result, _answerTokens.Count);
             _historyLog.Add(new HistoryEntryData
             {
@@ -287,6 +291,7 @@ namespace WordPuzzle.Single
         private void ExecuteJamoHint()
         {
             if (!hintController.TryReveal()) return;
+            SoundManager.Instance?.PlaySfx("hint_reveal");
             _saveData.Points -= JamoHintCost;
             _saveData.TotalHintsUsed++;
             SaveManager.SaveSingle(_saveData);
@@ -295,6 +300,7 @@ namespace WordPuzzle.Single
 
         private void ExecuteLineHint()
         {
+            SoundManager.Instance?.PlaySfx("hint_reveal");
             _lineHintUsed = true;
             _saveData.Points -= LineHintCost;
             SaveManager.SaveSingle(_saveData);
@@ -363,10 +369,15 @@ namespace WordPuzzle.Single
             SaveManager.SaveMidGame(save);
         }
 
-        public void OnPlayAgain() => StartGame(_currentWord.length);
+        public void OnPlayAgain()
+        {
+            SoundManager.Instance?.PlaySfx("button_click");
+            StartGame(_currentWord.length);
+        }
 
         public void OnBackButton()
         {
+            SoundManager.Instance?.PlaySfx("button_back");
             SaveMidGame();
             SceneManager.LoadScene("Intro");
         }

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using WordPuzzle.Audio;
 using WordPuzzle.Firebase;
 using WordPuzzle.Save;
 using DataSnapshot = global::Firebase.Database.DataSnapshot;
@@ -43,7 +44,7 @@ namespace WordPuzzle.UI
 
         private void Start()
         {
-            if (closeButton)         closeButton.onClick.AddListener(Hide);
+            if (closeButton)         closeButton.onClick.AddListener(() => { SoundManager.Instance?.PlaySfx("button_back"); Hide(); });
             if (setNicknameButton)   setNicknameButton.onClick.AddListener(OnSetNicknameClicked);
             if (changeNicknameButton)changeNicknameButton.onClick.AddListener(ShowEditPanel);
             if (cancelEditButton)    cancelEditButton.onClick.AddListener(HideEditPanel);

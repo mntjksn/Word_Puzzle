@@ -17,7 +17,7 @@ namespace WordPuzzle.UI
         {
             if (bgmSlider)   bgmSlider.onValueChanged.AddListener(OnBgmChanged);
             if (sfxSlider)   sfxSlider.onValueChanged.AddListener(OnSfxChanged);
-            if (closeButton) closeButton.onClick.AddListener(Hide);
+            if (closeButton) closeButton.onClick.AddListener(() => { SoundManager.Instance?.PlaySfx("button_back"); Hide(); });
         }
 
         public void Show()
@@ -34,12 +34,12 @@ namespace WordPuzzle.UI
 
         public void OnBgmChanged(float value)
         {
-            if (SoundManager.Instance != null) SoundManager.Instance.BgmVolume = value;
+            SoundManager.Instance?.SetBgmVolume(value);
         }
 
         public void OnSfxChanged(float value)
         {
-            if (SoundManager.Instance != null) SoundManager.Instance.SfxVolume = value;
+            SoundManager.Instance?.SetSfxVolume(value);
         }
     }
 }

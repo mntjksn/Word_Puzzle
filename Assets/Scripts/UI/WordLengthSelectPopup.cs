@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WordPuzzle.Audio;
 
 namespace WordPuzzle.UI
 {
@@ -14,7 +15,12 @@ namespace WordPuzzle.UI
         }
 
         public void Show() => gameObject.SetActive(true);
-        public void Hide() => gameObject.SetActive(false);
+
+        public void Hide()
+        {
+            SoundManager.Instance?.PlaySfx("button_back");
+            gameObject.SetActive(false);
+        }
 
         public void OnSelect2() => Load(2);
         public void OnSelect3() => Load(3);
@@ -24,6 +30,7 @@ namespace WordPuzzle.UI
 
         private void Load(int length)
         {
+            SoundManager.Instance?.PlaySfx("button_click");
             PlayerPrefs.SetInt(PrefKey, length);
             PlayerPrefs.Save();
             SceneManager.LoadScene("SingleGame");
