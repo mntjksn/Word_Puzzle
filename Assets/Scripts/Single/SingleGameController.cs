@@ -228,6 +228,7 @@ namespace WordPuzzle.Single
                 SoundManager.Instance?.PlaySfx("wrong");
                 historyView.AddErrorEntry(input);
                 _historyLog.Add(new HistoryEntryData { word = input, isError = true });
+                inputField.ActivateInputField();
                 return;
             }
 
@@ -254,6 +255,7 @@ namespace WordPuzzle.Single
             }
 
             if (result.IsCorrect) OnClear();
+            else inputField.ActivateInputField();
         }
 
         // ── 힌트 확인 팝업 ──

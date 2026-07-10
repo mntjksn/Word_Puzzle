@@ -139,6 +139,7 @@ namespace WordPuzzle.Daily
                 historyView.AddErrorEntry(input);
                 _dailySave.TodayAttempts = _attempts;
                 SaveManager.SaveDaily(_dailySave);
+                inputField.ActivateInputField();
                 return;
             }
 
@@ -156,6 +157,7 @@ namespace WordPuzzle.Daily
             SaveManager.SaveDaily(_dailySave);
 
             if (result.IsCorrect) OnClear();
+            else inputField.ActivateInputField();
         }
 
         public void OnLineHint()
