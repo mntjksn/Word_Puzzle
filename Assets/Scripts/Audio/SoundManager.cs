@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace WordPuzzle.Audio
 {
@@ -26,6 +27,10 @@ namespace WordPuzzle.Audio
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
+            // MultiMenu/MultiRoom 씬처럼 카메라 AudioListener가 없는 씬에서도 오디오 출력을 보장
+            if (GetComponent<AudioListener>() == null)
+                gameObject.AddComponent<AudioListener>();
+
             if (bgmSource == null) bgmSource = gameObject.AddComponent<AudioSource>();
             if (sfxSource == null) sfxSource = gameObject.AddComponent<AudioSource>();
             bgmSource.loop         = true;
@@ -42,6 +47,23 @@ namespace WordPuzzle.Audio
             {
                 bgmSource.clip = bgmClip;
                 bgmSource.Play();
+            }
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void OnDestroy()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        // 씬 카메라의 AudioListener와 중복되지 않도록 타 오브젝트의 것을 비활성화
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            foreach (var al in FindObjectsOfType<AudioListener>())
+            {
+                if (al.gameObject != gameObject)
+                    al.enabled = false;
             }
         }
 
